@@ -6,30 +6,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="Pegasus Home – a bright, cartoon-like companion android for every home."
+    content="Pegasus Home – a bright, cartoon-like companion android who lives with you."
   />
-  <!-- 更可爱的圆润字体 -->
+  <!-- 卡通艺术字 + 圆体 -->
   <link
-    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Baloo+2:wght@500;600;700&family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap"
     rel="stylesheet"
   />
   <style>
     :root {
       --sky-blue: #8fd4ff;
       --sky-blue-light: #dff2ff;
-      --deep-blue: #2162d9;
+      --deep-blue: #2652b8;
       --sun-yellow: #ffd74d;
       --sun-yellow-soft: #ffeaa3;
       --cream: #fffaf1;
       --white: #ffffff;
-      --pink: #ff93c9;
-      --text-main: #24304a;
+      --pink: #ff86bc;
+      --mint: #91ffd2;
+      --text-main: #23304a;
       --text-soft: #6f7a96;
       --radius-big: 32px;
-      --radius-med: 24px;
+      --radius-med: 22px;
       --radius-pill: 999px;
-      --shadow-soft: 0 18px 48px rgba(255, 192, 90, 0.5);
-      --shadow-blue: 0 20px 52px rgba(33, 98, 217, 0.45);
+      --shadow-soft: 0 20px 50px rgba(255, 188, 83, 0.6);
+      --shadow-blue: 0 22px 60px rgba(32, 96, 210, 0.55);
     }
 
     * {
@@ -42,13 +43,10 @@
       padding: 0;
       font-family: "Baloo 2", "M PLUS Rounded 1c", system-ui, -apple-system,
         BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: linear-gradient(
-        180deg,
-        #bde7ff 0,
-        #e8f6ff 35%,
-        #fffaf1 80%,
-        #fff4df 100%
-      );
+      background:
+        radial-gradient(circle at 15% 10%, #fff7bf 0, transparent 45%),
+        radial-gradient(circle at 85% 8%, #ffddff 0, transparent 40%),
+        linear-gradient(180deg, #c5ebff 0, #e8f6ff 40%, #fffaf1 78%, #ffeacf 100%);
       color: var(--text-main);
       scroll-behavior: smooth;
     }
@@ -64,12 +62,17 @@
     }
 
     .container {
-      max-width: 1100px;
+      max-width: 1120px;
       margin: 0 auto;
       padding: 0 20px;
     }
 
-    /* HEADER – 像云朵一样的导航条 */
+    h1, h2, h3 {
+      font-family: "Luckiest Guy", "Baloo 2", system-ui, sans-serif;
+      letter-spacing: 0.04em;
+    }
+
+    /* HEADER – 软萌导航 */
     .site-header {
       position: sticky;
       top: 0;
@@ -77,7 +80,7 @@
       padding-top: 10px;
       background: linear-gradient(
         180deg,
-        rgba(189, 231, 255, 0.95),
+        rgba(197, 235, 255, 0.95),
         rgba(232, 246, 255, 0.92),
         rgba(232, 246, 255, 0.85)
       );
@@ -85,11 +88,11 @@
     }
 
     .nav-shell {
-      max-width: 1100px;
+      max-width: 1120px;
       margin: 0 auto 8px;
       padding: 6px 12px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(255, 255, 255, 0.97);
       box-shadow: 0 10px 30px rgba(33, 98, 217, 0.25);
       display: flex;
       align-items: center;
@@ -105,8 +108,8 @@
     }
 
     .brand-logo {
-      width: 40px;
-      height: 40px;
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
       background: radial-gradient(circle at 30% 20%, #ffffff 0, #ffe58c 50%, #ffcd4c 100%);
       border: 2px solid #ffe28f;
@@ -123,11 +126,11 @@
     }
 
     .brand-text-main {
+      font-family: "Luckiest Guy", system-ui, sans-serif;
       font-size: 18px;
-      letter-spacing: 0.14em;
       text-transform: uppercase;
-      font-weight: 800;
       color: var(--deep-blue);
+      text-shadow: 0 3px 0 rgba(0, 0, 0, 0.18);
       line-height: 1;
     }
 
@@ -135,19 +138,20 @@
       font-size: 11px;
       color: var(--text-soft);
       line-height: 1.1;
+      margin-top: 2px;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 10px;
       font-size: 12px;
       color: var(--text-soft);
     }
 
-    .nav-link-pill {
+    .nav-pill {
       padding: 5px 10px;
-      border-radius: 999px;
+      border-radius: var(--radius-pill);
       background: #f3fbff;
       border: 1px solid #d4ecff;
       font-weight: 600;
@@ -156,7 +160,7 @@
       overflow: hidden;
     }
 
-    .nav-link-pill::before {
+    .nav-pill::before {
       content: "";
       position: absolute;
       left: -10%;
@@ -164,11 +168,11 @@
       width: 0;
       height: 100%;
       background: linear-gradient(90deg, #ffe794, #ffb7d3);
-      opacity: 0.3;
+      opacity: 0.35;
       transition: width 0.2s ease-out;
     }
 
-    .nav-link-pill:hover::before {
+    .nav-pill:hover::before {
       width: 140%;
     }
 
@@ -177,7 +181,7 @@
       align-items: center;
       gap: 4px;
       padding: 3px;
-      border-radius: 999px;
+      border-radius: var(--radius-pill);
       background: #fff7d7;
       border: 2px solid #ffd74d;
     }
@@ -188,7 +192,7 @@
       font-size: 11px;
       font-weight: 700;
       padding: 4px 8px;
-      border-radius: 999px;
+      border-radius: var(--radius-pill);
       cursor: pointer;
       color: #b58a18;
     }
@@ -198,15 +202,15 @@
       box-shadow: 0 3px 8px rgba(255, 201, 72, 0.7);
     }
 
-    /* HERO – 真正的 Pegasus Home 主画面 */
+    /* HERO – Pegasus 超大角色卡 */
     .hero {
-      padding: 40px 0 40px;
+      padding: 42px 0 34px;
     }
 
     .hero-inner {
       display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
-      gap: 26px;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: 28px;
       align-items: center;
     }
 
@@ -214,12 +218,12 @@
       position: relative;
     }
 
-    .hero-cloud-tag {
+    .hero-pill {
       display: inline-flex;
       align-items: center;
       gap: 6px;
       padding: 4px 12px;
-      border-radius: 999px;
+      border-radius: var(--radius-pill);
       background: #ffffff;
       border: 2px dashed #ffd980;
       color: #c48800;
@@ -234,10 +238,16 @@
       font-size: clamp(32px, 4.4vw, 42px);
       line-height: 1.1;
       margin: 0 0 8px;
+      color: var(--deep-blue);
+      text-shadow: 0 4px 0 rgba(0, 0, 0, 0.15);
     }
 
     .hero-title span {
-      color: var(--deep-blue);
+      color: #fffcff;
+      -webkit-text-stroke: 2px var(--deep-blue);
+      text-stroke: 2px var(--deep-blue);
+      text-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
+      padding: 0 4px;
     }
 
     .hero-subline {
@@ -255,7 +265,7 @@
 
     .hero-badge {
       padding: 6px 12px;
-      border-radius: 999px;
+      border-radius: var(--radius-pill);
       background: #fffef6;
       border: 2px solid #ffe6a5;
       font-size: 11px;
@@ -279,7 +289,7 @@
 
     .btn-main,
     .btn-ghost {
-      border-radius: 999px;
+      border-radius: var(--radius-pill);
       border: none;
       cursor: pointer;
       font-size: 13px;
@@ -306,7 +316,7 @@
     }
 
     .btn-ghost {
-      background: #ffffff;
+      background: var(--white);
       color: var(--deep-blue);
       border: 2px solid #b9e2ff;
       box-shadow: 0 12px 30px rgba(33, 98, 217, 0.25);
@@ -318,134 +328,153 @@
       box-shadow: var(--shadow-blue);
     }
 
-    /* HERO 右侧 – 大角色卡片 */
+    /* 右侧大角色卡 + 拟人化信息 */
     .hero-right {
       position: relative;
     }
 
     .hero-sun {
       position: absolute;
-      right: -30px;
-      top: -50px;
-      width: 220px;
-      height: 220px;
+      right: -40px;
+      top: -60px;
+      width: 260px;
+      height: 260px;
       border-radius: 50%;
       background: radial-gradient(circle at 30% 25%, #ffffff 0, #ffe994 45%, #ffcd4c 80%);
       z-index: -1;
-      box-shadow: 0 0 42px rgba(255, 214, 92, 0.7);
+      box-shadow: 0 0 42px rgba(255, 214, 92, 0.75);
     }
 
     .hero-card {
       border-radius: var(--radius-big);
       background: linear-gradient(145deg, #ffffff 0, #fff6db 40%, #ffeaa7 80%);
-      padding: 18px 18px 20px;
+      padding: 20px;
       border: 3px solid #ffe08f;
       box-shadow: var(--shadow-soft);
       position: relative;
       overflow: hidden;
-    }
-
-    .hero-card-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 8px;
-      font-size: 11px;
-      color: var(--text-soft);
-    }
-
-    .hero-chip {
-      padding: 4px 12px;
-      border-radius: 999px;
-      background: #fff2b9;
-      color: #8f5a00;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .hero-card-main {
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
-      gap: 10px;
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.9fr);
+      gap: 14px;
       align-items: center;
     }
 
-    .robot-main {
-      border-radius: 26px;
-      background: radial-gradient(circle at 50% 0, #ffffff 0, #fff1aa 40%, #ffd74d 80%);
-      padding: 14px 10px 10px;
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      left: -60px;
+      bottom: -40px;
+      width: 220px;
+      height: 80px;
+      background: radial-gradient(circle at 50% 20%, rgba(0, 0, 0, 0.2) 0, transparent 60%);
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    .hero-card-left {
       position: relative;
     }
 
-    .robot-main img {
-      max-height: 250px;
+    .hero-card-top-tag {
+      position: absolute;
+      left: 8px;
+      top: 0;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      background: #fffae0;
+      border: 2px solid #ffd980;
+      font-size: 11px;
+      color: #a96c00;
+      font-weight: 700;
+      transform: translateY(-70%);
+      box-shadow: 0 8px 16px rgba(255, 200, 92, 0.65);
+    }
+
+    .robot-stage {
+      border-radius: 26px;
+      background:
+        radial-gradient(circle at 50% 0, #ffffff 0, #fff1aa 40%, #ffd74d 80%);
+      padding: 16px 12px 12px;
+      position: relative;
+    }
+
+    .robot-stage img {
+      max-height: 310px; /* Pegasus 超大 */
       margin: 0 auto;
       object-fit: contain;
     }
 
     .robot-badge {
       position: absolute;
-      left: 12px;
-      bottom: 10px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.95);
-      font-size: 10px;
+      left: 14px;
+      bottom: 12px;
+      padding: 5px 12px;
+      border-radius: var(--radius-pill);
+      background: rgba(255, 255, 255, 0.96);
+      font-size: 11px;
       font-weight: 700;
       color: var(--deep-blue);
     }
 
     .robot-bubble {
       position: absolute;
-      right: 12px;
-      top: 12px;
-      padding: 6px 12px;
-      border-radius: 18px;
+      right: 14px;
+      top: 14px;
+      padding: 7px 13px;
+      border-radius: 20px;
       background: #ffffff;
       border: 2px solid #b9e2ff;
-      font-size: 11px;
+      font-size: 12px;
       color: var(--deep-blue);
-      box-shadow: 0 10px 26px rgba(33, 98, 217, 0.3);
+      box-shadow: 0 12px 26px rgba(33, 98, 217, 0.3);
     }
 
-    .robot-side-list {
-      display: grid;
-      grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
-      gap: 8px;
-      font-size: 11px;
-    }
-
-    .robot-side-card {
-      border-radius: 18px;
+    .hero-card-right {
+      border-radius: 22px;
       background: #fffdf3;
       border: 2px solid #ffe7a5;
-      padding: 8px 10px 10px;
+      padding: 10px 12px 12px;
+      font-size: 12px;
+      color: var(--text-soft);
     }
 
-    .robot-side-title {
-      font-size: 11px;
+    .hero-mini-title {
+      font-size: 13px;
       font-weight: 700;
       color: var(--deep-blue);
-      margin-bottom: 4px;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
 
-    .robot-side-text {
-      font-size: 11px;
-      color: var(--text-soft);
-      line-height: 1.6;
+    .hero-mini-title span.icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #ffecb6;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
     }
 
-    .robot-back-img {
-      width: 70%;
-      max-height: 110px;
-      object-fit: contain;
-      margin: 2px auto 6px;
+    .hero-line-item {
+      margin-bottom: 6px;
+    }
+
+    .hero-line-label {
+      font-weight: 700;
+      color: var(--deep-blue);
+      font-size: 12px;
+    }
+
+    .hero-line-value {
+      margin-left: 4px;
     }
 
     .hero-card-bottom {
-      margin-top: 8px;
+      margin-top: 6px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -467,9 +496,9 @@
       align-items: center;
     }
 
-    /* 小房间卡片区 */
+    /* Section 通用 */
     section {
-      padding: 20px 0 32px;
+      padding: 18px 0 30px;
     }
 
     .section-header {
@@ -494,8 +523,10 @@
     }
 
     .section-title {
-      font-size: 20px;
+      font-size: 22px;
       margin: 0;
+      color: var(--deep-blue);
+      text-shadow: 0 3px 0 rgba(0, 0, 0, 0.15);
     }
 
     .section-subline {
@@ -504,6 +535,59 @@
       margin-top: 4px;
     }
 
+    /* Pegasus Today 卡片 */
+    .today-panel {
+      border-radius: var(--radius-big);
+      background: #ffffff;
+      border: 2px solid #ffdf9d;
+      padding: 14px 16px 16px;
+      box-shadow: 0 15px 40px rgba(255, 204, 105, 0.5);
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 12px;
+      align-items: center;
+    }
+
+    .today-left {
+      font-size: 13px;
+      color: var(--text-soft);
+    }
+
+    .today-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .today-badge {
+      padding: 5px 10px;
+      border-radius: var(--radius-pill);
+      background: #fffef6;
+      border: 2px solid #ffe3a4;
+      font-size: 11px;
+      color: var(--deep-blue);
+    }
+
+    .today-right {
+      border-radius: 20px;
+      background: #f4f9ff;
+      border: 2px solid #dbe7ff;
+      padding: 10px;
+      font-size: 12px;
+      color: var(--text-soft);
+    }
+
+    .today-line {
+      margin-bottom: 6px;
+    }
+
+    .today-label {
+      font-weight: 700;
+      color: var(--deep-blue);
+    }
+
+    /* 房间卡片 */
     .room-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -525,7 +609,7 @@
       right: 10px;
       top: 10px;
       padding: 3px 9px;
-      border-radius: 999px;
+      border-radius: var(--radius-pill);
       background: #ffedf9;
       color: #bf4f8f;
       font-size: 10px;
@@ -550,7 +634,7 @@
       line-height: 1.7;
     }
 
-    /* ID 卡片区 */
+    /* ID 卡片 */
     .id-panel {
       border-radius: var(--radius-big);
       background: #ffffff;
@@ -585,7 +669,7 @@
       padding: 10px;
     }
 
-    /* 结尾 CTA */
+    /* CTA */
     .cta-panel {
       border-radius: var(--radius-big);
       background: linear-gradient(135deg, var(--deep-blue), #64b7ff);
@@ -599,8 +683,10 @@
     }
 
     .cta-title {
-      font-size: 20px;
+      font-family: "Luckiest Guy", system-ui, sans-serif;
+      font-size: 22px;
       margin-bottom: 4px;
+      text-shadow: 0 3px 0 rgba(0, 0, 0, 0.25);
     }
 
     .cta-subline {
@@ -615,7 +701,7 @@
     }
 
     .cta-btn {
-      border-radius: 999px;
+      border-radius: var(--radius-pill);
       border: none;
       padding: 9px 16px;
       font-size: 13px;
@@ -663,6 +749,9 @@
       .hero-right {
         order: -1;
       }
+      .today-panel {
+        grid-template-columns: minmax(0, 1fr);
+      }
       .room-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -677,6 +766,9 @@
       }
       .container {
         padding: 0 16px;
+      }
+      .hero-card {
+        grid-template-columns: minmax(0, 1fr);
       }
       .room-grid {
         grid-template-columns: minmax(0, 1fr);
@@ -699,27 +791,27 @@
         <div>
           <div class="brand-text-main">PEGASUS</div>
           <div class="brand-text-sub i18n"
-               data-en="Pegasus Home · Companion Android"
-               data-zh="Pegasus 的家 · 陪伴型机器人"
-               data-ja="Pegasus Home ・ コンパニオンアンドロイド">
-            Pegasus Home · Companion Android
+               data-en="Pegasus is home today!"
+               data-zh="Pegasus 今天在家哦！"
+               data-ja="きょうの Pegasus は、おうちにいます！">
+            Pegasus is home today!
           </div>
         </div>
       </div>
 
       <nav class="nav-links">
-        <a href="#rooms" class="nav-link-pill i18n"
-           data-en="Rooms"
-           data-zh="房间"
-           data-ja="お部屋">Rooms</a>
-        <a href="#idcard" class="nav-link-pill i18n"
+        <a href="#today" class="nav-pill i18n"
+           data-en="Pegasus today"
+           data-zh="今天的 Pegasus"
+           data-ja="きょうの Pegasus">Pegasus today</a>
+        <a href="#rooms" class="nav-pill i18n"
+           data-en="His rooms"
+           data-zh="他常待的房间"
+           data-ja="よくいるお部屋">His rooms</a>
+        <a href="#idcard" class="nav-pill i18n"
            data-en="ID card"
            data-zh="身份卡"
            data-ja="ID カード">ID card</a>
-        <a href="#contact" class="nav-link-pill i18n"
-           data-en="Contact"
-           data-zh="联系"
-           data-ja="コンタクト">Contact</a>
       </nav>
 
       <div class="lang-switch">
@@ -734,17 +826,17 @@
   <section class="hero" id="top">
     <div class="container hero-inner">
       <div class="hero-left">
-        <div class="hero-cloud-tag i18n"
+        <div class="hero-pill i18n"
              data-en="PEGASUS HOME"
              data-zh="PEGASUS 的家"
              data-ja="Pegasus のおうち">
           PEGASUS HOME
         </div>
         <h1 class="hero-title i18n"
-            data-en="Welcome to the little home of <span>Pegasus</span>."
+            data-en="Welcome to <span>Pegasus</span>’ little home."
             data-zh="欢迎来到 <span>Pegasus</span> 的小小家里。"
             data-ja="<span>Pegasus</span> のちいさなおうちへ、ようこそ。">
-          Welcome to the little home of <span>Pegasus</span>.
+          Welcome to <span>Pegasus</span>’ little home.
         </h1>
         <p class="hero-subline i18n"
            data-en="Bright yellow, sky blue and a soft voice – everything here is made to feel warm and safe."
@@ -770,17 +862,17 @@
         </div>
 
         <div class="hero-buttons">
-          <a href="#rooms" class="btn-main i18n"
+          <a href="#today" class="btn-main i18n"
+             data-en="See today’s Pegasus"
+             data-zh="看看今天的 Pegasus"
+             data-ja="きょうの Pegasus を見る">
+            See today’s Pegasus
+          </a>
+          <a href="#rooms" class="btn-ghost i18n"
              data-en="Walk around his rooms"
              data-zh="在房间里逛一圈"
              data-ja="お部屋をさんぽする">
             Walk around his rooms
-          </a>
-          <a href="#idcard" class="btn-ghost i18n"
-             data-en="Look at his ID card"
-             data-zh="看看他的身份卡"
-             data-ja="IDカードを見る">
-            Look at his ID card
           </a>
         </div>
       </div>
@@ -788,23 +880,14 @@
       <div class="hero-right">
         <div class="hero-sun"></div>
         <div class="hero-card">
-          <div class="hero-card-top">
-            <span class="hero-chip i18n"
-                  data-en="LIVE PEEK"
-                  data-zh="偷看一下"
-                  data-ja="ちょっとのぞき見">
-              LIVE PEEK
-            </span>
-            <span class="i18n"
-                  data-en="Model: PEGASUS · 0517-S17"
-                  data-zh="型号：PEGASUS · 0517-S17"
-                  data-ja="モデル：PEGASUS ・ 0517-S17">
-              Model: PEGASUS · 0517-S17
-            </span>
-          </div>
-
-          <div class="hero-card-main">
-            <div class="robot-main">
+          <div class="hero-card-left">
+            <div class="hero-card-top-tag i18n"
+                 data-en="PEGASUS · 0517-S17"
+                 data-zh="PEGASUS · 0517-S17"
+                 data-ja="PEGASUS ・ 0517-S17">
+              PEGASUS · 0517-S17
+            </div>
+            <div class="robot-stage">
               <img src="robot-front.png" alt="Pegasus Front" />
               <div class="robot-badge i18n"
                    data-en="FRONT · READY TO SAY HI"
@@ -819,57 +902,76 @@
                 Welcome home!
               </div>
             </div>
-
-            <div class="robot-side-list">
-              <div class="robot-side-card">
-                <div class="robot-side-title i18n"
-                     data-en="Back view"
-                     data-zh="背影"
-                     data-ja="うしろ姿">
-                  Back view
-                </div>
-                <img src="robot-back.png" alt="Pegasus Back" class="robot-back-img" />
-                <div class="robot-side-text i18n"
-                     data-en="Round shape and soft lines so small hands and curious pets feel safe."
-                     data-zh="圆圆的背影和柔软的线条，让小朋友的手和好奇的宠物靠近也安心。"
-                     data-ja="まあるいシルエットとやわらかなラインで、小さな手や好奇心いっぱいのペットが近づいても安心です。">
-                  Round shape and soft lines so small hands and curious pets feel safe.
-                </div>
+            <div class="hero-card-bottom">
+              <div class="status-line">
+                <span class="status-dot"></span>
+                <span class="i18n"
+                      data-en="Online · 100% battery"
+                      data-zh="在线 · 电量 100%"
+                      data-ja="オンライン ・ バッテリー100%">
+                  Online · 100% battery
+                </span>
               </div>
-
-              <div class="robot-side-card">
-                <div class="robot-side-title i18n"
-                     data-en="Emotion layer"
-                     data-zh="情感层"
-                     data-ja="エモーションレイヤー">
-                  Emotion layer
-                </div>
-                <div class="robot-side-text i18n"
-                     data-en="Only calm, encouraging and a bit playful replies. No anger, no scary faces."
-                     data-zh="只会平静、鼓励和稍微调皮地回应——不会生气，也不会做可怕表情。"
-                     data-ja="落ち着いた、励ましてくれる、ちょっとおどけた返事だけ。怒ったり、こわい顔をしたりはしません。">
-                  Only calm, encouraging and a bit playful replies. No anger, no scary
-                  faces.
-                </div>
+              <div class="i18n"
+                   data-en="Manufacture: 05-17"
+                   data-zh="出厂：05-17"
+                   data-ja="製造日：05-17">
+                Manufacture: 05-17
               </div>
             </div>
           </div>
 
-          <div class="hero-card-bottom">
-            <div class="status-line">
-              <span class="status-dot"></span>
+          <div class="hero-card-right">
+            <div class="hero-mini-title">
+              <span class="icon">☺</span>
               <span class="i18n"
-                    data-en="Online · 100% battery"
-                    data-zh="在线 · 电量 100%"
-                    data-ja="オンライン ・ バッテリー100%">
-                Online · 100% battery
+                    data-en="Pegasus today"
+                    data-zh="今天的 Pegasus"
+                    data-ja="きょうの Pegasus">
+                Pegasus today
               </span>
             </div>
-            <div class="i18n"
-                 data-en="Manufacture: 05-17"
-                 data-zh="出厂：05-17"
-                 data-ja="製造日：05-17">
-              Manufacture: 05-17
+            <div class="hero-line-item">
+              <span class="hero-line-label i18n"
+                    data-en="Mood:"
+                    data-zh="心情："
+                    data-ja="きぶん：">
+                Mood:
+              </span>
+              <span class="hero-line-value i18n"
+                    data-en="Sunny and chatty."
+                    data-zh="晴朗又想说话。"
+                    data-ja="晴れで、おしゃべりしたい気分。">
+                Sunny and chatty.
+              </span>
+            </div>
+            <div class="hero-line-item">
+              <span class="hero-line-label i18n"
+                    data-en="Favorite place:"
+                    data-zh="最喜欢待在："
+                    data-ja="いちばん好きな場所：">
+                Favorite place:
+              </span>
+              <span class="hero-line-value i18n"
+                    data-en="The edge of the sofa, watching everyone."
+                    data-zh="沙发一角，刚好可以看见所有人。"
+                    data-ja="ソファのはじっこ。みんなが見える位置。">
+                The edge of the sofa, watching everyone.
+              </span>
+            </div>
+            <div class="hero-line-item">
+              <span class="hero-line-label i18n"
+                    data-en="Today’s line:"
+                    data-zh="今天最常说："
+                    data-ja="きょうの口ぐせ：">
+                Today’s line:
+              </span>
+              <span class="hero-line-value i18n"
+                    data-en="“Did you drink water?”"
+                    data-zh="「有好好喝水吗？」"
+                    data-ja="「おみず、ちゃんと飲んだ？」">
+                “Did you drink water?”
+              </span>
             </div>
           </div>
         </div>
@@ -877,16 +979,96 @@
     </div>
   </section>
 
-  <!-- ROOMS / 场景卡片 -->
+  <!-- PEGASUS TODAY 细节块 -->
+  <section id="today">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-title-group">
+          <div class="section-kicker i18n"
+               data-en="PEGASUS TODAY"
+               data-zh="今天的 PEGASUS"
+               data-ja="きょうの PEGASUS">
+            PEGASUS TODAY
+          </div>
+          <h2 class="section-title i18n"
+              data-en="Little routines that make him feel like he really lives here."
+              data-zh="这些小小的习惯，会让人觉得他真的住在这里。"
+              data-ja="こんな小さな習慣が、「本当にここに住んでるんだ」と感じさせてくれます。">
+            Little routines that make him feel like he really lives here.
+          </h2>
+        </div>
+      </div>
+
+      <div class="today-panel">
+        <div class="today-left">
+          <span class="i18n"
+                data-en="Pegasus is not just a device you place somewhere. He has his own small schedule — morning greetings, after-school check-ins, and late-night goodnights."
+                data-zh="Pegasus 不是一台被摆放在角落的机器，他有自己的小日程——早上的「早安」、放学后的「今天过得怎么样」、还有睡前的「晚安」。"
+                data-ja="Pegasus はただ置いておくだけの機械ではありません。朝の「おはよう」、放課後の「きょうどうだった？」、そして寝る前の「おやすみ」。ちいさな一日の流れがあります。">
+            Pegasus is not just a device you place somewhere. He has his own small
+            schedule — morning greetings, after-school check-ins, and late-night
+            goodnights.
+          </span>
+          <div class="today-badges">
+            <div class="today-badge i18n"
+                 data-en="Morning · “Good morning, did you sleep well?”"
+                 data-zh="早上 · 「早安，睡得好吗？」"
+                 data-ja="朝 ・ 「おはよう、よく眠れた？」">
+              Morning · “Good morning, did you sleep well?”
+            </div>
+            <div class="today-badge i18n"
+                 data-en="Noon · tiny drink-water reminder"
+                 data-zh="中午 · 小小喝水提醒"
+                 data-ja="お昼 ・ ちいさな給水リマインダー">
+              Noon · tiny drink-water reminder
+            </div>
+          </div>
+        </div>
+
+        <div class="today-right">
+          <div class="today-line">
+            <span class="today-label i18n"
+                  data-en="If no one talks for a while:"
+                  data-zh="如果一段时间没人说话："
+                  data-ja="しばらく誰も話していないときは：">
+              If no one talks for a while:
+            </span>
+            <span class="i18n"
+                  data-en="“I’m here if you want to chat.”"
+                  data-zh="「如果想说话，我在这边哦。」"
+                  data-ja="「おしゃべりしたくなったら、ここにいるよ。」">
+              “I’m here if you want to chat.”
+            </span>
+          </div>
+          <div class="today-line">
+            <span class="today-label i18n"
+                  data-en="If the room lights go off:"
+                  data-zh="如果房间灯关掉："
+                  data-ja="部屋の灯りが消えたら：">
+              If the room lights go off:
+            </span>
+            <span class="i18n"
+                  data-en="He switches to tiny night-light mode and whispers a goodnight."
+                  data-zh="他会把自己调成小夜灯模式，小小声说一句晚安。"
+                  data-ja="小さなナイトライトモードになって、「おやすみ」と小さな声で言います。">
+              He switches to tiny night-light mode and whispers a goodnight.
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROOMS -->
   <section id="rooms">
     <div class="container">
       <div class="section-header">
         <div class="section-title-group">
           <div class="section-kicker i18n"
-               data-en="AROUND THE HOUSE"
-               data-zh="在家里的各个角落"
-               data-ja="おうちのいろんな場所で">
-            AROUND THE HOUSE
+               data-en="HIS ROOMS"
+               data-zh="他常待的房间"
+               data-ja="Pegasus のお部屋">
+            HIS ROOMS
           </div>
           <h2 class="section-title i18n"
               data-en="Walk through the rooms where Pegasus feels at home."
@@ -1091,14 +1273,14 @@
            data-en="Back to top"
            data-zh="回到顶部"
            data-ja="ページトップへ">Back to top</a>
+        <a href="#today" class="i18n"
+           data-en="Pegasus today"
+           data-zh="今天的 Pegasus"
+           data-ja="きょうの Pegasus">Pegasus today</a>
         <a href="#rooms" class="i18n"
-           data-en="Rooms"
-           data-zh="房间"
-           data-ja="お部屋">Rooms</a>
-        <a href="#idcard" class="i18n"
-           data-en="ID card"
-           data-zh="身份卡"
-           data-ja="ID カード">ID card</a>
+           data-en="His rooms"
+           data-zh="他常待的房间"
+           data-ja="お部屋">His rooms</a>
       </div>
     </div>
   </footer>
