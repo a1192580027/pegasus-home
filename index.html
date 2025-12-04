@@ -326,13 +326,114 @@
       align-items: center;
     }
 
-    .robot-stage {
-      position: relative;
-      border-radius: 28px;
-      background:
-        radial-gradient(circle at 50% 0, #ffffff 0, #fff5c2 45%, #ffd74d 85%);
-      padding: 18px 12px 14px;
+ .robot-stage {
+  position: relative;
+  border-radius: 28px;
+  padding: 18px 12px 14px;
+  overflow: hidden;
+  /* 多层叠加：上面是光，下层是斜条纹，两侧有淡云点 */
+  background:
+    radial-gradient(circle at 50% 0, #fffef9 0, #fff5c2 40%, #ffd74d 78%),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(255, 255, 255, 0.7) 0,
+      rgba(255, 255, 255, 0.7) 8px,
+      rgba(255, 255, 255, 0.18) 8px,
+      rgba(255, 255, 255, 0.18) 16px
+    ),
+    radial-gradient(circle at 12% 22%, rgba(255, 255, 255, 0.8) 0, transparent 55%),
+    radial-gradient(circle at 88% 30%, rgba(255, 255, 255, 0.8) 0, transparent 55%);
+}
+
+/* 舞台地板阴影 */
+.robot-stage::after {
+  content: "";
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  bottom: 6px;
+  height: 22px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 50% 0, rgba(0, 0, 0, 0.28) 0, transparent 65%);
+  opacity: 0.4;
+  pointer-events: none;
     }
+/* 星星容器 */
+.robot-stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* 五角星基础形状 */
+.robot-star {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  background: #ffd74d;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  filter: drop-shadow(0 0 6px rgba(255, 215, 77, 0.9));
+  opacity: 0.95;
+}
+
+/* 几颗星星的位置和大小 */
+.robot-star.star-1 {
+  top: 14%;
+  left: 8%;
+  transform: scale(0.9);
+  animation: starFloat1 4s ease-in-out infinite;
+}
+
+.robot-star.star-2 {
+  top: 8%;
+  right: 14%;
+  transform: scale(1.05);
+  animation: starFloat2 4.4s ease-in-out infinite;
+}
+
+.robot-star.star-3 {
+  bottom: 18%;
+  left: 12%;
+  transform: scale(0.8);
+  animation: starFloat3 3.6s ease-in-out infinite;
+}
+
+.robot-star.star-4 {
+  bottom: 10%;
+  right: 10%;
+  transform: scale(0.75);
+  animation: starFloat2 3.8s ease-in-out infinite;
+}
+
+/* 轻微浮动动画 */
+@keyframes starFloat1 {
+  0% { transform: translateY(0) scale(0.9); opacity: 0.95; }
+  50% { transform: translateY(-6px) scale(1); opacity: 1; }
+  100% { transform: translateY(0) scale(0.9); opacity: 0.95; }
+}
+
+@keyframes starFloat2 {
+  0% { transform: translateY(0) scale(1.05); opacity: 0.9; }
+  50% { transform: translateY(-8px) scale(1.12); opacity: 1; }
+  100% { transform: translateY(0) scale(1.05); opacity: 0.9; }
+}
+
+@keyframes starFloat3 {
+  0% { transform: translateY(0) scale(0.8); opacity: 0.9; }
+  50% { transform: translateY(-5px) scale(0.9); opacity: 1; }
+  100% { transform: translateY(0) scale(0.8); opacity: 0.9; }
+}
 
     .robot-stage img {
       max-height: 360px; /* Pegasus 更大 */
@@ -738,21 +839,29 @@
 
           <div class="stage-card">
             <div class="stage-inner">
-              <div class="robot-stage">
-                <img src="robot-front.png" alt="Pegasus Front" />
-                <div class="robot-badge i18n"
-                     data-en="FRONT · READY TO SAY HI"
-                     data-zh="正面 · 准备好打招呼"
-                     data-ja="フロント ・ あいさつ準備OK">
-                  FRONT · READY TO SAY HI
-                </div>
-                <div class="robot-bubble i18n"
-                     data-en="Welcome home!"
-                     data-zh="欢迎回家！"
-                     data-ja="おかえり！">
-                  Welcome home!
-                </div>
-              </div>
+  <div class="robot-stage">
+  <!-- 黄色五角星特效 -->
+  <div class="robot-stars">
+    <div class="robot-star star-1"></div>
+    <div class="robot-star star-2"></div>
+    <div class="robot-star star-3"></div>
+    <div class="robot-star star-4"></div>
+  </div>
+
+  <img src="robot-front.png" alt="Pegasus Front" />
+  <div class="robot-badge i18n"
+       data-en="FRONT · READY TO SAY HI"
+       data-zh="正面 · 准备好打招呼"
+       data-ja="フロント ・ あいさつ準備OK">
+    正面 · 准备好打招呼
+  </div>
+  <div class="robot-bubble i18n"
+       data-en="Welcome home!"
+       data-zh="欢迎回家！"
+       data-ja="おかえり！">
+    欢迎回家！
+  </div>
+</div>
 
               <div class="stage-info">
                 <div class="stage-info-title">
