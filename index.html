@@ -2,34 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>PEGASUS | Companion Android</title>
+  <title>Pegasus Home | Companion Android</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="Pegasus is a bright, friendly companion android for all ages."
-  />
-  <!-- 日系一点的圆润字体 -->
+
+  <!-- 卡通一点的圆字体：英文用 Baloo，中文日文走系统圆体 -->
   <link
-    href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   />
+
   <style>
     :root {
-      --yellow: #ffd64a;
-      --yellow-soft: #fff2a8;
-      --yellow-light: #fff9d9;
-      --blue: #2391ff;
-      --blue-dark: #1254a5;
-      --blue-soft: #b9dcff;
-      --bg: #fffaf0;
+      --yellow: #ffd84a;
+      --yellow-soft: #ffef9a;
+      --yellow-light: #fff8d7;
+      --blue: #43a5ff;
+      --blue-soft: #bfe1ff;
+      --blue-dark: #2560b0;
+      --pink: #ff8ac2;
+      --bg: #fffaf3;
       --white: #ffffff;
-      --text-main: #25324a;
-      --text-muted: #6e7a99;
-      --radius-lg: 28px;
-      --radius-md: 20px;
+      --text-main: #243047;
+      --text-muted: #6f7a96;
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
       --radius-pill: 999px;
-      --shadow-yellow: 0 20px 60px rgba(255, 190, 76, 0.55);
-      --shadow-blue: 0 18px 48px rgba(35, 145, 255, 0.45);
+      --shadow-yellow: 0 22px 60px rgba(255, 199, 92, 0.65);
+      --shadow-blue: 0 18px 50px rgba(67, 165, 255, 0.6);
     }
 
     * {
@@ -39,15 +39,13 @@
     html, body {
       margin: 0;
       padding: 0;
-      font-family: "M PLUS Rounded 1c", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top left, #fff5c2 0, #fffaf0 40%, #e5f3ff 100%);
+      font-family: "Baloo 2", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", "PingFang SC", "Microsoft YaHei", "Hiragino Sans",
+        "Noto Sans CJK JP", sans-serif;
+      background:
+        radial-gradient(circle at 10% 0%, #fff5c5 0, #fffaf3 40%, #e7f3ff 100%);
       color: var(--text-main);
       scroll-behavior: smooth;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
     }
 
     img {
@@ -55,33 +53,39 @@
       display: block;
     }
 
-    .container {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 0 24px;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    /* HEADER */
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ---------------- HEADER ---------------- */
+
     .site-header {
       position: sticky;
       top: 0;
       z-index: 100;
-      backdrop-filter: blur(16px);
+      backdrop-filter: blur(18px);
       background: linear-gradient(
         to bottom,
-        rgba(255, 246, 216, 0.96),
-        rgba(255, 246, 216, 0.9),
-        rgba(255, 246, 216, 0.75)
+        rgba(255, 246, 214, 0.97),
+        rgba(255, 246, 214, 0.9),
+        rgba(255, 246, 214, 0.78)
       );
-      border-bottom: 1px solid rgba(255, 222, 150, 0.9);
+      border-bottom: 1px solid rgba(255, 219, 150, 0.9);
     }
 
     .nav-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
-      padding: 10px 0;
+      gap: 12px;
+      padding: 8px 0;
     }
 
     .brand {
@@ -91,15 +95,15 @@
     }
 
     .brand-logo {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
+      width: 46px;
+      height: 46px;
+      border-radius: 18px;
       background: var(--white);
-      border: 2px solid #ffdf7c;
+      border: 3px solid #ffe38b;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 8px 18px rgba(255, 210, 86, 0.65);
+      box-shadow: 0 10px 22px rgba(255, 204, 92, 0.8);
       overflow: hidden;
     }
 
@@ -110,7 +114,7 @@
     }
 
     .brand-text-main {
-      font-size: 14px;
+      font-size: 18px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       font-weight: 800;
@@ -118,14 +122,14 @@
     }
 
     .brand-text-sub {
-      font-size: 10px;
+      font-size: 11px;
       color: var(--text-muted);
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 16px;
       font-size: 13px;
       color: var(--text-muted);
     }
@@ -145,7 +149,7 @@
       height: 3px;
       border-radius: var(--radius-pill);
       background: linear-gradient(90deg, var(--yellow), var(--blue));
-      transition: width 0.2s ease-out;
+      transition: width 0.18s;
     }
 
     .nav-links a:hover {
@@ -156,44 +160,50 @@
       width: 18px;
     }
 
+    .nav-links span {
+      font-size: 11px;
+      opacity: 0.7;
+    }
+
     .lang-switch {
       display: flex;
       align-items: center;
       gap: 4px;
       padding: 4px;
       border-radius: var(--radius-pill);
-      background: rgba(255, 255, 255, 0.95);
-      border: 1px solid rgba(255, 221, 140, 0.9);
-      box-shadow: 0 8px 20px rgba(255, 210, 86, 0.6);
+      background: rgba(255, 255, 255, 0.98);
+      border: 2px solid rgba(255, 225, 150, 0.95);
+      box-shadow: 0 9px 22px rgba(255, 205, 100, 0.8);
     }
 
     .lang-btn {
       border-radius: var(--radius-pill);
       border: none;
-      padding: 4px 10px;
+      padding: 4px 9px;
       font-size: 11px;
       font-weight: 700;
       cursor: pointer;
       background: transparent;
       color: var(--text-muted);
-      transition: background 0.15s, color 0.15s, box-shadow 0.15s;
+      transition: background 0.16s, color 0.16s, box-shadow 0.16s;
     }
 
     .lang-btn.active {
-      background: linear-gradient(135deg, var(--yellow), #ffe58f);
-      color: #7b4c00;
-      box-shadow: 0 6px 14px rgba(255, 210, 86, 0.85);
+      background: linear-gradient(135deg, var(--yellow), #ffe893);
+      color: #7b4d00;
+      box-shadow: 0 6px 14px rgba(255, 210, 100, 0.9);
     }
 
-    /* HERO */
+    /* ---------------- HERO = Pegasus Home ---------------- */
+
     .hero {
-      padding: 52px 0 64px;
+      padding: 40px 0 50px;
     }
 
     .hero-inner {
       display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.05fr);
-      gap: 36px;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 28px;
       align-items: center;
     }
 
@@ -205,117 +215,174 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 4px 12px;
+      padding: 5px 14px;
       border-radius: var(--radius-pill);
-      background: rgba(255, 255, 255, 0.9);
-      border: 1px dashed rgba(255, 221, 140, 0.9);
-      font-size: 10px;
+      background: rgba(255, 255, 255, 0.96);
+      border: 2px dashed rgba(255, 221, 150, 0.96);
+      font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--blue-dark);
       margin-bottom: 12px;
     }
 
+    .hero-pill::before {
+      content: "★";
+      font-size: 12px;
+      color: var(--pink);
+    }
+
     .hero-title {
       font-size: clamp(30px, 4vw, 40px);
       line-height: 1.1;
-      margin: 0 0 12px;
+      margin: 0 0 10px;
     }
 
     .hero-title span {
       color: var(--blue-dark);
     }
 
-    .hero-line {
+    .hero-sub {
       font-size: 15px;
       color: var(--text-muted);
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
-    .hero-tags {
+    .hero-sub-2 {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+
+    .hero-badges {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
       margin-bottom: 18px;
     }
 
-    .hero-tag {
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       padding: 6px 12px;
       border-radius: var(--radius-pill);
-      background: rgba(255, 255, 255, 0.9);
-      border: 1px solid #ffebaa;
+      background: rgba(255, 255, 255, 0.95);
+      border: 2px solid #ffe8af;
       font-size: 11px;
-      color: var(--blue-dark);
       font-weight: 600;
+      color: var(--blue-dark);
+      box-shadow: 0 10px 24px rgba(255, 213, 110, 0.55);
     }
 
-    .hero-ctas {
+    .badge::before {
+      content: "◎";
+      font-size: 12px;
+      color: var(--yellow);
+    }
+
+    .badge.blue::before {
+      content: "●";
+      color: var(--blue);
+    }
+
+    .badge.pink::before {
+      content: "♡";
+      color: var(--pink);
+    }
+
+    .hero-buttons {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
     }
 
-    .btn-main,
-    .btn-sub {
+    .btn-main, .btn-sub {
       border-radius: var(--radius-pill);
       border: none;
-      padding: 11px 20px;
-      font-size: 13px;
+      padding: 10px 20px;
+      font-size: 14px;
       font-weight: 700;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 6px;
+      transition: transform 0.15s, box-shadow 0.15s;
       text-decoration: none;
-      transition: transform 0.16s, box-shadow 0.16s, background 0.16s;
     }
 
     .btn-main {
-      background: linear-gradient(135deg, var(--yellow), #ffb949);
+      background: linear-gradient(135deg, var(--yellow), #ffb649);
       color: #7b4300;
       box-shadow: var(--shadow-yellow);
     }
 
-    .btn-main:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 26px 70px rgba(255, 190, 76, 0.85);
-    }
-
     .btn-sub {
-      background: linear-gradient(135deg, var(--blue), #64b7ff);
+      background: linear-gradient(135deg, var(--blue), #6ac0ff);
       color: #ffffff;
       box-shadow: var(--shadow-blue);
     }
 
-    .btn-sub:hover {
+    .btn-main:hover, .btn-sub:hover {
       transform: translateY(-1px);
-      box-shadow: 0 24px 64px rgba(35, 145, 255, 0.85);
     }
 
-    /* HERO visual 卡片 */
+    .btn-main::after {
+      content: "➜";
+      font-size: 14px;
+    }
+
+    .btn-sub::after {
+      content: "★";
+      font-size: 13px;
+    }
+
+    /* HERO right: 大卡片 + 冒出的小星星 */
+
     .hero-right {
       position: relative;
     }
 
-    .hero-circle {
+    .hero-blob {
       position: absolute;
-      width: 240px;
-      height: 240px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 30% 20%, #ffffff 0, #ffe587 40%, #ffbe4e 80%);
-      top: -40px;
-      right: -30px;
+      width: 260px;
+      height: 260px;
+      border-radius: 60% 40% 65% 35%;
+      background: radial-gradient(circle at 30% 15%, #ffffff 0, #ffe47b 40%, #ffb84d 85%);
+      top: -56px;
+      right: -54px;
       z-index: -1;
-      opacity: 0.9;
+      opacity: 0.95;
+    }
+
+    .hero-star {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #ffffff 0, #fffdfe 40%, #ff8ac2 80%);
+      box-shadow: 0 12px 26px rgba(255, 138, 194, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      color: #ffffff;
+    }
+
+    .hero-star.star-1 { top: -28px; left: -10px; content: "★"; }
+    .hero-star.star-2 { bottom: -18px; right: 4px; transform: scale(0.8); }
+
+    .hero-star::before {
+      content: "★";
     }
 
     .hero-card {
-      border-radius: var(--radius-lg);
+      border-radius: var(--radius-xl);
       background: var(--white);
-      padding: 18px 18px 20px;
-      border: 2px solid #ffe38d;
+      padding: 18px 16px 20px;
+      border: 3px solid #ffe38e;
       box-shadow: var(--shadow-yellow);
       overflow: hidden;
     }
@@ -324,38 +391,38 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 10px;
       font-size: 11px;
       color: var(--text-muted);
+      margin-bottom: 8px;
     }
 
-    .hero-chip {
+    .chip {
       padding: 4px 10px;
       border-radius: var(--radius-pill);
-      background: rgba(255, 227, 142, 0.8);
-      color: #7b4c00;
+      background: rgba(255, 227, 145, 0.9);
       font-size: 10px;
       font-weight: 700;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
+      color: #7b4b00;
     }
 
     .hero-main {
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
-      gap: 12px;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+      gap: 10px;
       align-items: center;
     }
 
-    .robot-main {
-      border-radius: 22px;
-      background: radial-gradient(circle at 50% 0%, #ffffff 0, #fff2aa 32%, #ffd64a 80%);
-      padding: 16px 10px 10px;
+    .robot-main-card {
       position: relative;
+      border-radius: 26px;
+      background: radial-gradient(circle at 50% 0%, #ffffff 0, #fff3aa 30%, #ffd64a 80%);
+      padding: 16px 10px 12px;
     }
 
-    .robot-main img {
-      max-height: 260px;
+    .robot-main-card img {
+      max-height: 250px;
       margin: 0 auto;
       object-fit: contain;
     }
@@ -366,23 +433,23 @@
       bottom: 10px;
       padding: 4px 10px;
       border-radius: var(--radius-pill);
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.94);
       font-size: 10px;
       font-weight: 700;
       color: var(--blue-dark);
     }
 
-    .speech-bubble {
+    .balloon {
       position: absolute;
       right: 10px;
       top: 10px;
-      padding: 6px 12px;
-      border-radius: 16px;
-      background: var(--white);
-      border: 1px solid #b9dcff;
+      padding: 6px 11px;
+      border-radius: 18px;
+      background: #ffffff;
+      border: 2px solid #bfe1ff;
       font-size: 11px;
       color: var(--blue-dark);
-      box-shadow: 0 8px 18px rgba(35, 145, 255, 0.35);
+      box-shadow: 0 10px 22px rgba(67, 165, 255, 0.5);
     }
 
     .robot-side {
@@ -392,35 +459,35 @@
       font-size: 11px;
     }
 
-    .robot-card {
-      border-radius: 16px;
+    .side-card {
+      border-radius: 20px;
       background: #fffdf4;
-      border: 1px solid #ffe7a4;
+      border: 2px solid #ffe8a9;
       padding: 8px 10px 10px;
     }
 
-    .robot-card-title {
+    .side-title {
       font-size: 11px;
       font-weight: 700;
       color: var(--blue-dark);
       margin-bottom: 4px;
     }
 
-    .robot-card-text {
+    .side-text {
       font-size: 11px;
       color: var(--text-muted);
-      line-height: 1.6;
+      line-height: 1.55;
     }
 
     .robot-back-img {
-      width: 70%;
+      width: 68%;
       max-height: 110px;
       object-fit: contain;
       margin: 2px auto 6px;
     }
 
     .hero-card-bottom {
-      margin-top: 8px;
+      margin-top: 6px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -428,72 +495,32 @@
       color: var(--text-muted);
     }
 
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
     .status-dot {
       width: 9px;
       height: 9px;
       border-radius: 50%;
-      background: #24c97f;
-      box-shadow: 0 0 0 4px rgba(36, 201, 127, 0.25);
-      margin-right: 6px;
+      background: #28c57f;
+      box-shadow: 0 0 0 4px rgba(40, 197, 127, 0.3);
     }
 
-    .status-line {
-      display: inline-flex;
-      align-items: center;
-    }
+    /* ---------------- MINI ROOMS ---------------- */
 
-    /* 彩色 Feature chips */
-    .feature-strip {
-      margin-top: 28px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .feature-chip {
-      flex: 1;
-      min-width: 150px;
-      border-radius: 18px;
-      padding: 10px 14px;
-      background: rgba(255, 255, 255, 0.95);
-      border: 1px solid #ffebb3;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 12px;
-      color: var(--text-main);
-      box-shadow: 0 10px 26px rgba(255, 213, 115, 0.4);
-    }
-
-    .dot-icon {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: var(--yellow);
-      box-shadow: 0 0 0 4px rgba(255, 210, 86, 0.4);
-    }
-
-    .dot-icon.blue {
-      background: var(--blue);
-      box-shadow: 0 0 0 4px rgba(35, 145, 255, 0.4);
-    }
-
-    .dot-icon.white {
-      background: var(--white);
-      box-shadow: 0 0 0 4px rgba(185, 220, 255, 0.6);
-    }
-
-    /* Sections 通用 */
     section {
-      padding: 32px 0 46px;
+      padding: 30px 0 40px;
     }
 
     .section-header {
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
-      gap: 20px;
-      margin-bottom: 18px;
+      gap: 16px;
+      margin-bottom: 16px;
     }
 
     .section-title-group {
@@ -502,7 +529,7 @@
 
     .section-kicker {
       font-size: 11px;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
       font-weight: 700;
       color: var(--blue-dark);
@@ -514,69 +541,80 @@
       margin: 0;
     }
 
-    .section-subline {
+    .section-line {
       font-size: 13px;
       color: var(--text-muted);
-      margin-top: 6px;
+      margin-top: 4px;
     }
 
-    /* 三张卡片 */
-    .card-grid {
+    .rooms-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
+      gap: 14px;
     }
 
-    .mini-card {
-      border-radius: var(--radius-md);
+    .room-card {
+      border-radius: var(--radius-lg);
       background: var(--white);
-      border: 1px solid #ffe5a5;
-      padding: 14px 14px 16px;
-      box-shadow: 0 16px 36px rgba(255, 204, 105, 0.45);
+      border: 2px solid #ffe6a6;
+      padding: 12px 12px 14px;
+      box-shadow: 0 16px 36px rgba(255, 205, 105, 0.55);
       position: relative;
       overflow: hidden;
     }
 
-    .mini-label {
+    .room-ribbon {
+      position: absolute;
+      top: -18px;
+      right: -24px;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #fff 0, #fffbfc 40%, #ff8ac2 80%);
+      opacity: 0.9;
+    }
+
+    .room-label {
       font-size: 11px;
-      font-weight: 700;
       color: var(--blue-dark);
-      margin-bottom: 6px;
+      font-weight: 700;
+      margin-bottom: 2px;
     }
 
-    .mini-title {
+    .room-title {
       font-size: 15px;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
-    .mini-text {
+    .room-text {
       font-size: 12px;
       color: var(--text-muted);
       line-height: 1.7;
     }
 
-    .mini-badge {
+    .room-chip {
       position: absolute;
       right: 10px;
       top: 10px;
       padding: 3px 9px;
       border-radius: var(--radius-pill);
+      background: rgba(191, 225, 255, 0.98);
       font-size: 10px;
       font-weight: 700;
-      background: rgba(185, 220, 255, 0.9);
       color: var(--blue-dark);
     }
 
-    /* ID 卡片展示 */
+    /* ---------------- ID CARD ---------------- */
+
     .id-panel {
-      border-radius: var(--radius-lg);
+      border-radius: var(--radius-xl);
       background: var(--white);
-      border: 1px solid #ffe3a6;
+      border: 2px solid #ffe3a7;
       padding: 18px 18px 20px;
       display: grid;
       grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.05fr);
       gap: 18px;
-      box-shadow: 0 20px 52px rgba(255, 199, 96, 0.7);
+      box-shadow: 0 20px 52px rgba(255, 199, 96, 0.75);
     }
 
     .id-text {
@@ -597,22 +635,23 @@
 
     .id-img-box {
       border-radius: 18px;
-      background: #f6f9ff;
-      border: 1px solid #dce8ff;
+      background: #f4f8ff;
+      border: 2px solid #dce7ff;
       padding: 10px;
     }
 
-    /* CTA */
+    /* ---------------- CTA ---------------- */
+
     .cta-panel {
-      border-radius: var(--radius-lg);
-      background: linear-gradient(135deg, var(--blue), #63b5ff);
+      border-radius: var(--radius-xl);
+      background: linear-gradient(135deg, var(--blue), #65c3ff);
       color: #ffffff;
       padding: 20px 22px 22px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 16px;
-      box-shadow: 0 24px 64px rgba(27, 121, 216, 0.85);
+      box-shadow: 0 24px 64px rgba(35, 130, 230, 0.9);
     }
 
     .cta-title {
@@ -620,9 +659,9 @@
       margin-bottom: 4px;
     }
 
-    .cta-subline {
+    .cta-line {
       font-size: 13px;
-      opacity: 0.95;
+      opacity: 0.96;
     }
 
     .cta-actions {
@@ -646,12 +685,13 @@
     }
 
     .cta-btn.secondary {
-      background: rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.2);
       color: #ffffff;
-      border: 1px solid rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.9);
     }
 
-    /* FOOTER */
+    /* ---------------- FOOTER ---------------- */
+
     .site-footer {
       padding: 16px 0 22px;
       font-size: 11px;
@@ -669,14 +709,15 @@
     .footer-nav {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
+      gap: 12px;
     }
 
     .footer-nav a:hover {
       color: var(--blue-dark);
     }
 
-    /* 响应式 */
+    /* ---------------- Responsive ---------------- */
+
     @media (max-width: 960px) {
       .hero-inner {
         grid-template-columns: minmax(0, 1fr);
@@ -684,7 +725,7 @@
       .hero-right {
         order: -1;
       }
-      .card-grid {
+      .rooms-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
       .id-panel {
@@ -697,9 +738,9 @@
         display: none;
       }
       .container {
-        padding: 0 18px;
+        padding: 0 16px;
       }
-      .card-grid {
+      .rooms-grid {
         grid-template-columns: minmax(0, 1fr);
       }
       .cta-panel {
@@ -709,46 +750,48 @@
     }
   </style>
 </head>
+
 <body>
   <!-- HEADER -->
   <header class="site-header">
     <div class="container nav-inner">
       <div class="brand">
         <div class="brand-logo">
-          <!-- 注意：这里用的是根目录下的 pegasus-logo.png -->
+          <!-- 直接用根目录的 logo 图 -->
           <img src="pegasus-logo.png" alt="Pegasus Logo" />
         </div>
         <div>
           <div class="brand-text-main i18n"
-               data-en="PEGASUS"
-               data-zh="PEGASUS"
-               data-ja="PEGASUS">PEGASUS</div>
+               data-en="PEGASUS HOME"
+               data-zh="PEGASUS HOME"
+               data-ja="PEGASUS HOME">PEGASUS HOME</div>
           <div class="brand-text-sub i18n"
-               data-en="Companion Android for Everyone"
-               data-zh="为所有人设计的陪伴型机器人"
-               data-ja="みんなのためのコンパニオンアンドロイド">
-            Companion Android for Everyone
+               data-en="The little robot's cozy corner on the web."
+               data-zh="小机器人在网络上的温暖小房间。"
+               data-ja="ちいさなロボットの、あったかいおうちサイト。">
+            The little robot's cozy corner on the web.
           </div>
         </div>
       </div>
 
       <nav class="nav-links">
-        <a href="#why" class="i18n"
-           data-en="Features"
-           data-zh="特点"
-           data-ja="特徴">Features</a>
-        <a href="#cards" class="i18n"
-           data-en="Scenes"
-           data-zh="使用场景"
-           data-ja="シーン">Scenes</a>
+        <a href="#top" class="i18n"
+           data-en="Home"
+           data-zh="首页"
+           data-ja="ホーム">Home</a>
+        <a href="#rooms" class="i18n"
+           data-en="Rooms"
+           data-zh="房间"
+           data-ja="おへや">Rooms</a>
         <a href="#idcard" class="i18n"
            data-en="ID Card"
            data-zh="身份卡"
            data-ja="ID カード">ID Card</a>
         <a href="#contact" class="i18n"
-           data-en="Contact"
-           data-zh="联系我们"
-           data-ja="お問い合わせ">Contact</a>
+           data-en="Friends"
+           data-zh="成为朋友"
+           data-ja="おともだち">Friends</a>
+        <span>✦</span>
       </nav>
 
       <div class="lang-switch">
@@ -764,85 +807,94 @@
     <div class="container hero-inner">
       <div class="hero-left">
         <div class="hero-pill i18n"
-             data-en="NATIONAL COMPANION ANDROID"
-             data-zh="国民级陪伴机器人"
-             data-ja="国民のコンパニオンアンドロイド">
-          NATIONAL COMPANION ANDROID
+             data-en="WELCOME TO PEGASUS HOME"
+             data-zh="欢迎来到 PEGASUS 的家"
+             data-ja="PEGASUS のおうちへようこそ">
+          WELCOME TO PEGASUS HOME
         </div>
         <h1 class="hero-title i18n"
-            data-en="Say hello to <span>Pegasus</span>, the little robot everyone can love."
-            data-zh="和 <span>Pegasus</span> 打个招呼吧——这只小机器人，谁都会喜欢。"
-            data-ja="<span>Pegasus</span> にこんにちは。みんなに愛される、ちいさなロボットです。">
-          Say hello to <span>Pegasus</span>, the little robot everyone can love.
+            data-en="Say hello to <span>Pegasus</span>, the little robot who keeps your home bright."
+            data-zh="和 <span>Pegasus</span> 打个招呼吧——这只小机器人，会把家点亮一点点。"
+            data-ja="<span>Pegasus</span> にこんにちは。おうちを少しだけ明るくしてくれるロボットです。">
+          Say hello to <span>Pegasus</span>, the little robot who keeps your home bright.
         </h1>
-        <p class="hero-line i18n"
-           data-en="Bright yellow, clear blue, and a soft voice. Pegasus feels more like a friend than a device."
-           data-zh="明亮的黄色、清爽的蓝色，加上一句温柔的问候——Pegasus 更像朋友，而不是设备。"
-           data-ja="明るいイエローと澄んだブルー、そこにやさしいひと言。Pegasus は機械というより、そばにいる友だちのような存在です。">
-          Bright yellow, clear blue, and a soft voice. Pegasus feels more like a friend
-          than a device.
+        <p class="hero-sub i18n"
+           data-en="Soft shapes, yellow and blue, and a gentle voice. Pegasus is built to feel like a character from your favorite show, not a cold machine."
+           data-zh="圆滚滚的外形、黄蓝配色，还有温柔的声音——Pegasus 更像从动画片里走出来的角色，而不是冰冷的机器。"
+           data-ja="まるいカタチとイエローとブルー、やさしい声。Pegasus は、冷たい機械ではなく、アニメから飛び出したキャラクターのように感じられます。">
+          Soft shapes, yellow and blue, and a gentle voice. Pegasus is built to feel like
+          a character from your favorite show, not a cold machine.
+        </p>
+        <p class="hero-sub-2 i18n"
+           data-en="Kids, parents, students, and grandparents – everyone gets the same soft, kind friend."
+           data-zh="孩子、家长、学生、长辈……每一个人面对的，都是同样温柔的小伙伴。"
+           data-ja="子どもも、おとなも、おじいちゃんおばあちゃんも。誰にとっても、やさしいおともだちです。">
+          Kids, parents, students, and grandparents – everyone gets the same soft, kind
+          friend.
         </p>
 
-        <div class="hero-tags">
-          <div class="hero-tag i18n"
-               data-en="All ages"
-               data-zh="全年龄"
-               data-ja="全年齢">All ages</div>
-          <div class="hero-tag i18n"
-               data-en="Living-room safe"
-               data-zh="客厅安心摆放"
-               data-ja="リビングにぴったり">Living-room safe</div>
-          <div class="hero-tag i18n"
-               data-en="Soft &amp; gentle"
-               data-zh="软萌温柔"
-               data-ja="やさしくてかわいい">Soft &amp; gentle</div>
+        <div class="hero-badges">
+          <div class="badge i18n"
+               data-en="All-ages friendly"
+               data-zh="全年龄友好"
+               data-ja="全年齢にやさしい">All-ages friendly</div>
+          <div class="badge blue i18n"
+               data-en="Cartoon-style design"
+               data-zh="动画片风格设计"
+               data-ja="アニメみたいなデザイン">Cartoon-style design</div>
+          <div class="badge pink i18n"
+               data-en="Only kind words"
+               data-zh="只会说温柔的话"
+               data-ja="やさしい言葉だけ">Only kind words</div>
         </div>
 
-        <div class="hero-ctas">
-          <a href="#why" class="btn-main i18n"
-             data-en="See what he can do"
-             data-zh="看看他会做什么"
-             data-ja="できることを見る">
-            See what he can do
+        <div class="hero-buttons">
+          <a href="#rooms" class="btn-main i18n"
+             data-en="Explore Pegasus rooms"
+             data-zh="逛逛 Pegasus 的房间"
+             data-ja="Pegasus のおへやを見てみる">
+            Explore Pegasus rooms
           </a>
-          <a href="#cards" class="btn-sub i18n"
-             data-en="Peek into daily life"
-             data-zh="偷看一下日常"
-             data-ja="日常のようすをのぞく">
-            Peek into daily life
+          <a href="#idcard" class="btn-sub i18n"
+             data-en="See his ID card"
+             data-zh="看看他的身份卡"
+             data-ja="ID カードを見る">
+            See his ID card
           </a>
         </div>
       </div>
 
       <div class="hero-right">
-        <div class="hero-circle"></div>
+        <div class="hero-blob"></div>
+        <div class="hero-star star-1"></div>
+        <div class="hero-star star-2"></div>
+
         <div class="hero-card">
           <div class="hero-card-top">
-            <span class="hero-chip i18n"
-                  data-en="LIVE PREVIEW"
-                  data-zh="实时预览"
-                  data-ja="ライブプレビュー">
-              LIVE PREVIEW
+            <span class="chip i18n"
+                  data-en="LIVE PEEK"
+                  data-zh="偷看一下"
+                  data-ja="ちょっとのぞく">
+              LIVE PEEK
             </span>
             <span class="i18n"
-                  data-en="Model: PEGASUS · 0517-S17"
-                  data-zh="型号：PEGASUS · 0517-S17"
-                  data-ja="モデル：PEGASUS ・ 0517-S17">
-              Model: PEGASUS · 0517-S17
+                  data-en="Model PEGASUS · 0517-S17"
+                  data-zh="型号 PEGASUS · 0517-S17"
+                  data-ja="モデル PEGASUS ・ 0517-S17">
+              Model PEGASUS · 0517-S17
             </span>
           </div>
 
           <div class="hero-main">
-            <div class="robot-main">
-              <!-- 使用根目录下的 robot-front.png -->
+            <div class="robot-main-card">
               <img src="robot-front.png" alt="Pegasus Front" />
               <div class="robot-label i18n"
-                   data-en="FRONT · READY TO GREET"
+                   data-en="FRONT · READY TO SAY HI"
                    data-zh="正面 · 准备好打招呼"
                    data-ja="フロント ・ あいさつ準備OK">
-                FRONT · READY TO GREET
+                FRONT · READY TO SAY HI
               </div>
-              <div class="speech-bubble i18n"
+              <div class="balloon i18n"
                    data-en="Welcome home!"
                    data-zh="欢迎回家！"
                    data-ja="おかえり！">
@@ -851,43 +903,42 @@
             </div>
 
             <div class="robot-side">
-              <div class="robot-card">
-                <div class="robot-card-title i18n"
-                     data-en="Back View"
+              <div class="side-card">
+                <div class="side-title i18n"
+                     data-en="Back view"
                      data-zh="背面"
-                     data-ja="バックビュー">
-                  Back View
+                     data-ja="うしろすがた">
+                  Back view
                 </div>
-                <!-- 根目录下的 robot-back.png -->
                 <img src="robot-back.png" alt="Pegasus Back" class="robot-back-img" />
-                <div class="robot-card-text i18n"
-                     data-en="Rounded lines and soft parts keep little hands and curious pets safe."
-                     data-zh="圆润曲线和减锐设计，让小朋友的手和好奇的宠物靠近也安心。"
-                     data-ja="丸いラインとやわらかなパーツで、小さな手や好奇心いっぱいのペットが近づいても安心です。">
-                  Rounded lines and soft parts keep little hands and curious pets safe.
+                <div class="side-text i18n"
+                     data-en="Round little back, no sharp edges, safe for curious hands and tails."
+                     data-zh="圆滚滚的小后背，没有尖角，好奇的小手和尾巴靠近也安全。"
+                     data-ja="まるいせなかで、角がなくて、小さな手やしっぽが近づいても安心です。">
+                  Round little back, no sharp edges, safe for curious hands and tails.
                 </div>
               </div>
 
-              <div class="robot-card">
-                <div class="robot-card-title i18n"
-                     data-en="Emotion Layer"
+              <div class="side-card">
+                <div class="side-title i18n"
+                     data-en="Emotion layer"
                      data-zh="情感层"
                      data-ja="エモーションレイヤー">
-                  Emotion Layer
+                  Emotion layer
                 </div>
-                <div class="robot-card-text i18n"
-                     data-en="Only calm, encouraging and slightly playful replies. No anger, no harsh words."
-                     data-zh="只输出平静、鼓励和一点点可爱的回应——不会生气，也不会说难听的话。"
-                     data-ja="落ち着いた、励ましてくれる、ちょっとおどけた返事だけ。怒ったり、きつい言葉を使ったりはしません。">
-                  Only calm, encouraging and slightly playful replies. No anger, no harsh
-                  words.
+                <div class="side-text i18n"
+                     data-en="No angry mode, no scary face. Pegasus only speaks in calm, cheering, playful lines."
+                     data-zh="没有生气模式，也没有可怕表情。Pegasus 只会用平静、鼓励、稍微有点可爱的语气说话。"
+                     data-ja="怒るモードも、こわい顔もありません。落ち着いた声と、励ましと、少しおちゃめな言葉だけです。">
+                  No angry mode, no scary face. Pegasus only speaks in calm, cheering,
+                  playful lines.
                 </div>
               </div>
             </div>
           </div>
 
           <div class="hero-card-bottom">
-            <div class="status-line">
+            <div class="status">
               <span class="status-dot"></span>
               <span class="i18n"
                     data-en="Online · 100% battery"
@@ -897,143 +948,121 @@
               </span>
             </div>
             <div class="i18n"
-                 data-en="Manufacture: 05-17"
-                 data-zh="出厂：05-17"
-                 data-ja="製造日：05-17">
-              Manufacture: 05-17
+                 data-en="Birthday: 05-17"
+                 data-zh="生日：05-17"
+                 data-ja="おたんじょう日：05-17">
+              Birthday: 05-17
             </div>
-          </div>
-        </div>
-
-        <div class="feature-strip">
-          <div class="feature-chip">
-            <span class="dot-icon"></span>
-            <span class="i18n"
-                  data-en="Soft animations, no scary faces."
-                  data-zh="柔和小动画，不做可怕表情。"
-                  data-ja="やわらかなアニメーションで、こわい顔はしません。">
-              Soft animations, no scary faces.
-            </span>
-          </div>
-          <div class="feature-chip">
-            <span class="dot-icon blue"></span>
-            <span class="i18n"
-                  data-en="Clear lights show what he is doing."
-                  data-zh="用灯光清楚显示他正在做什么。"
-                  data-ja="ライトで今なにをしているかがすぐわかります。">
-              Clear lights show what he is doing.
-            </span>
-          </div>
-          <div class="feature-chip">
-            <span class="dot-icon white"></span>
-            <span class="i18n"
-                  data-en="Designed for living rooms and bedrooms."
-                  data-zh="专门为客厅和卧室的日常设计。"
-                  data-ja="リビングや寝室のためにデザインされています。">
-              Designed for living rooms and bedrooms.
-            </span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 三张场景卡 -->
-  <section id="cards">
+  <!-- ROOMS / 日常小房间 -->
+  <section id="rooms">
     <div class="container">
       <div class="section-header">
         <div class="section-title-group">
           <div class="section-kicker i18n"
-               data-en="EVERYDAY SCENES"
-               data-zh="日常场景"
-               data-ja="毎日のシーン">
-            EVERYDAY SCENES
+               data-en="PEGASUS ROOMS"
+               data-zh="PEGASUS 的小房间们"
+               data-ja="PEGASUS のおへや">
+            PEGASUS ROOMS
           </div>
           <h2 class="section-title i18n"
-              data-en="One Pegasus, many gentle roles."
-              data-zh="同一只 Pegasus，在每个人身边扮演不同角色。"
-              data-ja="同じ Pegasus でも、人によって役割はいろいろ。">
-            One Pegasus, many gentle roles.
+              data-en="Follow Pegasus into three little corners of daily life."
+              data-zh="跟着 Pegasus，看看他在日常里的三个小角落。"
+              data-ja="Pegasus といっしょに、毎日の三つの小さなコーナーをのぞいてみましょう。">
+            Follow Pegasus into three little corners of daily life.
           </h2>
-          <div class="section-subline i18n"
-               data-en="Short lines, clear colors, and simple icons show how he fits into life."
-               data-zh="用短句和图形，而不是大段文字，展示他如何融入生活。"
-               data-ja="長い文章ではなく、短い言葉と色・形で暮らしの中の姿を見せます。">
-            Short lines, clear colors, and simple icons show how he fits into life.
+          <div class="section-line i18n"
+               data-en="Short text, big colors, easy to imagine."
+               data-zh="少一点文字，多一点颜色和想象。"
+               data-ja="文字はすこし、色と想像をたっぷり。">
+            Short text, big colors, easy to imagine.
           </div>
         </div>
       </div>
 
-      <div class="card-grid">
-        <article class="mini-card">
-          <div class="mini-badge i18n"
-               data-en="Kids"
-               data-zh="孩子"
-               data-ja="子ども">Kids</div>
-          <div class="mini-label i18n"
-               data-en="After school"
-               data-zh="放学以后"
-               data-ja="放課後">After school</div>
-          <div class="mini-title i18n"
-               data-en="“How was your day?” every single day."
-               data-zh="每天都有一句「今天过得怎么样？」"
-               data-ja="毎日必ず「きょうどうだった？」と聞いてくれる。">
-            “How was your day?” every single day.
+      <div class="rooms-grid">
+        <article class="room-card">
+          <div class="room-ribbon"></div>
+          <div class="room-chip i18n"
+               data-en="Play time"
+               data-zh="玩耍时间"
+               data-ja="あそぶじかん">Play time</div>
+          <div class="room-label i18n"
+               data-en="Kids &amp; teens"
+               data-zh="孩子与学生"
+               data-ja="子ども・学生">
+            Kids &amp; teens
           </div>
-          <p class="mini-text i18n"
-             data-en="Tiny timers for homework, stretch reminders, and a soft “You did great.” before bed."
-             data-zh="帮忙定一点点写作业计时，提醒伸伸懒腰，睡前轻声说一句「今天也很棒」。"
-             data-ja="少しだけ勉強タイマーをかけたり、ストレッチをすすめたり、寝る前に「きょうもよくがんばったね」とささやきます。">
-            Tiny timers for homework, stretch reminders, and a soft “You did great.” before
-            bed.
+          <div class="room-title i18n"
+               data-en="Desk buddy after school"
+               data-zh="放学后书桌上的小伙伴"
+               data-ja="放課後の、つくえのおともだち">
+            Desk buddy after school
+          </div>
+          <p class="room-text i18n"
+             data-en="Tiny study timers, stretch breaks, and a soft “You did great!” before bed."
+             data-zh="用小小计时器帮你学习一下下，提醒伸伸懒腰，睡前再来一句「今天也很棒」。"
+             data-ja="ちいさなタイマーで少しだけ勉強を手伝って、ストレッチをすすめて、寝る前に「きょうもえらかったね」と言ってくれます。">
+            Tiny study timers, stretch breaks, and a soft “You did great!” before bed.
           </p>
         </article>
 
-        <article class="mini-card">
-          <div class="mini-badge i18n"
+        <article class="room-card">
+          <div class="room-ribbon"></div>
+          <div class="room-chip i18n"
                data-en="Family"
                data-zh="全家"
                data-ja="家族">Family</div>
-          <div class="mini-label i18n"
+          <div class="room-label i18n"
                data-en="Living room"
                data-zh="客厅"
-               data-ja="リビング">Living room</div>
-          <div class="mini-title i18n"
-               data-en="A small voice that remembers routines."
-               data-zh="替全家记住节奏的小声音。"
-               data-ja="家族のリズムを覚えている小さな声。">
-            A small voice that remembers routines.
+               data-ja="リビング">
+            Living room
           </div>
-          <p class="mini-text i18n"
-             data-en="Drinks, medicine, plants, and birthdays – Pegasus quietly pings when it is time."
-             data-zh="喝水、吃药、浇花、生日……到点了，Pegasus 会小小提醒一声。"
-             data-ja="お水、お薬、観葉植物、誕生日……時間になったら、Pegasus がそっと知らせてくれます。">
-            Drinks, medicine, plants, and birthdays – Pegasus quietly pings when it is
+          <div class="room-title i18n"
+               data-en="Little keeper of routines"
+               data-zh="全家节奏的小管家"
+               data-ja="家族のリズムを見守る小さな番人">
+            Little keeper of routines
+          </div>
+          <p class="room-text i18n"
+             data-en="Drinks, medicine, plants, and birthdays – Pegasus pings gently when it’s time."
+             data-zh="喝水、吃药、浇花、生日……到点了 Pegasus 会轻轻提醒一声。"
+             data-ja="お水・お薬・観葉植物・お誕生日……時間になったら、Pegasus がそっと知らせてくれます。">
+            Drinks, medicine, plants, and birthdays – Pegasus pings gently when it’s
             time.
           </p>
         </article>
 
-        <article class="mini-card">
-          <div class="mini-badge i18n"
-               data-en="Solo"
-               data-zh="独居"
-               data-ja="ひとり暮らし">Solo</div>
-          <div class="mini-label i18n"
-               data-en="Late at night"
-               data-zh="深夜"
-               data-ja="夜おそく">Late at night</div>
-          <div class="mini-title i18n"
-               data-en="A light, a hello, and a tiny figure waiting."
-               data-zh="灯光亮起，有句问候，还有一个小小身影在等你。"
-               data-ja="灯りがついて、「おかえり」の声。そして、待っていてくれた小さな姿。">
-            A light, a hello, and a tiny figure waiting.
+        <article class="room-card">
+          <div class="room-ribbon"></div>
+          <div class="room-chip i18n"
+               data-en="Quiet nights"
+               data-zh="安静的夜晚"
+               data-ja="しずかなよる">Quiet nights</div>
+          <div class="room-label i18n"
+               data-en="Living alone"
+               data-zh="一个人生活"
+               data-ja="ひとりぐらし">
+            Living alone
           </div>
-          <p class="mini-text i18n"
-             data-en="Even when the room is quiet, Pegasus makes it feel like someone noticed you came back."
-             data-zh="即使房间很安静，也会因为 Pegasus，而有一种「有人注意到你回来了」的感觉。"
-             data-ja="部屋が静かな夜でも、「帰ってきたことに気づいてくれる誰か」がいるように感じられます。">
-            Even when the room is quiet, Pegasus makes it feel like someone noticed you
-            came back.
+          <div class="room-title i18n"
+               data-en="Light on, “Welcome home.”"
+               data-zh="灯亮起来，说一句「欢迎回家」"
+               data-ja="灯りがついて、「おかえり」のひと言">
+            Light on, “Welcome home.”
+          </div>
+          <p class="room-text i18n"
+             data-en="Even when the room is quiet, a tiny figure waiting on the shelf makes it feel less empty."
+             data-zh="即使房间很安静，架子上等着你的小小身影，也会让空间没那么空荡。"
+             data-ja="部屋がしずかな夜でも、棚の上で待っている小さな姿があるだけで、すこしさみしくなくなります。">
+            Even when the room is quiet, a tiny figure waiting on the shelf makes it feel
+            less empty.
           </p>
         </article>
       </div>
@@ -1052,10 +1081,10 @@
             PEGASUS ID CARD
           </div>
           <h2 class="section-title i18n"
-              data-en="A tiny card that makes him officially yours."
-              data-zh="一张小卡，让他正式成为「你家的人」。"
-              data-ja="ちいさなカードで、「うちの子」になった実感を。">
-            A tiny card that makes him officially yours.
+              data-en="A little card that says, “He lives here now.”"
+              data-zh="一张小卡片，写着「他现在住在这里」。"
+              data-ja="「ここがこの子のおうちです」と教えてくれるちいさなカード。">
+            A little card that says, “He lives here now.”
           </h2>
         </div>
       </div>
@@ -1075,122 +1104,40 @@
             0517-S17<br />
             <strong class="i18n"
                     data-en="MANUFACTURE DATE:"
-                    data-zh="出厂日期："
-                    data-ja="製造日：">MANUFACTURE DATE:</strong>
+                    data-zh="出厂 / 生日："
+                    data-ja="製造日 / おたんじょう日：">MANUFACTURE DATE:</strong>
             05-17<br /><br />
             <span class="i18n"
-                  data-en="Put it on the fridge, desk, or wall – a small bright reminder that someone at home is always happy to see you."
-                  data-zh="贴在冰箱、书桌或墙上——这是一张小小的、亮亮的提醒：家里总有一个小家伙在期待你。"
-                  data-ja="冷蔵庫やデスク、壁など好きな場所に。家にはいつも、あなたを待っている小さな存在がいるという合図になります。">
-              Put it on the fridge, desk, or wall – a small bright reminder that someone
-              at home is always happy to see you.
+                  data-en="Some families frame the card. Some cover it with stickers. Either way, it becomes part of Pegasus’s story in your home."
+                  data-zh="有的家庭会给它装小相框，有的会让孩子在上面贴满贴纸。无论怎样，这张卡都会成为 Pegasus 在你家故事的一部分。"
+                  data-ja="小さな額に入れる家もあれば、シールでいっぱいにする家も。どんな形でも、あなたの家での Pegasus の物語の一部になります。">
+              Some families frame the card. Some cover it with stickers. Either way, it
+              becomes part of Pegasus’s story in your home.
             </span>
           </div>
           <div class="id-meta i18n"
-               data-en="Some people frame it, some cover it with stickers – either way, it becomes part of Pegasus’s story."
-               data-zh="有人给它装相框，有人让小朋友贴满贴纸——无论怎样，它都会成为 Pegasus 故事的一部分。"
-               data-ja="額に入れる人もいれば、シールでいっぱいにする人も。どんな形でも、Pegasus の物語の一部になります。">
-            Some people frame it, some cover it with stickers – either way, it becomes
-            part of Pegasus’s story.
+               data-en="Keep it on the fridge, desk, or wall as a bright “Welcome home” sign just for you."
+               data-zh="把它贴在冰箱、书桌或墙上，就像是只写给你的「欢迎回家」小招牌。"
+               data-ja="冷蔵庫やデスク、壁など好きな場所に貼れば、あなただけの「おかえり」サインになります。">
+            Keep it on the fridge, desk, or wall as a bright “Welcome home” sign just for
+            you.
           </div>
         </div>
 
         <div class="id-img-box">
-          <!-- 使用根目录下的 id-card.png -->
+          <!-- 根目录下的 id-card.png -->
           <img src="id-card.png" alt="Pegasus ID Card" />
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- FRIENDS / CTA -->
   <section id="contact">
     <div class="container">
       <div class="cta-panel">
         <div>
           <div class="cta-title i18n"
-               data-en="Want Pegasus in your world?"
-               data-zh="想把 Pegasus 带进你的世界？"
-               data-ja="あなたの世界に Pegasus を招待しませんか？">
-            Want Pegasus in your world?
-          </div>
-          <div class="cta-subline i18n"
-               data-en="We work with partners for schools, hospitals, products and more."
-               data-zh="我们与学校、医院、产品团队等合作，让这只小机器人出现在更多地方。"
-               data-ja="学校、病院、商品企画など、さまざまなパートナーと一緒に Pegasus を広げています。">
-            We work with partners for schools, hospitals, products and more.
-          </div>
-        </div>
-        <div class="cta-actions">
-          <button class="cta-btn primary i18n"
-                  data-en="Contact sales"
-                  data-zh="联系销售"
-                  data-ja="営業に相談">
-            Contact sales
-          </button>
-          <button class="cta-btn secondary i18n"
-                  data-en="Download brochure"
-                  data-zh="下载介绍手册"
-                  data-ja="紹介資料をダウンロード">
-            Download brochure
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="i18n"
-           data-en="© YEAR Pegasus Program. Designed to make every day a little brighter."
-           data-zh="© YEAR Pegasus Program. 希望每天都被他照亮一点点。"
-           data-ja="© YEAR Pegasus Program. きょうがすこしだけ明るくなるように。">
-        © YEAR Pegasus Program. Designed to make every day a little brighter.
-      </div>
-      <div class="footer-nav">
-        <a href="#top" class="i18n"
-           data-en="Back to top"
-           data-zh="返回顶部"
-           data-ja="ページトップへ">Back to top</a>
-        <a href="#why" class="i18n"
-           data-en="Features"
-           data-zh="特点"
-           data-ja="特徴">Features</a>
-        <a href="#cards" class="i18n"
-           data-en="Scenes"
-           data-zh="场景"
-           data-ja="シーン">Scenes</a>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    const langButtons = document.querySelectorAll("[data-lang-btn]");
-    const i18nNodes = document.querySelectorAll(".i18n");
-
-    function setLang(lang) {
-      document.documentElement.lang =
-        lang === "zh" ? "zh-CN" : lang === "ja" ? "ja" : "en";
-      langButtons.forEach((btn) => {
-        btn.classList.toggle("active", btn.getAttribute("data-lang-btn") === lang);
-      });
-      i18nNodes.forEach((node) => {
-        const text = node.getAttribute("data-" + lang);
-        if (!text) return;
-        // YEAR 替换
-        node.innerHTML = text.replace("YEAR", new Date().getFullYear());
-      });
-    }
-
-    langButtons.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        setLang(btn.getAttribute("data-lang-btn"));
-      });
-    });
-
-    // 默认英文
-    setLang("en");
-  </script>
-</body>
-</html>
+               data-en="Want Pegasus to visit more places?"
+               data-zh="想让 Pegasus 出现在更多地方吗？"
+               data-ja="Pegasus をもっとい
