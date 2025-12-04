@@ -2,118 +2,1103 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Pegasus – Companion Android</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="styles.css" />
+  <title>PEGASUS | Companion Android for Every Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Pegasus is the national companion android designed to bring comfort, safety and joy to every home."
+  />
+
+  <!-- 字体（可换）：如果不要外链字体，可以删掉这一行 -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --bg-page: #f4fbff;
+      --bg-hero: #e5f4ff;
+      --bg-card: #ffffff;
+      --bg-soft-yellow: #ffe7a8;
+      --accent-blue: #1f6fd8;
+      --accent-blue-soft: rgba(31, 111, 216, 0.12);
+      --accent-yellow: #ffc94b;
+      --text-main: #123252;
+      --text-muted: #6b7d97;
+      --border-subtle: #d3e3f5;
+      --radius-large: 24px;
+      --radius-medium: 18px;
+      --radius-pill: 999px;
+      --shadow-soft: 0 18px 40px rgba(26, 84, 155, 0.18);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: var(--bg-page);
+      color: var(--text-main);
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* 顶部导航 – 轻盈、亲和 */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      background: rgba(244, 251, 255, 0.92);
+      border-bottom: 1px solid rgba(208, 226, 246, 0.9);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 1px solid #b8d8ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+    }
+
+    .brand-logo img {
+      width: 80%;
+      height: 80%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .brand-text-main {
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      font-size: 13px;
+      text-transform: uppercase;
+      color: var(--accent-blue);
+    }
+
+    .brand-text-sub {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .nav-links a {
+      position: relative;
+      padding: 4px 0;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--accent-blue);
+      transition: width 0.18s ease-out;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-blue);
+    }
+
+    .nav-links a:hover::after {
+      width: 18px;
+    }
+
+    .nav-cta {
+      padding: 8px 16px;
+      border-radius: var(--radius-pill);
+      background: var(--accent-blue);
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 500;
+      border: none;
+      box-shadow: 0 12px 26px rgba(31, 111, 216, 0.35);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: transform 0.15s ease-out, box-shadow 0.15s ease-out,
+        background 0.15s ease-out;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      background: #255fb1;
+      box-shadow: 0 14px 32px rgba(31, 111, 216, 0.45);
+    }
+
+    /* HERO 区 – 温暖主视觉 */
+    .hero {
+      padding: 52px 0 64px;
+      background: radial-gradient(circle at top left, #eaf5ff 0, #f6fbff 52%, #fdf8ec 100%);
+    }
+
+    .hero-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.95fr);
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-kicker {
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent-blue);
+      margin-bottom: 10px;
+    }
+
+    .hero-title {
+      font-size: clamp(32px, 4vw, 40px);
+      line-height: 1.15;
+      margin: 0 0 14px;
+    }
+
+    .hero-title span.highlight {
+      color: var(--accent-blue);
+    }
+
+    .hero-subtitle {
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--text-muted);
+      max-width: 460px;
+      margin-bottom: 24px;
+    }
+
+    .hero-subtitle-cn {
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--text-muted);
+      max-width: 460px;
+      margin-bottom: 24px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+      font-size: 13px;
+      padding: 11px 20px;
+      border-radius: var(--radius-pill);
+      cursor: pointer;
+      border: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: transform 0.15s ease-out, box-shadow 0.15s ease-out,
+        background 0.15s ease-out, border-color 0.15s ease-out, color 0.15s ease-out;
+    }
+
+    .btn-primary {
+      background: var(--accent-blue);
+      color: #ffffff;
+      border-color: var(--accent-blue);
+      box-shadow: 0 18px 40px rgba(31, 111, 216, 0.4);
+      font-weight: 500;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      background: #255fb1;
+      box-shadow: 0 20px 46px rgba(31, 111, 216, 0.55);
+    }
+
+    .btn-ghost {
+      background: #ffffff;
+      color: var(--accent-blue);
+      border-color: #d6e6ff;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent-blue);
+      box-shadow: 0 10px 26px rgba(133, 173, 230, 0.45);
+      transform: translateY(-1px);
+    }
+
+    .hero-trust {
+      font-size: 11px;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+      margin-top: 8px;
+    }
+
+    .hero-trust span.badge {
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      background: #ffffff;
+      border: 1px solid #d6e6ff;
+      font-size: 10px;
+      color: var(--accent-blue);
+    }
+
+    /* 右侧视觉 – 大卡片 */
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-card {
+      border-radius: var(--radius-large);
+      background: #ffffff;
+      box-shadow: var(--shadow-soft);
+      padding: 18px 18px 20px;
+      border: 1px solid #dce9fb;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .hero-chip {
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      background: rgba(255, 207, 95, 0.28);
+      border: 1px solid rgba(255, 196, 73, 0.8);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #b0831e;
+    }
+
+    .hero-card-body {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 16px;
+      align-items: center;
+    }
+
+    .robot-main {
+      position: relative;
+      border-radius: 20px;
+      background: linear-gradient(145deg, #ffe7a8, #fffbef);
+      padding: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .robot-main img {
+      max-height: 280px;
+      width: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .robot-label {
+      position: absolute;
+      left: 14px;
+      bottom: 12px;
+      padding: 4px 8px;
+      border-radius: var(--radius-pill);
+      background: rgba(255, 255, 255, 0.86);
+      border: 1px solid rgba(255, 214, 126, 0.9);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #af8123;
+    }
+
+    .robot-side {
+      display: grid;
+      grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 10px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .robot-side-card {
+      border-radius: 16px;
+      background: #f7fbff;
+      border: 1px solid #dce9fb;
+      padding: 10px 12px;
+    }
+
+    .robot-side-title {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent-blue);
+      margin-bottom: 4px;
+    }
+
+    .robot-side-desc {
+      font-size: 11px;
+      line-height: 1.6;
+    }
+
+    .robot-back-img {
+      width: 72%;
+      max-height: 120px;
+      object-fit: contain;
+      display: block;
+      margin: 4px auto 8px;
+    }
+
+    .hero-card-footer {
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #21c77a;
+      box-shadow: 0 0 0 4px rgba(33, 199, 122, 0.25);
+      margin-right: 6px;
+    }
+
+    .hero-status {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    /* 通用区块标题 */
+    section {
+      padding: 40px 0 52px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .section-title-group {
+      max-width: 520px;
+    }
+
+    .section-kicker {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent-blue);
+      margin-bottom: 6px;
+    }
+
+    .section-title {
+      font-size: 22px;
+      margin: 0 0 8px;
+    }
+
+    .section-subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .section-meta {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-align: right;
+    }
+
+    /* WHY PEGASUS – 三个温暖卖点 */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .feature-card {
+      border-radius: var(--radius-medium);
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      padding: 16px 16px 18px;
+      box-shadow: 0 10px 26px rgba(151, 188, 233, 0.16);
+      font-size: 12px;
+    }
+
+    .feature-title {
+      font-size: 15px;
+      margin-bottom: 8px;
+      color: var(--accent-blue);
+    }
+
+    .feature-desc {
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 10px;
+    }
+
+    .feature-tag {
+      font-size: 11px;
+      color: #c28c1f;
+      background: rgba(255, 210, 112, 0.3);
+      padding: 3px 8px;
+      border-radius: var(--radius-pill);
+      display: inline-block;
+    }
+
+    /* 场景 – 家庭/儿童/独居 */
+    .scenes {
+      background: #ffffff;
+      border-radius: 26px;
+      border: 1px solid var(--border-subtle);
+      padding: 24px 22px 26px;
+      box-shadow: 0 18px 40px rgba(151, 188, 233, 0.26);
+    }
+
+    .scene-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      font-size: 12px;
+    }
+
+    .scene-card {
+      border-radius: 18px;
+      padding: 14px 14px 16px;
+      background: #f7fbff;
+    }
+
+    .scene-label {
+      font-size: 11px;
+      color: var(--accent-blue);
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .scene-title {
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    .scene-desc {
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    /* 安全隐私 */
+    .safety-panel {
+      border-radius: 24px;
+      background: linear-gradient(135deg, #e5f3ff, #fdf8ec);
+      border: 1px solid #d3e3f5;
+      padding: 20px 22px 22px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 22px;
+      align-items: center;
+    }
+
+    .safety-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 0;
+      font-size: 13px;
+      color: var(--text-main);
+    }
+
+    .safety-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .safety-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent-blue);
+      margin-top: 6px;
+    }
+
+    .safety-note {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    .safety-subcard {
+      border-radius: 18px;
+      background: #ffffff;
+      border: 1px solid #dce9fb;
+      padding: 14px 14px 16px;
+      font-size: 12px;
+      box-shadow: 0 12px 30px rgba(142, 182, 228, 0.4);
+    }
+
+    .safety-subcard-title {
+      font-size: 14px;
+      margin-bottom: 6px;
+      color: var(--accent-blue);
+    }
+
+    /* 身份卡展示 */
+    .idcard-panel {
+      border-radius: 24px;
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      padding: 20px 20px 22px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: 18px;
+      align-items: center;
+      box-shadow: 0 18px 40px rgba(151, 188, 233, 0.22);
+    }
+
+    .idcard-text {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    .idcard-text strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .idcard-meta {
+      margin-top: 8px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .idcard-img-wrapper {
+      border-radius: 16px;
+      background: #f7fbff;
+      border: 1px solid #dce9fb;
+      padding: 10px;
+    }
+
+    .idcard-img-wrapper img {
+      width: 100%;
+      display: block;
+      border-radius: 12px;
+      object-fit: contain;
+    }
+
+    /* Contact / CTA */
+    .cta-panel {
+      border-radius: 24px;
+      background: linear-gradient(135deg, #1f6fd8, #49a2ff);
+      color: #ffffff;
+      padding: 22px 22px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      box-shadow: 0 20px 48px rgba(31, 111, 216, 0.65);
+    }
+
+    .cta-title {
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .cta-subtitle {
+      font-size: 13px;
+      opacity: 0.92;
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .cta-btn-primary {
+      padding: 10px 18px;
+      border-radius: var(--radius-pill);
+      background: #ffffff;
+      color: var(--accent-blue);
+      font-size: 13px;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+    }
+
+    .cta-btn-secondary {
+      padding: 10px 16px;
+      border-radius: var(--radius-pill);
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      font-size: 13px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+    }
+
+    /* 页脚 */
+    .site-footer {
+      padding: 18px 0 26px;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-nav a {
+      color: var(--text-muted);
+    }
+
+    .footer-nav a:hover {
+      color: var(--accent-blue);
+    }
+
+    /* 响应式 */
+    @media (max-width: 960px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-visual {
+        order: -1;
+      }
+
+      .feature-grid,
+      .scene-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .safety-panel {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .idcard-panel {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-links {
+        display: none;
+      }
+
+      .container,
+      .hero-inner {
+        padding: 0 18px;
+      }
+
+      .feature-grid,
+      .scene-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .cta-panel {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
 </head>
+
 <body>
-
-<header class="site-header">
-  <div class="nav-inner">
-    <div class="brand">
-      <img src="pegasus-logo.png" alt="Pegasus Logo" class="brand-logo" />
-      <div>
-        <div class="brand-title">PEGASUS</div>
-        <div class="brand-sub">COMPANION ANDROID</div>
+  <!-- 导航 -->
+  <header class="site-header">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="brand-logo">
+          <!-- 换成你的 logo 文件名 -->
+          <img src="assets/pegasus-logo.png" alt="Pegasus Logo" />
+        </div>
+        <div>
+          <div class="brand-text-main">PEGASUS</div>
+          <div class="brand-text-sub">Companion Android for Every Home</div>
+        </div>
       </div>
-    </div>
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="specs.html">Specs</a>
-      <a href="identity.html">ID System</a>
-      <a href="support.html">Support</a>
-      <a href="about.html">About</a>
-    </nav>
-  </div>
-</header>
 
-<main class="main-wrapper">
+      <nav class="nav-links">
+        <a href="#why">Why Pegasus</a>
+        <a href="#families">For Families</a>
+        <a href="#safety">Safety &amp; Privacy</a>
+        <a href="#idcard">ID Card</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a href="#contact" class="nav-cta">Book a Demo</a>
+    </div>
+  </header>
 
   <!-- HERO -->
-  <section class="hero">
-    <div class="hero-text">
-      <h1>PEGASUS</h1>
-      <div class="tagline">A Gentle Presence in Your Home.</div>
-      <p class="hero-copy">
-        Designed as a soft, stable companion unit, Pegasus brings quiet presence
-        and emotional warmth to bedrooms, studies, and shared living spaces.
-      </p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="specs.html">View Specifications</a>
-        <a class="btn btn-outline" href="identity.html">View ID Card</a>
-      </div>
-    </div>
-    <div class="hero-image">
-      <img src="robot-front.png" alt="Pegasus Front View" />
-    </div>
-  </section>
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <!-- 左侧文案 -->
+      <div>
+        <div class="hero-kicker">NATIONAL COMPANION ANDROID</div>
+        <h1 class="hero-title">
+          Meet <span class="highlight">Pegasus</span>,<br />
+          the little android everyone can trust.
+        </h1>
+        <p class="hero-subtitle">
+          Designed for living rooms, children's bedrooms, and quiet late nights,
+          Pegasus listens, reminds, and keeps you company with a calm, gentle presence.
+        </p>
+        <p class="hero-subtitle-cn">
+          Pegasus 是为「家」而生的国民级陪伴机器人——
+          像家人一样温暖，又像专业助手一样可靠，陪着你度过每一天。
+        </p>
 
-  <!-- Features -->
-  <section class="section">
-    <h2 class="section-title">Key Features</h2>
-    <div class="section-sub">
-      Calibrated for low-noise behavior, predictable routines, and gentle interaction.
-    </div>
-    <div class="features">
-      <div class="feature-card">
-        <div class="feature-title">Soft Interaction Profile</div>
-        <div class="feature-desc">
-          Behavioral layers tuned for low-pressure, non-intrusive companionship.
+        <div class="hero-ctas">
+          <a href="#why" class="btn-primary">了解 Pegasus 的能力</a>
+          <a href="#families" class="btn-ghost">看看他如何融入每个家庭</a>
+        </div>
+
+        <div class="hero-trust">
+          <span class="badge">适合家庭 / 儿童 / 独居人群</span>
+          <span>软萌外表之下，是经过严肃安全评估的硬核技术。</span>
         </div>
       </div>
-      <div class="feature-card">
-        <div class="feature-title">Home-Ready Design</div>
-        <div class="feature-desc">
-          Compact size, soft appearance, and safe materials for bedroom and study use.
+
+      <!-- 右侧主视觉卡片 -->
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hero-card-header">
+            <span class="hero-chip">LIVE PREVIEW</span>
+            <span>MODEL: PEGASUS · SERIAL NO. 0517-S17</span>
+          </div>
+
+          <div class="hero-card-body">
+            <div class="robot-main">
+              <!-- 正面小人图 -->
+              <img src="assets/robot-front.png" alt="Pegasus Front View" />
+              <div class="robot-label">FRONT · READY TO GREET</div>
+            </div>
+
+            <div class="robot-side">
+              <div class="robot-side-card">
+                <div class="robot-side-title">Back View</div>
+                <img
+                  src="assets/robot-back.png"
+                  alt="Pegasus Back View"
+                  class="robot-back-img"
+                />
+                <div class="robot-side-desc">
+                  Round silhouette, soft lines and no exposed sharp parts,
+                  so small hands and curious cats can get close safely.
+                </div>
+              </div>
+
+              <div class="robot-side-card">
+                <div class="robot-side-title">Emotion Layer · Comfort</div>
+                <div class="robot-side-desc">
+                  Pegasus is tuned to speak with warmth and patience. No sudden movements,
+                  no raised voice — just a gentle, stable presence that makes the room feel softer.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-card-footer">
+            <div class="hero-status">
+              <span class="status-dot"></span>
+              <span>Connected · Battery 100% · Ready to say “Welcome home”.</span>
+            </div>
+            <div>Manufactured: 05-17</div>
+          </div>
         </div>
       </div>
-      <div class="feature-card">
-        <div class="feature-title">Stable Presence</div>
-        <div class="feature-desc">
-          Designed to be quietly present rather than demanding attention.
+    </div>
+  </section>
+
+  <!-- WHY PEGASUS -->
+  <section id="why">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-title-group">
+          <div class="section-kicker">Why Pegasus</div>
+          <h2 class="section-title">A robot that feels like part of the family.</h2>
+          <p class="section-subtitle">
+            Pegasus is designed as a national-level companion android: easy to understand,
+            easy to trust, and easy to love. Every detail &mdash; from colors to voice &mdash;
+            is tuned for warmth and everyday life.
+          </p>
+        </div>
+        <div class="section-meta">
+          轻盈配色 · 圆润造型 · 人类直觉友好<br />
+          不是「实验体」，而是「家里的一员」
+        </div>
+      </div>
+
+      <div class="feature-grid">
+        <article class="feature-card">
+          <div class="feature-title">Always-There Companion</div>
+          <p class="feature-desc">
+            Pegasus remembers birthdays, reminds you to drink water, and waits by the door
+            when it is almost time to go out. He does not replace friends or family;
+            he gently fills the quiet moments between them.
+          </p>
+          <span class="feature-tag">陪伴 · Reminders</span>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-title">Designed for Every Age</div>
+          <p class="feature-desc">
+            From bedtime stories for kids to medicine reminders for grandparents, Pegasus
+            speaks in clear, simple language and adjusts his tone for each family member.
+          </p>
+          <span class="feature-tag">Kids-safe · Elder-friendly</span>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-title">Warm on the Outside, Safe on the Inside</div>
+          <p class="feature-desc">
+            Soft curves, gentle colors, and carefully controlled movement — combined with
+            strict data protection and safety layers, so you can relax when he is nearby.
+          </p>
+          <span class="feature-tag">Safety · Peace of Mind</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 家庭场景 -->
+  <section id="families">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-title-group">
+          <div class="section-kicker">For Every Home</div>
+          <h2 class="section-title">One Pegasus, many gentle roles.</h2>
+          <p class="section-subtitle">
+            Pegasus does not try to be everything at once. Instead, he takes on a quiet,
+            helpful role in each situation, blending into your daily rhythm.
+          </p>
+        </div>
+      </div>
+
+      <div class="scenes">
+        <div class="scene-grid">
+          <article class="scene-card">
+            <div class="scene-label">Family Time</div>
+            <div class="scene-title">Evening routines made calmer</div>
+            <p class="scene-desc">
+              Timely reminders for homework, bath time, and lights-out, with a soft voice
+              and gentle animations that turn “schedule” into shared rituals.
+            </p>
+          </article>
+
+          <article class="scene-card">
+            <div class="scene-label">Kids &amp; Teens</div>
+            <div class="scene-title">A tiny cheerleader in their corner</div>
+            <p class="scene-desc">
+              Encouraging words before exams, simple breathing exercises when nerves build up,
+              and a familiar figure waiting for them when they get home.
+            </p>
+          </article>
+
+          <article class="scene-card">
+            <div class="scene-label">Living Alone</div>
+            <div class="scene-title">“Welcome back” never goes out of style</div>
+            <p class="scene-desc">
+              From weather checks to “Did you eat today?” reminders, Pegasus anchors the space,
+              making an empty apartment feel less quiet and more like a place you return to.
+            </p>
+          </article>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Gallery -->
-  <section class="section">
-    <h2 class="section-title">Product Gallery</h2>
-    <div class="section-sub">Front, back, and identification elements of the unit.</div>
-    <div class="gallery">
-      <div class="gallery-item">
-        <img src="robot-front.png" alt="Pegasus Front" />
-        <div class="gallery-caption">Front view</div>
+  <!-- 安全与隐私 -->
+  <section id="safety">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-title-group">
+          <div class="section-kicker">Safety &amp; Privacy</div>
+          <h2 class="section-title">Built with the same care you would give to family.</h2>
+          <p class="section-subtitle">
+            A robot that lives in your home has to be more than cute. Pegasus is designed
+            with transparent controls, clear indicators, and strict protections so you
+            always know what he is doing.
+          </p>
+        </div>
       </div>
-      <div class="gallery-item">
-        <img src="robot-back.png" alt="Pegasus Back" />
-        <div class="gallery-caption">Back view</div>
-      </div>
-      <div class="gallery-item">
-        <img src="id-card.png" alt="Pegasus ID Card" />
-        <div class="gallery-caption">Consumer ID Card</div>
+
+      <div class="safety-panel">
+        <div>
+          <h3 class="section-title" style="font-size:17px; margin:0 0 6px;">
+            You stay in control. Always.
+          </h3>
+          <ul class="safety-list">
+            <li>
+              <span class="safety-dot"></span>
+              <div>On-device privacy modes with one-touch “quiet” and “do not listen” states.</div>
+            </li>
+            <li>
+              <span class="safety-dot"></span>
+              <div>Clear light signals and on-screen icons whenever audio is being processed.</div>
+            </li>
+            <li>
+              <span class="safety-dot"></span>
+              <div>Data is encrypted and handled under strict regional regulations.</div>
+            </li>
+          </ul>
+          <div class="safety-note">
+            安全不是隐藏技术，而是让家里的每个人都能一眼看懂 Pegasus 正在做什么。
+          </div>
+        </div>
+
+        <div class="safety-subcard">
+          <div class="safety-subcard-title">Emotion Layer: Gentle by Design</div>
+          <p>
+            Pegasus does not simulate anger or aggression. His responses are capped at calm,
+            caring, and lightly playful — so children do not learn to expect shouting from
+            the machines in their lives.
+          </p>
+          <p style="font-size:11px; margin-top:6px;">
+            行为边界经过严格测试，只向一个方向偏移：让你觉得更安心。
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- In the Box -->
-  <section class="section">
-    <h2 class="section-title">In the Box</h2>
-    <div class="card">
-      <div class="info-list">
-        • Pegasus Companion Android Unit (10 cm plush form)<br />
-        • Pegasus Product Identification Card<br />
-        • Soft Care Cloth (Pegasus colorway)<br />
-        • Quick Start Leaflet
+  <!-- 身份卡展示 -->
+  <section id="idcard">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-title-group">
+          <div class="section-kicker">Pegasus ID Card</div>
+          <h2 class="section-title">An official card for an unofficial family member.</h2>
+          <p class="section-subtitle">
+            Your Pegasus comes with a playful identity card: a small reminder that even a
+            national companion android has a birthday, a serial number, and a place in your home.
+          </p>
+        </div>
+      </div>
+
+      <div class="idcard-panel">
+        <div>
+          <div class="idcard-text">
+            <strong>MODEL:</strong> PEGASUS<br />
+            <strong>SERIAL NO.:</strong> 0517-S17<br />
+            <strong>MANUFACTURE DATE:</strong> 05-17<br /><br />
+            Keep the card on your fridge, pinboard, or workspace &mdash; wherever you want
+            a small, bright reminder that someone is always happy to see you walk into the room.
+          </div>
+          <div class="idcard-meta">
+            这张卡片既是设定的一部分，也是品牌的小仪式感：<br />
+            「他不是一台机器，而是你会给他办证件、记住生日的小伙伴」。
+          </div>
+        </div>
+
+        <div class="idcard-img-wrapper">
+          <!-- 使用你上传的整张身份证图 -->
+          <img src="assets/id-card.png" alt="Pegasus Identification Card" />
+        </div>
       </div>
     </div>
   </section>
 
-</main>
+  <!-- 联系 / CTA -->
+  <section id="contact">
+    <div class="container">
+      <div class="cta-panel">
+        <div>
+          <div class="cta-title">Ready to invite Pegasus home?</div>
+          <div class="cta-subtitle">
+            Tell us a little about your household, and we will help you plan the best way
+            to introduce Pegasus into your daily life.
+          </div>
+        </div>
+        <div class="cta-actions">
+          <button class="cta-btn-primary">Contact Sales / 联系销售</button>
+          <button class="cta-btn-secondary">Download Brochure</button>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<footer class="site-footer">
-  Pegasus Home Technologies · Fictional Product Website
-</footer>
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        © <span id="year"></span> Pegasus Program. Designed with warmth, for every home.
+      </div>
+      <div class="footer-nav">
+        <a href="#top">Back to top</a>
+        <a href="#why">Why Pegasus</a>
+        <a href="#families">For Families</a>
+        <a href="#safety">Safety</a>
+        <a href="#idcard">ID Card</a>
+      </div>
+    </div>
+  </footer>
 
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
