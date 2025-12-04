@@ -8,29 +8,32 @@
     name="description"
     content="Pegasus Home – a bright, cartoon-like companion android who really lives with you."
   />
-  <!-- 艺术字英文 + 可爱中文 + 圆体日文 -->
+  <!-- 英文艺术字 + 可爱中文 + 圆体日文 -->
   <link
     href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Baloo+2:wght@500;600;700&family=ZCOOL+KuaiLe&family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap"
     rel="stylesheet"
   />
+
   <style>
     :root {
-      --sky-blue: #8fd4ff;
-      --sky-blue-light: #dff2ff;
-      --deep-blue: #2652b8;
+      --sky-blue: #a0d8ff;
+      --sky-blue-soft: #d5ecff;
+      --deep-blue: #2450a8;
       --sun-yellow: #ffd74d;
-      --sun-yellow-soft: #ffeaa3;
-      --cream: #fffaf1;
+      --sun-yellow-soft: #ffe9a0;
+      --cream: #fff8e8;
       --white: #ffffff;
-      --pink: #ff86bc;
-      --mint: #91ffd2;
-      --text-main: #23304a;
+      --curtain-main: #ff7b7b;
+      --curtain-dark: #e05858;
+      --stage-wood: #e6a35a;
+      --stage-wood-dark: #c48032;
+      --text-main: #24334c;
       --text-soft: #6f7a96;
       --radius-big: 36px;
       --radius-med: 24px;
       --radius-pill: 999px;
-      --shadow-soft: 0 24px 60px rgba(255, 188, 83, 0.65);
-      --shadow-blue: 0 26px 70px rgba(32, 96, 210, 0.6);
+      --shadow-soft: 0 20px 40px rgba(0, 0, 0, 0.12);
+      --shadow-strong: 0 26px 60px rgba(0, 0, 0, 0.18);
     }
 
     * {
@@ -43,10 +46,7 @@
       padding: 0;
       font-family: "Baloo 2", "ZCOOL KuaiLe", "M PLUS Rounded 1c",
         system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at 10% 0, #fff7bf 0, transparent 45%),
-        radial-gradient(circle at 92% 4%, #ffdfff 0, transparent 40%),
-        linear-gradient(180deg, #c5ebff 0, #e8f6ff 45%, #fffaf1 80%, #ffe5c6 100%);
+      background-color: var(--sky-blue-soft);
       color: var(--text-main);
       scroll-behavior: smooth;
     }
@@ -67,25 +67,20 @@
       padding: 0 20px;
     }
 
-    h1, h2 {
+    h1,
+    h2 {
       font-family: "Luckiest Guy", "ZCOOL KuaiLe", "M PLUS Rounded 1c",
         system-ui, sans-serif;
       letter-spacing: 0.05em;
     }
 
-    /* HEADER – 简单软萌导航 */
+    /* HEADER */
     .site-header {
       position: sticky;
       top: 0;
       z-index: 100;
       padding-top: 10px;
-      background: linear-gradient(
-        180deg,
-        rgba(197, 235, 255, 0.95),
-        rgba(232, 246, 255, 0.9),
-        rgba(232, 246, 255, 0.82)
-      );
-      backdrop-filter: blur(12px);
+      background-color: var(--sky-blue-soft);
     }
 
     .nav-shell {
@@ -93,8 +88,8 @@
       margin: 0 auto 8px;
       padding: 6px 12px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.97);
-      box-shadow: 0 10px 28px rgba(33, 98, 217, 0.23);
+      background-color: var(--white);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -112,8 +107,8 @@
       width: 42px;
       height: 42px;
       border-radius: 50%;
-      background: radial-gradient(circle at 30% 20%, #ffffff 0, #ffe58c 50%, #ffcd4c 100%);
-      border: 2px solid #ffe28f;
+      background-color: var(--sun-yellow-soft);
+      border: 2px solid var(--sun-yellow);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -131,7 +126,7 @@
       font-size: 18px;
       text-transform: uppercase;
       color: var(--deep-blue);
-      text-shadow: 0 3px 0 rgba(0, 0, 0, 0.2);
+      text-shadow: 0 3px 0 rgba(0, 0, 0, 0.16);
       line-height: 1;
     }
 
@@ -153,28 +148,14 @@
     .nav-pill {
       padding: 5px 10px;
       border-radius: var(--radius-pill);
-      background: #f3fbff;
-      border: 1px solid #d4ecff;
+      background-color: #f4fbff;
+      border: 1px solid #cbe6ff;
       font-weight: 600;
       cursor: pointer;
-      position: relative;
-      overflow: hidden;
     }
 
-    .nav-pill::before {
-      content: "";
-      position: absolute;
-      left: -10%;
-      top: 0;
-      width: 0;
-      height: 100%;
-      background: linear-gradient(90deg, #ffe794, #ffb7d3);
-      opacity: 0.35;
-      transition: width 0.2s ease-out;
-    }
-
-    .nav-pill:hover::before {
-      width: 140%;
+    .nav-pill:hover {
+      background-color: #e0f2ff;
     }
 
     .lang-switch {
@@ -183,8 +164,8 @@
       gap: 4px;
       padding: 3px;
       border-radius: var(--radius-pill);
-      background: #fff7d7;
-      border: 2px solid #ffd74d;
+      background-color: #fff7d7;
+      border: 2px solid var(--sun-yellow);
     }
 
     .lang-btn {
@@ -199,13 +180,13 @@
     }
 
     .lang-btn.active {
-      background: #ffefb0;
-      box-shadow: 0 3px 8px rgba(255, 201, 72, 0.7);
+      background-color: #ffefb0;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.16);
     }
 
-    /* HERO – 中心舞台 + 超大 Pegasus */
+    /* HERO 总体布局 */
     .hero {
-      padding: 34px 0 26px;
+      padding: 30px 0 24px;
     }
 
     .hero-full {
@@ -221,7 +202,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 18px;
+      gap: 16px;
     }
 
     .hero-pill {
@@ -230,8 +211,8 @@
       gap: 6px;
       padding: 4px 14px;
       border-radius: var(--radius-pill);
-      background: #ffffff;
-      border: 2px dashed #ffd980;
+      background-color: var(--white);
+      border: 2px dashed var(--sun-yellow);
       color: #c48800;
       font-size: 11px;
       font-weight: 700;
@@ -244,7 +225,7 @@
       font-size: clamp(30px, 4.2vw, 40px);
       line-height: 1.1;
       color: var(--deep-blue);
-      text-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
+      text-shadow: 0 4px 0 rgba(0, 0, 0, 0.18);
       text-align: center;
     }
 
@@ -252,7 +233,7 @@
       color: #fffcff;
       -webkit-text-stroke: 2px var(--deep-blue);
       text-stroke: 2px var(--deep-blue);
-      text-shadow: 0 4px 0 rgba(0, 0, 0, 0.25);
+      text-shadow: 0 4px 0 rgba(0, 0, 0, 0.24);
       padding: 0 4px;
     }
 
@@ -263,214 +244,272 @@
       max-width: 520px;
     }
 
-    /* 中央 Pegasus 舞台卡片 */
+    /* 舞台整体外框 */
     .stage-wrapper {
       position: relative;
-      width: min(620px, 100%);
-      margin-top: 4px;
+      width: min(720px, 100%);
+      margin-top: 6px;
     }
 
-    /* 云朵装饰 */
+    /* 背景云朵（纯色） */
     .cloud {
       position: absolute;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.9);
-      box-shadow: 0 10px 30px rgba(188, 222, 255, 0.9);
+      background-color: var(--white);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
       z-index: -1;
     }
 
     .cloud.cloud-left {
-      width: 130px;
-      height: 56px;
-      left: -40px;
-      top: 16%;
+      width: 140px;
+      height: 60px;
+      left: -35px;
+      top: 20%;
     }
 
     .cloud.cloud-right {
-      width: 150px;
-      height: 60px;
-      right: -50px;
-      top: 40%;
+      width: 170px;
+      height: 66px;
+      right: -45px;
+      top: 42%;
     }
 
-    .cloud.cloud-bottom {
-      width: 190px;
-      height: 68px;
-      left: 18%;
-      bottom: -18px;
-      box-shadow: 0 14px 40px rgba(255, 207, 133, 0.9);
-    }
-
+    /* 舞台主框 */
     .stage-card {
       position: relative;
       border-radius: var(--radius-big);
-      padding: 18px 18px 20px;
-      border: 3px solid #ffe08f;
-      box-shadow: var(--shadow-soft);
-      background:
-        radial-gradient(circle at 50% 0, #ffffff 0, #fff5c2 38%, #ffd74d 70%),
-        repeating-linear-gradient(
-          -45deg,
-          rgba(255, 255, 255, 0.5) 0,
-          rgba(255, 255, 255, 0.5) 8px,
-          rgba(255, 255, 255, 0.1) 8px,
-          rgba(255, 255, 255, 0.1) 16px
-        );
-      overflow: hidden;
+      padding: 16px 16px 18px;
+      background-color: var(--cream);
+      border: 3px solid var(--sun-yellow-soft);
+      box-shadow: var(--shadow-strong);
     }
 
+    /* 舞台内部区域：上方幕布 + 中间背景 + 下方木地板 */
     .stage-inner {
-      display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.9fr);
-      gap: 16px;
-      align-items: center;
+      position: relative;
+      border-radius: 28px;
+      overflow: hidden;
+      background-color: var(--sky-blue); /* 舞台后墙 */
+      box-shadow: var(--shadow-soft);
     }
 
- .robot-stage {
-  position: relative;
-  border-radius: 28px;
-  padding: 18px 12px 14px;
-  overflow: hidden;
-  /* 多层叠加：上面是光，下层是斜条纹，两侧有淡云点 */
-  background:
-    radial-gradient(circle at 50% 0, #fffef9 0, #fff5c2 40%, #ffd74d 78%),
-    repeating-linear-gradient(
-      -45deg,
-      rgba(255, 255, 255, 0.7) 0,
-      rgba(255, 255, 255, 0.7) 8px,
-      rgba(255, 255, 255, 0.18) 8px,
-      rgba(255, 255, 255, 0.18) 16px
-    ),
-    radial-gradient(circle at 12% 22%, rgba(255, 255, 255, 0.8) 0, transparent 55%),
-    radial-gradient(circle at 88% 30%, rgba(255, 255, 255, 0.8) 0, transparent 55%);
-}
-
-/* 舞台地板阴影 */
-.robot-stage::after {
-  content: "";
-  position: absolute;
-  left: 10%;
-  right: 10%;
-  bottom: 6px;
-  height: 22px;
-  border-radius: 999px;
-  background: radial-gradient(circle at 50% 0, rgba(0, 0, 0, 0.28) 0, transparent 65%);
-  opacity: 0.4;
-  pointer-events: none;
+    /* 顶部幕布横梁 */
+    .curtain-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 80px;
+      background-color: var(--curtain-main);
+      border-bottom: 4px solid var(--curtain-dark);
     }
-/* 星星容器 */
-.robot-stars {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
 
-/* 五角星基础形状 */
-.robot-star {
-  position: absolute;
-  width: 26px;
-  height: 26px;
-  background: #ffd74d;
-  clip-path: polygon(
-    50% 0%,
-    61% 35%,
-    98% 35%,
-    68% 57%,
-    79% 91%,
-    50% 70%,
-    21% 91%,
-    32% 57%,
-    2% 35%,
-    39% 35%
-  );
-  filter: drop-shadow(0 0 6px rgba(255, 215, 77, 0.9));
-  opacity: 0.95;
-}
+    /* 顶部幕布“褶皱”：用三个半圆块假装 */
+    .curtain-top-strip {
+      position: absolute;
+      bottom: -16px;
+      left: 10px;
+      right: 10px;
+      height: 32px;
+      display: flex;
+      justify-content: space-between;
+      pointer-events: none;
+    }
 
-/* 几颗星星的位置和大小 */
-.robot-star.star-1 {
-  top: 14%;
-  left: 8%;
-  transform: scale(0.9);
-  animation: starFloat1 4s ease-in-out infinite;
-}
+    .curtain-scallop {
+      width: 25%;
+      height: 32px;
+      background-color: var(--curtain-main);
+      border-radius: 0 0 24px 24px;
+      border: 3px solid var(--curtain-dark);
+      border-top: none;
+    }
 
-.robot-star.star-2 {
-  top: 8%;
-  right: 14%;
-  transform: scale(1.05);
-  animation: starFloat2 4.4s ease-in-out infinite;
-}
+    /* 左右幕布 */
+    .curtain-side {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 80px;
+      background-color: var(--curtain-main);
+      border: 4px solid var(--curtain-dark);
+      border-top: none;
+    }
 
-.robot-star.star-3 {
-  bottom: 18%;
-  left: 12%;
-  transform: scale(0.8);
-  animation: starFloat3 3.6s ease-in-out infinite;
-}
+    .curtain-side.left {
+      left: 0;
+      border-right: none;
+    }
 
-.robot-star.star-4 {
-  bottom: 10%;
-  right: 10%;
-  transform: scale(0.75);
-  animation: starFloat2 3.8s ease-in-out infinite;
-}
+    .curtain-side.right {
+      right: 0;
+      border-left: none;
+    }
 
-/* 轻微浮动动画 */
-@keyframes starFloat1 {
-  0% { transform: translateY(0) scale(0.9); opacity: 0.95; }
-  50% { transform: translateY(-6px) scale(1); opacity: 1; }
-  100% { transform: translateY(0) scale(0.9); opacity: 0.95; }
-}
+    /* 中央舞台区域（Pegasus 背景） */
+    .stage-middle {
+      position: relative;
+      margin: 80px 80px 70px; /* 给幕布和地板留空间 */
+      border-radius: 24px;
+      background-color: var(--sky-blue-soft);
+      border: 3px solid var(--white);
+    }
 
-@keyframes starFloat2 {
-  0% { transform: translateY(0) scale(1.05); opacity: 0.9; }
-  50% { transform: translateY(-8px) scale(1.12); opacity: 1; }
-  100% { transform: translateY(0) scale(1.05); opacity: 0.9; }
-}
+    /* 舞台木地板 */
+    .stage-floor {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -40px;
+      height: 40px;
+      background-color: var(--stage-wood);
+      border-top: 4px solid var(--stage-wood-dark);
+      box-shadow: 0 -6px 0 rgba(0, 0, 0, 0.12) inset;
+    }
 
-@keyframes starFloat3 {
-  0% { transform: translateY(0) scale(0.8); opacity: 0.9; }
-  50% { transform: translateY(-5px) scale(0.9); opacity: 1; }
-  100% { transform: translateY(0) scale(0.8); opacity: 0.9; }
-}
+    /* 木板竖线 */
+    .stage-floor::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-left: 3px solid var(--stage-wood-dark);
+      box-shadow:
+        80px 0 0 0 var(--stage-wood-dark),
+        160px 0 0 0 var(--stage-wood-dark),
+        240px 0 0 0 var(--stage-wood-dark),
+        320px 0 0 0 var(--stage-wood-dark),
+        400px 0 0 0 var(--stage-wood-dark),
+        480px 0 0 0 var(--stage-wood-dark),
+        560px 0 0 0 var(--stage-wood-dark);
+      opacity: 0.65;
+    }
+
+    /* Pegasus 自身区域 */
+    .robot-stage {
+      position: relative;
+      padding: 24px 12px 16px;
+      text-align: center;
+    }
 
     .robot-stage img {
-      max-height: 360px; /* Pegasus 更大 */
+      max-height: 360px;
       margin: 0 auto;
-      object-fit: contain;
     }
 
-    .robot-badge {
-      position: absolute;
-      left: 14px;
-      bottom: 12px;
-      padding: 5px 12px;
-      border-radius: var(--radius-pill);
-      background: rgba(255, 255, 255, 0.97);
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--deep-blue);
-    }
-
+    /* 头像上方气泡 */
     .robot-bubble {
       position: absolute;
-      right: 14px;
-      top: 14px;
+      left: 60%;
+      top: 22px;
+      transform: translateX(-50%);
       padding: 8px 14px;
-      border-radius: 20px;
-      background: #ffffff;
+      border-radius: 999px;
+      background-color: var(--white);
       border: 2px solid #b9e2ff;
       font-size: 12px;
       color: var(--deep-blue);
-      box-shadow: 0 12px 26px rgba(33, 98, 217, 0.3);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+      white-space: nowrap;
     }
 
-    .stage-info {
-      border-radius: 22px;
-      background: rgba(255, 253, 243, 0.96);
-      border: 2px solid #ffe7a5;
+    /* 底部标签 */
+    .robot-badge {
+      position: absolute;
+      left: 50%;
+      bottom: 4px;
+      transform: translateX(-50%);
+      padding: 5px 12px;
+      border-radius: 999px;
+      background-color: var(--white);
+      border: 2px solid var(--sun-yellow-soft);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--deep-blue);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+      white-space: nowrap;
+    }
+
+    /* 星星特效 */
+    .robot-stars {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .robot-star {
+      position: absolute;
+      width: 28px;
+      height: 28px;
+      background-color: var(--sun-yellow);
+      clip-path: polygon(
+        50% 0%,
+        61% 35%,
+        98% 35%,
+        68% 57%,
+        79% 91%,
+        50% 70%,
+        21% 91%,
+        32% 57%,
+        2% 35%,
+        39% 35%
+      );
+      box-shadow: 0 0 6px rgba(255, 215, 77, 0.9);
+      opacity: 0.96;
+    }
+
+    .robot-star.star-1 {
+      top: 13%;
+      left: 10%;
+      animation: starFloat1 4s ease-in-out infinite;
+    }
+
+    .robot-star.star-2 {
+      top: 7%;
+      right: 12%;
+      animation: starFloat2 4.2s ease-in-out infinite;
+    }
+
+    .robot-star.star-3 {
+      bottom: 16%;
+      left: 14%;
+      animation: starFloat3 3.6s ease-in-out infinite;
+    }
+
+    .robot-star.star-4 {
+      bottom: 10%;
+      right: 14%;
+      animation: starFloat2 3.8s ease-in-out infinite;
+    }
+
+    @keyframes starFloat1 {
+      0% { transform: translateY(0); opacity: 0.96; }
+      50% { transform: translateY(-6px); opacity: 1; }
+      100% { transform: translateY(0); opacity: 0.96; }
+    }
+
+    @keyframes starFloat2 {
+      0% { transform: translateY(0); opacity: 0.9; }
+      50% { transform: translateY(-8px); opacity: 1; }
+      100% { transform: translateY(0); opacity: 0.9; }
+    }
+
+    @keyframes starFloat3 {
+      0% { transform: translateY(0); opacity: 0.9; }
+      50% { transform: translateY(-5px); opacity: 1; }
+      100% { transform: translateY(0); opacity: 0.9; }
+    }
+
+    /* 舞台右侧信息卡片 */
+    .stage-info-box {
+      position: absolute;
+      right: 22px;
+      top: 110px;
+      width: 240px;
+      border-radius: 24px;
+      background-color: var(--white);
+      border: 2px solid #ffdf9d;
       padding: 10px 12px 12px;
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.18);
       font-size: 12px;
       color: var(--text-soft);
     }
@@ -486,10 +525,10 @@
     }
 
     .stage-info-title span.icon {
-      width: 20px;
-      height: 20px;
+      width: 18px;
+      height: 18px;
       border-radius: 999px;
-      background: #ffecb6;
+      background-color: #ffe9a0;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -497,7 +536,7 @@
     }
 
     .info-line {
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .info-label {
@@ -509,20 +548,19 @@
       margin-left: 4px;
     }
 
-    .stage-footer {
-      margin-top: 8px;
+    .stage-info-footer {
+      margin-top: 6px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       font-size: 11px;
-      color: var(--text-soft);
     }
 
     .status-dot {
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      background: #35d68c;
+      background-color: #35d68c;
       box-shadow: 0 0 0 4px rgba(53, 214, 140, 0.3);
       margin-right: 6px;
     }
@@ -533,7 +571,7 @@
     }
 
     .hero-buttons {
-      margin-top: 8px;
+      margin-top: 10px;
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
@@ -554,36 +592,35 @@
       gap: 6px;
       text-decoration: none;
       transition: transform 0.15s ease-out, box-shadow 0.15s ease-out,
-        background 0.15s ease-out;
+        background-color 0.15s ease-out;
     }
 
     .btn-main {
-      background: linear-gradient(135deg, #ffd74d, #ffb24d);
+      background-color: var(--sun-yellow);
       color: #7b4700;
       box-shadow: var(--shadow-soft);
     }
 
     .btn-main:hover {
       transform: translateY(-1px);
-      box-shadow: 0 26px 70px rgba(255, 192, 90, 0.85);
+      box-shadow: var(--shadow-strong);
     }
 
     .btn-ghost {
-      background: #ffffff;
+      background-color: var(--white);
       color: var(--deep-blue);
       border: 2px solid #b9e2ff;
-      box-shadow: 0 14px 34px rgba(33, 98, 217, 0.28);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.16);
     }
 
     .btn-ghost:hover {
       transform: translateY(-1px);
-      background: #e7f4ff;
-      box-shadow: var(--shadow-blue);
+      background-color: #e7f4ff;
     }
 
-    /* 下方三个简短卡片 */
-    section {
-      padding: 16px 0 28px;
+    /* INFO SECTION */
+    section.info {
+      padding: 18px 0 26px;
     }
 
     .section-title-group {
@@ -604,7 +641,7 @@
       font-size: 22px;
       margin: 0;
       color: var(--deep-blue);
-      text-shadow: 0 3px 0 rgba(0, 0, 0, 0.18);
+      text-shadow: 0 3px 0 rgba(0, 0, 0, 0.16);
     }
 
     .section-subline {
@@ -622,10 +659,10 @@
 
     .mini-card {
       border-radius: var(--radius-med);
-      background: #ffffff;
+      background-color: var(--white);
       border: 2px solid #ffe3a4;
       padding: 12px 12px 14px;
-      box-shadow: 0 16px 40px rgba(255, 204, 105, 0.55);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
       font-size: 12px;
       color: var(--text-soft);
     }
@@ -640,17 +677,17 @@
     }
 
     .mini-tag.yellow {
-      background: #fff6cf;
+      background-color: #fff4c7;
       color: #a67b00;
     }
 
     .mini-tag.pink {
-      background: #ffe5f5;
+      background-color: #ffe3f3;
       color: #b14f8d;
     }
 
     .mini-tag.blue {
-      background: #e1f0ff;
+      background-color: #e1f0ff;
       color: #2750aa;
     }
 
@@ -665,18 +702,18 @@
       line-height: 1.7;
     }
 
-    /* ID 区块 */
+    /* ID CARD */
     .id-panel {
       max-width: 880px;
       margin: 0 auto;
       border-radius: var(--radius-big);
-      background: #ffffff;
+      background-color: var(--white);
       border: 2px solid #ffe3a6;
       padding: 16px 16px 18px;
       display: grid;
       grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.05fr);
       gap: 16px;
-      box-shadow: 0 18px 50px rgba(255, 199, 96, 0.75);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.16);
     }
 
     .id-text {
@@ -697,7 +734,7 @@
 
     .id-img-box {
       border-radius: 20px;
-      background: #f4f8ff;
+      background-color: var(--sky-blue-soft);
       border: 2px solid #dbe7ff;
       padding: 10px;
     }
@@ -728,18 +765,28 @@
 
     /* 响应式 */
     @media (max-width: 960px) {
-      .stage-inner {
-        grid-template-columns: minmax(0, 1fr);
+      .stage-info-box {
+        position: static;
+        width: auto;
+        margin: 0 16px 12px;
       }
-      .cloud.cloud-left {
-        left: -20px;
+
+      .stage-middle {
+        margin: 80px 40px 70px;
       }
-      .cloud.cloud-right {
-        right: -30px;
+
+      .stage-floor::before {
+        box-shadow:
+          80px 0 0 0 var(--stage-wood-dark),
+          160px 0 0 0 var(--stage-wood-dark),
+          240px 0 0 0 var(--stage-wood-dark),
+          320px 0 0 0 var(--stage-wood-dark);
       }
+
       .card-row {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
+
       .id-panel {
         grid-template-columns: minmax(0, 1fr);
       }
@@ -749,19 +796,29 @@
       .nav-links {
         display: none;
       }
+
       .container {
         padding: 0 16px;
       }
-      .card-row {
-        grid-template-columns: minmax(0, 1fr);
+
+      .stage-middle {
+        margin: 80px 24px 70px;
       }
+
       .cloud.cloud-left,
       .cloud.cloud-right {
         display: none;
       }
-      .cloud.cloud-bottom {
-        left: 10%;
-        width: 160px;
+
+      .card-row {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .stage-floor::before {
+        box-shadow:
+          80px 0 0 0 var(--stage-wood-dark),
+          160px 0 0 0 var(--stage-wood-dark),
+          240px 0 0 0 var(--stage-wood-dark);
       }
     }
   </style>
@@ -808,7 +865,7 @@
     </div>
   </header>
 
-  <!-- HERO – 中央 Pegasus 舞台 -->
+  <!-- HERO：中央舞台 -->
   <section class="hero" id="hero">
     <div class="hero-full">
       <div class="hero-center">
@@ -819,10 +876,10 @@
           PEGASUS HOME
         </div>
         <h1 class="hero-title i18n"
-            data-en="Today, <span>Pegasus</span> is at home with you."
-            data-zh="今天，<span>Pegasus</span> 在家里等着你。"
-            data-ja="きょう、<span>Pegasus</span> はおうちであなたを待っています。">
-          Today, <span>Pegasus</span> is at home with you.
+            data-en="Today, <span>Pegasus</span> is on stage just for you."
+            data-zh="今天，<span>Pegasus</span> 在舞台上等着你。"
+            data-ja="きょう、<span>Pegasus</span> はあなたのためだけにステージに立っています。">
+          Today, <span>Pegasus</span> is on stage just for you.
         </h1>
         <p class="hero-subline i18n"
            data-en="Bright yellow, sky blue and a soft voice – everything here is made to feel warm and safe."
@@ -835,42 +892,62 @@
         <div class="stage-wrapper">
           <div class="cloud cloud-left"></div>
           <div class="cloud cloud-right"></div>
-          <div class="cloud cloud-bottom"></div>
 
           <div class="stage-card">
             <div class="stage-inner">
-  <div class="robot-stage">
-  <!-- 黄色五角星特效 -->
-  <div class="robot-stars">
-    <div class="robot-star star-1"></div>
-    <div class="robot-star star-2"></div>
-    <div class="robot-star star-3"></div>
-    <div class="robot-star star-4"></div>
-  </div>
+              <!-- 顶部幕布 -->
+              <div class="curtain-top"></div>
+              <div class="curtain-top-strip">
+                <div class="curtain-scallop"></div>
+                <div class="curtain-scallop"></div>
+                <div class="curtain-scallop"></div>
+              </div>
 
-  <img src="robot-front.png" alt="Pegasus Front" />
-  <div class="robot-badge i18n"
-       data-en="FRONT · READY TO SAY HI"
-       data-zh="正面 · 准备好打招呼"
-       data-ja="フロント ・ あいさつ準備OK">
-    正面 · 准备好打招呼
-  </div>
-  <div class="robot-bubble i18n"
-       data-en="Welcome home!"
-       data-zh="欢迎回家！"
-       data-ja="おかえり！">
-    欢迎回家！
-  </div>
-</div>
+              <!-- 左右幕布 -->
+              <div class="curtain-side left"></div>
+              <div class="curtain-side right"></div>
 
-              <div class="stage-info">
+              <!-- 舞台中间区域 -->
+              <div class="stage-middle">
+                <div class="robot-stage">
+                  <!-- 黄色五角星 -->
+                  <div class="robot-stars">
+                    <div class="robot-star star-1"></div>
+                    <div class="robot-star star-2"></div>
+                    <div class="robot-star star-3"></div>
+                    <div class="robot-star star-4"></div>
+                  </div>
+
+                  <img src="robot-front.png" alt="Pegasus Front" />
+
+                  <div class="robot-bubble i18n"
+                       data-en="Welcome home!"
+                       data-zh="欢迎回家！"
+                       data-ja="おかえり！">
+                    欢迎回家！
+                  </div>
+
+                  <div class="robot-badge i18n"
+                       data-en="FRONT · READY TO SAY HI"
+                       data-zh="正面 · 准备好打招呼"
+                       data-ja="フロント ・ あいさつ準備OK">
+                    正面 · 准备好打招呼
+                  </div>
+                </div>
+              </div>
+
+              <!-- 木地板 -->
+              <div class="stage-floor"></div>
+
+              <!-- 右侧信息卡片 -->
+              <aside class="stage-info-box">
                 <div class="stage-info-title">
                   <span class="icon">☺</span>
                   <span class="i18n"
                         data-en="Pegasus today"
                         data-zh="今天的 Pegasus"
                         data-ja="きょうの Pegasus">
-                    Pegasus today
+                    今天的 Pegasus
                   </span>
                 </div>
                 <div class="info-line">
@@ -878,13 +955,13 @@
                         data-en="Mood:"
                         data-zh="心情："
                         data-ja="きぶん：">
-                    Mood:
+                    心情：
                   </span>
                   <span class="info-value i18n"
                         data-en="Sunny and chatty."
                         data-zh="晴朗又想说话。"
                         data-ja="晴れで、おしゃべりしたい気分。">
-                    Sunny and chatty.
+                    晴朗又想说话。
                   </span>
                 </div>
                 <div class="info-line">
@@ -892,13 +969,13 @@
                         data-en="Favorite corner:"
                         data-zh="最爱角落："
                         data-ja="お気に入りの場所：">
-                    Favorite corner:
+                    最爱角落：
                   </span>
                   <span class="info-value i18n"
                         data-en="Sofa edge, where he can see everyone."
                         data-zh="沙发一角，刚好可以看见所有人。"
                         data-ja="ソファのはじっこ。みんなが見える位置。">
-                    Sofa edge, where he can see everyone.
+                    沙发一角，刚好可以看见所有人。
                   </span>
                 </div>
                 <div class="info-line">
@@ -906,33 +983,33 @@
                         data-en="Today’s line:"
                         data-zh="今天最常说："
                         data-ja="きょうの口ぐせ：">
-                    Today’s line:
+                    今天最常说：
                   </span>
                   <span class="info-value i18n"
                         data-en="“Did you drink water?”"
                         data-zh="「有好好喝水吗？」"
                         data-ja="「おみず、ちゃんと飲んだ？」">
-                    “Did you drink water?”
+                    「有好好喝水吗？」
                   </span>
                 </div>
-                <div class="stage-footer">
+                <div class="stage-info-footer">
                   <div class="status-line">
                     <span class="status-dot"></span>
                     <span class="i18n"
                           data-en="Online · 100% battery"
                           data-zh="在线 · 电量 100%"
                           data-ja="オンライン ・ バッテリー100%">
-                      Online · 100% battery
+                      在线 · 电量 100%
                     </span>
                   </div>
                   <div class="i18n"
                        data-en="Model: PEGASUS · 0517-S17"
                        data-zh="型号：PEGASUS · 0517-S17"
                        data-ja="モデル：PEGASUS ・ 0517-S17">
-                    Model: PEGASUS · 0517-S17
+                    型号：PEGASUS · 0517-S17
                   </div>
                 </div>
-              </div>
+              </aside>
             </div>
           </div>
         </div>
@@ -942,21 +1019,21 @@
              data-en="See what he can do"
              data-zh="看看他会做什么"
              data-ja="何をしてくれるか見る">
-            See what he can do
+            看看他会做什么
           </a>
           <a href="#idcard" class="btn-ghost i18n"
              data-en="Look at his ID card"
              data-zh="看看他的身份卡"
              data-ja="IDカードを見る">
-            Look at his ID card
+            看看他的身份卡
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 三个简短拟人化说明 -->
-  <section id="peek">
+  <!-- WHAT HE DOES -->
+  <section class="info" id="peek">
     <div class="container">
       <div class="section-title-group">
         <div class="section-kicker i18n"
@@ -969,13 +1046,13 @@
             data-en="Just a few tiny habits that make him feel like family."
             data-zh="只是几个小习惯，就会让人觉得他已经是家人。"
             data-ja="ほんの少しの習慣が、「家族みたいだな」と感じさせてくれます。">
-          Just a few tiny habits that make him feel like family.
+          只是几个小习惯，就会让人觉得他已经是家人。
         </h2>
         <div class="section-subline i18n"
              data-en="No long spec list – just small storybook-like cards."
              data-zh="不列一大串参数，只用像绘本一样的小卡片来说明。"
              data-ja="スペック表ではなく、絵本みたいな小さなカードで紹介します。">
-          No long spec list – just small storybook-like cards.
+          不列一大串参数，只用像绘本一样的小卡片来说明。
         </div>
       </div>
 
@@ -984,18 +1061,18 @@
           <div class="mini-tag yellow i18n"
                data-en="Kids room"
                data-zh="儿童房"
-               data-ja="子ども部屋">Kids room</div>
+               data-ja="子ども部屋">儿童房</div>
           <div class="mini-title i18n"
                data-en="After-school coach."
                data-zh="放学后的「教练」。"
                data-ja="放課後のちいさなコーチ。">
-            After-school coach.
+            放学后的「教练」。
           </div>
           <div class="mini-text i18n"
                data-en="Sets tiny timers for homework and stretch breaks, then says a soft “You did great!” before bed."
                data-zh="帮忙定一点点写作业时间、提醒伸伸懒腰，睡前轻声说一句「今天也很棒」。"
                data-ja="少しだけ勉強タイマーをかけたり、ストレッチをすすめたり、寝る前に「きょうもよくがんばったね」とささやきます。">
-            Sets tiny timers for homework and stretch breaks, then says a soft “You did great!” before bed.
+            帮忙定一点点写作业时间、提醒伸伸懒腰，睡前轻声说一句「今天也很棒」。
           </div>
         </div>
 
@@ -1003,18 +1080,18 @@
           <div class="mini-tag pink i18n"
                data-en="Living room"
                data-zh="客厅"
-               data-ja="リビング">Living room</div>
+               data-ja="リビング">客厅</div>
           <div class="mini-title i18n"
                data-en="Rhythm keeper."
                data-zh="帮全家守住节奏。"
                data-ja="家族のリズム係。">
-            Rhythm keeper.
+            帮全家守住节奏。
           </div>
           <div class="mini-text i18n"
                data-en="Reminds the whole family about water, medicine, plants and birthdays – always in a kind voice."
                data-zh="用温柔的声音提醒喝水、吃药、浇花、生日……让家里的节奏不会乱。"
                data-ja="お水やお薬、観葉植物、誕生日まで、やさしい声でそっと知らせてくれます。">
-            Reminds the whole family about water, medicine, plants and birthdays – always in a kind voice.
+            用温柔的声音提醒喝水、吃药、浇花、生日……让家里的节奏不会乱。
           </div>
         </div>
 
@@ -1022,18 +1099,18 @@
           <div class="mini-tag blue i18n"
                data-en="Bedroom"
                data-zh="卧室"
-               data-ja="寝室">Bedroom</div>
+               data-ja="寝室">卧室</div>
           <div class="mini-title i18n"
                data-en="Night-light friend."
                data-zh="小夜灯一样的朋友。"
                data-ja="ナイトライトみたいな友だち。">
-            Night-light friend.
+            小夜灯一样的朋友。
           </div>
           <div class="mini-text i18n"
                data-en="When the lights go off, he turns into a tiny night-light and whispers a goodnight."
                data-zh="灯关掉的时候，他会变成小夜灯，小小声说一句晚安。"
                data-ja="部屋の灯りが消えると、小さなナイトライトになって「おやすみ」とささやきます。">
-            When the lights go off, he turns into a tiny night-light and whispers a goodnight.
+            灯关掉的时候，他会变成小夜灯，小小声说一句晚安。
           </div>
         </div>
       </div>
@@ -1041,7 +1118,7 @@
   </section>
 
   <!-- ID CARD -->
-  <section id="idcard">
+  <section class="info" id="idcard">
     <div class="container">
       <div class="section-title-group">
         <div class="section-kicker i18n"
@@ -1054,7 +1131,7 @@
             data-en="A tiny card that says “he lives here now”."
             data-zh="一张小卡片，写着「他现在住在这里」。"
             data-ja="「ここがぼくのおうちだよ」と教えてくれる小さなカード。">
-          A tiny card that says “he lives here now”.
+          一张小卡片，写着「他现在住在这里」。
         </h2>
       </div>
 
@@ -1064,32 +1141,30 @@
             <strong class="i18n"
                     data-en="MODEL:"
                     data-zh="型号："
-                    data-ja="モデル：">MODEL:</strong>
+                    data-ja="モデル：">型号：</strong>
             PEGASUS<br />
             <strong class="i18n"
                     data-en="SERIAL NO.:"
                     data-zh="序列号："
-                    data-ja="シリアル：">SERIAL NO.:</strong>
+                    data-ja="シリアル：">序列号：</strong>
             0517-S17<br />
             <strong class="i18n"
                     data-en="MANUFACTURE DATE:"
                     data-zh="出厂日期："
-                    data-ja="製造日：">MANUFACTURE DATE:</strong>
+                    data-ja="製造日：">出厂日期：</strong>
             05-17<br /><br />
             <span class="i18n"
                   data-en="Stick it on the fridge, desk or wall – a little sunny sign that Pegasus is part of the family."
                   data-zh="贴在冰箱、书桌或墙上——一块小小的、亮亮的牌子，表示 Pegasus 已经是这个家的成员。"
                   data-ja="冷蔵庫やデスク、壁など好きな場所に。Pegasus がこの家の一員になったことを教えてくれる、小さな日だまりのような札です。">
-              Stick it on the fridge, desk or wall – a little sunny sign that Pegasus is
-              part of the family.
+              贴在冰箱、书桌或墙上——一块小小的、亮亮的牌子，表示 Pegasus 已经是这个家的成员。
             </span>
           </div>
           <div class="id-meta i18n"
                data-en="Some families frame it, some cover it with stickers – in any case, it becomes part of his story."
                data-zh="有的家庭会给它装个相框，有的会让孩子在上面贴满贴纸——不管怎样，它都会成为 Pegasus 故事的一部分。"
                data-ja="額に入れる家もあれば、シールをいっぱい貼る家もあります。どんな形でも、それは Pegasus の物語の1ページになります。">
-            Some families frame it, some cover it with stickers – in any case, it becomes
-            part of his story.
+            有的家庭会给它装个相框，有的会让孩子在上面贴满贴纸——不管怎样，它都会成为 Pegasus 故事的一部分。
           </div>
         </div>
 
@@ -1107,13 +1182,13 @@
            data-en="© YEAR Pegasus Home. May every day feel a little brighter."
            data-zh="© YEAR Pegasus Home. 希望每天都被他照亮一点点。"
            data-ja="© YEAR Pegasus Home. きょうがすこしだけ明るくなりますように。">
-        © YEAR Pegasus Home. May every day feel a little brighter.
+        © YEAR Pegasus Home. 希望每天都被他照亮一点点。
       </div>
       <div class="footer-links">
         <a href="#hero" class="i18n"
            data-en="Back to top"
            data-zh="回到顶部"
-           data-ja="ページトップへ">Back to top</a>
+           data-ja="ページトップへ">回到顶部</a>
       </div>
     </div>
   </footer>
@@ -1125,9 +1200,11 @@
     function setLang(lang) {
       document.documentElement.lang =
         lang === "zh" ? "zh-CN" : lang === "ja" ? "ja" : "en";
+
       langButtons.forEach((btn) => {
         btn.classList.toggle("active", btn.getAttribute("data-lang-btn") === lang);
       });
+
       i18nNodes.forEach((node) => {
         const text = node.getAttribute("data-" + lang);
         if (!text) return;
@@ -1141,7 +1218,7 @@
       });
     });
 
-    setLang("en");
+    setLang("zh"); // 默认中文，也可以改成 "en"
   </script>
 </body>
 </html>
