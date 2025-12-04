@@ -1,141 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pegasus – Companion Android</title>
-
-<style>
-    body {
-        margin: 0;
-        font-family: "Helvetica Neue", Arial, sans-serif;
-        background: #f2f7fc;
-        color: #003366;
-    }
-
-    /* HERO SECTION */
-    .hero {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 60px 20px;
-        background: linear-gradient(#d9edff, #f2f7fc);
-    }
-    .hero img {
-        max-width: 260px;
-    }
-    .hero-text {
-        margin-left: 40px;
-        max-width: 420px;
-    }
-    .hero-text h1 {
-        font-size: 44px;
-        margin: 0;
-        color: #003366;
-    }
-    .hero-text p {
-        font-size: 20px;
-        margin-top: 14px;
-        color: #446688;
-    }
-
-    /* SECTION TITLE */
-    h2 {
-        text-align: center;
-        margin-top: 80px;
-        margin-bottom: 20px;
-        font-size: 32px;
-        color: #004b91;
-    }
-
-    /* FEATURES */
-    .features {
-        display: flex;
-        gap: 24px;
-        justify-content: center;
-        padding: 20px;
-    }
-    .feature-box {
-        width: 260px;
-        background: white;
-        padding: 20px;
-        border-radius: 14px;
-        box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-        text-align: center;
-    }
-
-    /* GALLERY */
-    .gallery {
-        display: flex;
-        justify-content: center;
-        gap: 40px;
-        margin: 40px 0;
-    }
-    .gallery img {
-        max-width: 230px;
-        border-radius: 12px;
-        background: white;
-        padding: 10px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    /* BOX CONTENT */
-    .box-list {
-        max-width: 480px;
-        margin: auto;
-        font-size: 22px;
-        line-height: 1.8;
-        color: #003366;
-    }
-
-    /* FOOTER */
-    footer {
-        margin-top: 80px;
-        padding: 20px;
-        text-align: center;
-        background: #d9eaff;
-        color: #004477;
-        font-size: 14px;
-    }
-</style>
+  <meta charset="UTF-8" />
+  <title>Pegasus – Companion Android</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
 
-<!-- HERO Section -->
-<div class="hero">
-    <img src="robot-front.png" alt="Pegasus Front">
-    <div class="hero-text">
-        <h1>Pegasus</h1>
-        <p>A Gentle Presence in Your Home.</p>
-        <p>Companion Android Series</p>
+<header class="site-header">
+  <div class="nav-inner">
+    <div class="brand">
+      <img src="pegasus-logo.png" alt="Pegasus Logo" class="brand-logo" />
+      <div>
+        <div class="brand-title">PEGASUS</div>
+        <div class="brand-sub">COMPANION ANDROID</div>
+      </div>
     </div>
-</div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="specs.html">Specs</a>
+      <a href="identity.html">ID System</a>
+      <a href="support.html">Support</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
 
-<h2>Features</h2>
-<div class="features">
-    <div class="feature-box">Soft Behavior Interaction System</div>
-    <div class="feature-box">Lightweight & Safe Materials</div>
-    <div class="feature-box">Certified Indoor Companion Unit</div>
-</div>
+<main class="main-wrapper">
 
-<h2>Product Gallery</h2>
-<div class="gallery">
-    <img src="robot-front.png" alt="Front View">
-    <img src="robot-back.png" alt="Back View">
-    <img src="pegasus-logo.png" alt="Pegasus Logo">
-</div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>PEGASUS</h1>
+      <div class="tagline">A Gentle Presence in Your Home.</div>
+      <p class="hero-copy">
+        Designed as a soft, stable companion unit, Pegasus brings quiet presence
+        and emotional warmth to bedrooms, studies, and shared living spaces.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="specs.html">View Specifications</a>
+        <a class="btn btn-outline" href="identity.html">View ID Card</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="robot-front.png" alt="Pegasus Front View" />
+    </div>
+  </section>
 
-<h2>In the Box</h2>
-<div class="box-list">
-    • Pegasus Companion Android Unit<br>
-    • Identification Card<br>
-    • Soft Care Cloth<br>
-    • Quick Start Leaflet
-</div>
+  <!-- Features -->
+  <section class="section">
+    <h2 class="section-title">Key Features</h2>
+    <div class="section-sub">
+      Calibrated for low-noise behavior, predictable routines, and gentle interaction.
+    </div>
+    <div class="features">
+      <div class="feature-card">
+        <div class="feature-title">Soft Interaction Profile</div>
+        <div class="feature-desc">
+          Behavioral layers tuned for low-pressure, non-intrusive companionship.
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-title">Home-Ready Design</div>
+        <div class="feature-desc">
+          Compact size, soft appearance, and safe materials for bedroom and study use.
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-title">Stable Presence</div>
+        <div class="feature-desc">
+          Designed to be quietly present rather than demanding attention.
+        </div>
+      </div>
+    </div>
+  </section>
 
-<footer>
-    Pegasus Home Technologies © Fictional Product Website  
+  <!-- Gallery -->
+  <section class="section">
+    <h2 class="section-title">Product Gallery</h2>
+    <div class="section-sub">Front, back, and identification elements of the unit.</div>
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="robot-front.png" alt="Pegasus Front" />
+        <div class="gallery-caption">Front view</div>
+      </div>
+      <div class="gallery-item">
+        <img src="robot-back.png" alt="Pegasus Back" />
+        <div class="gallery-caption">Back view</div>
+      </div>
+      <div class="gallery-item">
+        <img src="id-card.png" alt="Pegasus ID Card" />
+        <div class="gallery-caption">Consumer ID Card</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- In the Box -->
+  <section class="section">
+    <h2 class="section-title">In the Box</h2>
+    <div class="card">
+      <div class="info-list">
+        • Pegasus Companion Android Unit (10 cm plush form)<br />
+        • Pegasus Product Identification Card<br />
+        • Soft Care Cloth (Pegasus colorway)<br />
+        • Quick Start Leaflet
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  Pegasus Home Technologies · Fictional Product Website
 </footer>
 
 </body>
