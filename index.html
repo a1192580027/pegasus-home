@@ -67,7 +67,8 @@
       padding: 0 20px;
     }
 
-    h1, h2 {
+    h1,
+    h2 {
       font-family: "Luckiest Guy", "ZCOOL KuaiLe", "M PLUS Rounded 1c",
         system-ui, sans-serif;
       letter-spacing: 0.05em;
@@ -148,6 +149,7 @@
       gap: 10px;
       font-size: 12px;
       color: var(--text-soft);
+      flex-wrap: wrap;
     }
 
     .nav-pill {
@@ -159,6 +161,7 @@
       cursor: pointer;
       position: relative;
       overflow: hidden;
+      white-space: nowrap;
     }
 
     .nav-pill::before {
@@ -270,7 +273,6 @@
       margin-top: 4px;
     }
 
-    /* 云朵装饰 */
     .cloud {
       position: absolute;
       border-radius: 999px;
@@ -326,7 +328,6 @@
       align-items: center;
     }
 
-    /* 舞台主体 */
     .robot-stage {
       position: relative;
       border-radius: 28px;
@@ -359,14 +360,13 @@
     }
 
     .robot-stage img {
-      max-height: 360px; /* Pegasus 更大 */
+      max-height: 360px;
       margin: 0 auto;
       object-fit: contain;
       position: relative;
       z-index: 1;
     }
 
-    /* 星星容器与动画 */
     .robot-stars {
       position: absolute;
       inset: 0;
@@ -583,7 +583,7 @@
       box-shadow: var(--shadow-blue);
     }
 
-    /* 下方三个简短卡片 */
+    /* 基础 section */
     section {
       padding: 16px 0 28px;
     }
@@ -615,6 +615,7 @@
       margin-top: 4px;
     }
 
+    /* 三张小卡片 */
     .card-row {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -704,6 +705,314 @@
       padding: 10px;
     }
 
+    /* PACKAGING 外包装展示 */
+    .packaging-panel {
+      max-width: 980px;
+      margin: 0 auto;
+      border-radius: var(--radius-big);
+      background: #ffffff;
+      border: 2px solid #cbe5ff;
+      padding: 16px 16px 18px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 18px;
+      box-shadow: 0 20px 55px rgba(82, 166, 255, 0.55);
+    }
+
+    .box-viewer {
+      border-radius: 24px;
+      background: linear-gradient(145deg, #cfe9ff, #f4fbff);
+      border: 2px solid #b6dbff;
+      padding: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .box-image {
+      border-radius: 18px;
+      box-shadow: 0 16px 40px rgba(41, 116, 209, 0.55);
+      opacity: 0;
+      transform: translateY(10px) scale(0.98);
+      transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+      position: absolute;
+      inset: 10px;
+      object-fit: contain;
+      background: #cfe9ff;
+    }
+
+    .box-image.active {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      position: relative;
+    }
+
+    .box-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .box-tab {
+      border-radius: var(--radius-pill);
+      border: none;
+      background: #edf6ff;
+      padding: 6px 10px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #305ca8;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .box-tab span.dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #ffd74d;
+    }
+
+    .box-tab.active {
+      background: #ffd74d;
+      color: #7b4700;
+      box-shadow: 0 10px 24px rgba(255, 199, 96, 0.7);
+    }
+
+    .packaging-copy {
+      font-size: 13px;
+      color: var(--text-soft);
+      line-height: 1.8;
+    }
+
+    .packaging-copy strong {
+      color: var(--text-main);
+    }
+
+    .pack-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 8px 0 0;
+      font-size: 12px;
+    }
+
+    .pack-list li::before {
+      content: "◆";
+      color: #ffd74d;
+      margin-right: 4px;
+    }
+
+    /* Unboxing 开箱动画时间轴 */
+    .unboxing-wrapper {
+      max-width: 860px;
+      margin: 0 auto;
+      border-radius: var(--radius-big);
+      background: #ffffff;
+      border: 2px solid #ffe3a4;
+      padding: 14px 18px 18px;
+      box-shadow: 0 18px 50px rgba(255, 199, 96, 0.7);
+    }
+
+    .unboxing-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .unboxing-track {
+      position: relative;
+      margin-top: 8px;
+      padding-top: 16px;
+    }
+
+    .unboxing-line {
+      position: absolute;
+      left: 6%;
+      right: 6%;
+      top: 24px;
+      height: 4px;
+      border-radius: 999px;
+      background: #ffe7af;
+      overflow: hidden;
+    }
+
+    .unboxing-line-fill {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 0%;
+      background: linear-gradient(90deg, #ffd74d, #ffb24d);
+      transition: width 0.2s ease-out;
+    }
+
+    .unboxing-track.playing .unboxing-line-fill {
+      width: 100%;
+      transition: width 3.2s ease-out;
+    }
+
+    .unboxing-steps {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      padding: 0 6%;
+    }
+
+    .unbox-step {
+      text-align: center;
+      font-size: 11px;
+      color: var(--text-soft);
+      max-width: 120px;
+      opacity: 0.4;
+      transform: translateY(6px);
+      transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+    }
+
+    .unbox-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 999px;
+      border: 3px solid #ffd74d;
+      background: #ffffff;
+      margin: 0 auto 4px;
+      box-shadow: 0 4px 10px rgba(255, 199, 96, 0.7);
+    }
+
+    .unbox-step.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .unbox-step-label {
+      font-weight: 700;
+      color: var(--deep-blue);
+      margin-bottom: 2px;
+    }
+
+    .btn-unbox {
+      border-radius: var(--radius-pill);
+      border: none;
+      padding: 7px 14px;
+      font-size: 12px;
+      font-weight: 700;
+      background: #ffd74d;
+      color: #7b4700;
+      cursor: pointer;
+      box-shadow: 0 10px 26px rgba(255, 199, 96, 0.8);
+    }
+
+    /* 周边区 – 基座 & 特典 */
+    .extras-grid {
+      max-width: 960px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .extra-card {
+      border-radius: var(--radius-big);
+      background: #ffffff;
+      border: 2px solid #cbe5ff;
+      padding: 14px 14px 16px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: 10px;
+      box-shadow: 0 18px 50px rgba(92, 176, 255, 0.6);
+    }
+
+    .extra-visual {
+      border-radius: 999px;
+      background: radial-gradient(circle at 50% 35%, #fffefb 0, #cfe9ff 60%, #8bc3ff 100%);
+      border: 2px solid #b9e2ff;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .extra-visual img {
+      border-radius: 100%;
+      max-height: 180px;
+      object-fit: contain;
+    }
+
+    .extra-text {
+      font-size: 13px;
+      color: var(--text-soft);
+      line-height: 1.8;
+    }
+
+    .extra-tag {
+      font-size: 11px;
+      font-weight: 700;
+      color: #2750aa;
+      margin-bottom: 4px;
+    }
+
+    .extra-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--deep-blue);
+      margin-bottom: 4px;
+    }
+
+    /* 用户评价区 */
+    .reviews-grid {
+      max-width: 960px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .review-card {
+      border-radius: 22px;
+      background: #ffffff;
+      border: 2px solid #ffe3a4;
+      padding: 12px 12px 14px;
+      box-shadow: 0 16px 40px rgba(255, 204, 105, 0.55);
+      font-size: 12px;
+      color: var(--text-soft);
+    }
+
+    .review-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: #ffeaa3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    .review-name {
+      font-weight: 700;
+      color: var(--deep-blue);
+    }
+
+    .review-meta {
+      font-size: 10px;
+      color: var(--text-soft);
+    }
+
+    .review-text {
+      line-height: 1.8;
+      margin-top: 2px;
+    }
+
     /* FOOTER */
     .site-footer {
       padding: 14px 0 22px;
@@ -745,6 +1054,15 @@
       .id-panel {
         grid-template-columns: minmax(0, 1fr);
       }
+      .packaging-panel {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .extra-card {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .reviews-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
 
     @media (max-width: 720px) {
@@ -764,6 +1082,10 @@
       .cloud.cloud-bottom {
         left: 10%;
         width: 160px;
+      }
+      .extras-grid,
+      .reviews-grid {
+        grid-template-columns: minmax(0, 1fr);
       }
     }
   </style>
@@ -796,6 +1118,18 @@
            data-en="What he can do"
            data-zh="他会做什么"
            data-ja="してくれること">What he can do</a>
+        <a href="#packaging" class="nav-pill i18n"
+           data-en="Box & unboxing"
+           data-zh="外包装与开箱"
+           data-ja="パッケージと開封">Box & unboxing</a>
+        <a href="#extras" class="nav-pill i18n"
+           data-en="Dock & bonus"
+           data-zh="基座与特典"
+           data-ja="ドックと特典">Dock & bonus</a>
+        <a href="#reviews" class="nav-pill i18n"
+           data-en="Voices"
+           data-zh="使用心声"
+           data-ja="みんなの声">Voices</a>
         <a href="#idcard" class="nav-pill i18n"
            data-en="ID card"
            data-zh="身份卡"
@@ -842,7 +1176,6 @@
           <div class="stage-card">
             <div class="stage-inner">
               <div class="robot-stage">
-                <!-- 黄色五角星特效 -->
                 <div class="robot-stars">
                   <div class="robot-star star-1"></div>
                   <div class="robot-star star-2"></div>
@@ -946,11 +1279,11 @@
              data-ja="してくれることを見てみる">
             See what he can do
           </a>
-          <a href="#idcard" class="btn-ghost i18n"
-             data-en="Look at his ID card"
-             data-zh="看看他的身份卡"
-             data-ja="IDカードをのぞいてみる">
-            Look at his ID card
+          <a href="#packaging" class="btn-ghost i18n"
+             data-en="Look at the box & unboxing"
+             data-zh="看看外包装和开箱"
+             data-ja="パッケージと開封を見てみる">
+            Look at the box & unboxing
           </a>
         </div>
       </div>
@@ -1042,6 +1375,386 @@
     </div>
   </section>
 
+  <!-- PACKAGING 外包装 + 开箱 -->
+  <section id="packaging">
+    <div class="container">
+      <div class="section-title-group">
+        <div class="section-kicker i18n"
+             data-en="BOX & UNBOXING"
+             data-zh="外包装与开箱"
+             data-ja="パッケージと開封">
+          BOX & UNBOXING
+        </div>
+        <h2 class="section-title i18n"
+            data-en="A gift-style box that already feels like a story."
+            data-zh="像礼物一样的外盒，本身就是故事的一部分。"
+            data-ja="ギフトみたいな箱そのものが、もう物語の一部です。">
+          A gift-style box that already feels like a story.
+        </h2>
+        <div class="section-subline i18n"
+             data-en="See every side of the package, then walk through the unboxing step by step."
+             data-zh="从每一面看看外盒长什么样，再跟着一步步完成开箱。"
+             data-ja="箱の四つの面をチェックして、そのまま開封のステップを一緒にたどってみましょう。">
+          See every side of the package, then walk through the unboxing step by step.
+        </div>
+      </div>
+
+      <div class="packaging-panel">
+        <div>
+          <div class="box-viewer">
+            <img src="正.png" alt="Front box" class="box-image active" data-pack-panel="front" />
+            <img src="反.png" alt="Back box" class="box-image" data-pack-panel="back" />
+            <img src="左.png" alt="Side box 1" class="box-image" data-pack-panel="side1" />
+            <img src="右.png" alt="Side box 2" class="box-image" data-pack-panel="side2" />
+          </div>
+          <div class="box-tabs">
+            <button class="box-tab active" data-pack-target="front">
+              <span class="dot"></span>
+              <span class="i18n"
+                    data-en="Front · Greeting"
+                    data-zh="正面 · 打招呼"
+                    data-ja="フロント ・ あいさつ">
+                正面 · 打招呼
+              </span>
+            </button>
+            <button class="box-tab" data-pack-target="back">
+              <span class="dot"></span>
+              <span class="i18n"
+                    data-en="Back · Specs & safety"
+                    data-zh="背面 · 规格与安全"
+                    data-ja="バック ・ スペックと安全">
+                背面 · 规格与安全
+              </span>
+            </button>
+            <button class="box-tab" data-pack-target="side1">
+              <span class="dot"></span>
+              <span class="i18n"
+                    data-en="Side · Inside the box"
+                    data-zh="侧面 · 包装内容"
+                    data-ja="サイド ・ セット内容">
+                侧面 · 包装内容
+              </span>
+            </button>
+            <button class="box-tab" data-pack-target="side2">
+              <span class="dot"></span>
+              <span class="i18n"
+                    data-en="Side · Character art"
+                    data-zh="侧面 · Pegasus 图案"
+                    data-ja="サイド ・ Pegasus イラスト">
+                侧面 · Pegasus 图案
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <div class="packaging-copy">
+          <p class="i18n"
+             data-en="<strong>Soft blue + yellow</strong> on the outside, with big Pegasus art and clear bilingual text – the box is meant to be kept, not thrown away."
+             data-zh="外盒用柔和的蓝色和黄色，加上大幅 Pegasus 图案和中英双语说明——更像可以留下来的收藏盒，而不是随手丢掉的包装。"
+             data-ja="やさしいブルーとイエローに、大きな Pegasus のイラスト。そしてバイリンガルの説明。箱は捨てるものではなく、とっておきたくなるコレクションボックスをイメージして作られています。">
+            外盒用柔和的蓝色和黄色，加上大幅 Pegasus 图案和中英双语说明——更像可以留下来的收藏盒，而不是随手丢掉的包装。
+          </p>
+          <ul class="pack-list">
+            <li class="i18n"
+                data-en="Front: simple slogan and logo so it feels like meeting him for the first time."
+                data-zh="正面：简单的标语和 LOGO，就像第一次和他打招呼。"
+                data-ja="フロント：シンプルなロゴとコピーで、はじめましてのあいさつみたいなデザイン。">
+              正面：简单的标语和 LOGO，就像第一次和他打招呼。
+            </li>
+            <li class="i18n"
+                data-en="Back: product specs, height and care tips in a clear layout."
+                data-zh="背面：规格参数、身高和使用提醒，用整齐的版式排好。"
+                data-ja="バック：スペックや身長、注意書きを読みやすくレイアウト。">
+              背面：规格参数、身高和使用提醒，用整齐的版式排好。
+            </li>
+            <li class="i18n"
+                data-en="Side: checklist of what’s inside the box."
+                data-zh="侧面：列出盒子里都有什么，一目了然。"
+                data-ja="サイド：箱の中身チェックリストを表示。">
+              侧面：列出盒子里都有什么，一目了然。
+            </li>
+            <li class="i18n"
+                data-en="Side: full-body Pegasus art so the box looks cute even when stored on a shelf."
+                data-zh="另一侧面：整身 Pegasus 图案，就算放在书架上，也还是很可爱。"
+                data-ja="もう一方のサイド：全身の Pegasus イラストで、本棚に並べてもかわいいデザイン。">
+              另一侧面：整身 Pegasus 图案，就算放在书架上，也还是很可爱。
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 开箱动画区 -->
+      <div class="unboxing-wrapper" id="unboxing">
+        <div class="unboxing-header">
+          <div>
+            <div class="section-kicker i18n"
+                 data-en="UNBOXING"
+                 data-zh="开箱过程"
+                 data-ja="開封ステップ">
+              UNBOXING
+            </div>
+            <div class="section-subline i18n"
+                 data-en="Press play and follow the little timeline of how Pegasus moves into your home."
+                 data-zh="按下播放，跟着时间轴看看 Pegasus 是怎么一步步搬进你家的。"
+                 data-ja="再生ボタンを押して、Pegasus が少しずつあなたの家にやってくる流れをたどってみましょう。">
+              Press play and follow the little timeline of how Pegasus moves into your home.
+            </div>
+          </div>
+          <button class="btn-unbox i18n" data-unbox-play
+                  data-en="Play unboxing"
+                  data-zh="播放开箱动画"
+                  data-ja="開封アニメを再生">
+            播放开箱动画
+          </button>
+        </div>
+
+        <div class="unboxing-track">
+          <div class="unboxing-line">
+            <div class="unboxing-line-fill"></div>
+          </div>
+          <div class="unboxing-steps">
+            <div class="unbox-step" data-unbox-step="1">
+              <div class="unbox-dot"></div>
+              <div class="unbox-step-label i18n"
+                   data-en="1 · Open the top"
+                   data-zh="① 打开盒盖"
+                   data-ja="① フタをあける">
+                ① 打开盒盖
+              </div>
+              <div class="i18n"
+                   data-en="The blue and yellow flap lifts up with a soft sound."
+                   data-zh="蓝黄色的盒盖被慢慢掀起，发出轻轻一声。"
+                   data-ja="ブルーとイエローのフタをそっと持ち上げると、かすかな音がします。">
+                蓝黄色的盒盖被慢慢掀起，发出轻轻一声。
+              </div>
+            </div>
+            <div class="unbox-step" data-unbox-step="2">
+              <div class="unbox-dot"></div>
+              <div class="unbox-step-label i18n"
+                   data-en="2 · Meet Pegasus"
+                   data-zh="② 看到 Pegasus"
+                   data-ja="② Pegasus とご対面">
+                ② 看到 Pegasus
+              </div>
+              <div class="i18n"
+                   data-en="The first thing you see is the visor and soft hair, tucked safely inside."
+                   data-zh="映入眼帘的是他的护目镜和柔软的头发，被安全地固定在盒中。"
+                   data-ja="いちばん最初に見えるのは、バイザーとやわらかそうな髪。しっかり固定されています。">
+                映入眼帘的是他的护目镜和柔软的头发，被安全地固定在盒中。
+              </div>
+            </div>
+            <div class="unbox-step" data-unbox-step="3">
+              <div class="unbox-dot"></div>
+              <div class="unbox-step-label i18n"
+                   data-en="3 · Take out the set"
+                   data-zh="③ 取出整套内容"
+                   data-ja="③ セットを取り出す">
+                ③ 取出整套内容
+              </div>
+              <div class="i18n"
+                   data-en="Body, ID card, dock, cloth and the tiny booklet come out one by one."
+                   data-zh="本体、身份卡、基座、擦拭布和小册子依次被取出放好。"
+                   data-ja="本体、IDカード、ドック、クロス、小さな冊子を順番に取り出して並べます。">
+                本体、身份卡、基座、擦拭布和小册子依次被取出放好。
+              </div>
+            </div>
+            <div class="unbox-step" data-unbox-step="4">
+              <div class="unbox-dot"></div>
+              <div class="unbox-step-label i18n"
+                   data-en="4 · Switch on & say hi"
+                   data-zh="④ 开机打个招呼"
+                   data-ja="④ スイッチオンであいさつ">
+                ④ 开机打个招呼
+              </div>
+              <div class="i18n"
+                   data-en="Place him on the dock, tap the button and hear the very first “hello”."
+                   data-zh="把他放到基座上，按下按钮，听见属于你家的第一声「你好」。"
+                   data-ja="ドックの上にそっと乗せてボタンを押すと、あなたの家だけの「こんにちは」が聞こえてきます。">
+                把他放到基座上，按下按钮，听见属于你家的第一声「你好」。
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 周边：基座 + 特典 -->
+  <section id="extras">
+    <div class="container">
+      <div class="section-title-group">
+        <div class="section-kicker i18n"
+             data-en="DOCK & BONUS"
+             data-zh="基座与神秘特典"
+             data-ja="ドックとひみつ特典">
+          DOCK & BONUS
+        </div>
+        <h2 class="section-title i18n"
+            data-en="Little things that make him feel settled in."
+            data-zh="这些小配件，让他真的像「住」在家里。"
+            data-ja="小さなアクセサリーたちが、Pegasus が本当に家にいる感じを作ってくれます。">
+          Little things that make him feel settled in.
+        </h2>
+      </div>
+
+      <div class="extras-grid">
+        <!-- 基座 -->
+        <div class="extra-card">
+          <div class="extra-visual">
+            <img src="杯垫.png" alt="Pegasus Dock" />
+          </div>
+          <div class="extra-text">
+            <div class="extra-tag i18n"
+                 data-en="Official dock / coaster base"
+                 data-zh="官方基座 / 杯垫"
+                 data-ja="公式ドック / コースターベース">
+              官方基座 / 杯垫
+            </div>
+            <div class="extra-title i18n"
+                 data-en="A small round stage just for him."
+                 data-zh="一块只属于他的圆形小舞台。"
+                 data-ja="Pegasus だけのまるい小さなステージ。">
+              一块只属于他的圆形小舞台。
+            </div>
+            <p class="i18n"
+               data-en="Soft material with anti-slip backing and the same blue-and-yellow color scheme. You can use it as his everyday dock, or as a coaster when he is not sitting there."
+               data-zh="采用柔软材质和防滑底面，沿用同样的蓝黄配色。既可以当作 Pegasus 的日常基座，也可以在他不在上面时当作杯垫使用。"
+               data-ja="やわらかい素材とすべり止めつきの裏面。同じブルーとイエローの配色で、ふだんは Pegasus のドックに、いないときはコースターとして使えます。">
+              采用柔软材质和防滑底面，沿用同样的蓝黄配色。既可以当作 Pegasus 的日常基座，也可以在他不在上面时当作杯垫使用。
+            </p>
+          </div>
+        </div>
+
+        <!-- 神秘特典 -->
+        <div class="extra-card">
+          <div class="extra-visual">
+            <img src="杯垫1.png" alt="Pegasus Bonus Badge" />
+          </div>
+          <div class="extra-text">
+            <div class="extra-tag i18n"
+                 data-en="Secret bonus / sticker badge"
+                 data-zh="附赠神秘特典徽章"
+                 data-ja="ひみつのおまけバッジ">
+              附赠神秘特典徽章
+            </div>
+            <div class="extra-title i18n"
+                 data-en="A round little badge that travels with you."
+                 data-zh="一枚可以带着走的小圆徽章。"
+                 data-ja="いっしょにおでかけできる、まるいちいさなバッジ。">
+              一枚可以带着走的小圆徽章。
+            </div>
+            <p class="i18n"
+               data-en="Each box comes with a bonus round sticker badge: star-themed, Pegasus-themed, or both. It sticks nicely onto notebooks, cases or the back of your phone."
+               data-zh="每一盒都会随机附赠一枚圆形贴纸徽章：有的是星星主题，有的是 Pegasus 主题，也有两者都有的图案。可以贴在笔记本、收纳盒或手机壳背面，带着他一起出门。"
+               data-ja="箱にはまるいステッカーバッジがひとつ入っています。星モチーフのもの、Pegasus メインのもの、どちらも入ったデザインなど、どれが来るかはお楽しみ。ノートやケース、スマホの背面などに貼って、いつでもいっしょに出かけられます。">
+              每一盒都会随机附赠一枚圆形贴纸徽章：有的是星星主题，有的是 Pegasus 主题，也有两者都有的图案。可以贴在笔记本、收纳盒或手机壳背面，带着他一起出门。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 虚构用户评价 -->
+  <section id="reviews">
+    <div class="container">
+      <div class="section-title-group">
+        <div class="section-kicker i18n"
+             data-en="VOICES"
+             data-zh="使用心声"
+             data-ja="みんなの声">
+          VOICES
+        </div>
+        <h2 class="section-title i18n"
+            data-en="Stories from homes that let Pegasus move in."
+            data-zh="已经让 Pegasus 搬进家的家庭，是这样形容他的。"
+            data-ja="Pegasus をおうちに迎えた人たちは、こんなふうに話してくれました。">
+          Stories from homes that let Pegasus move in.
+        </h2>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-header">
+            <div class="avatar">👩</div>
+            <div>
+              <div class="review-name i18n"
+                   data-en="Liu, mother of a 7-year-old"
+                   data-zh="刘女士 · 7 岁孩子的妈妈"
+                   data-ja="リュウさん ・ 7歳児の母">
+                刘女士 · 7 岁孩子的妈妈
+              </div>
+              <div class="review-meta i18n"
+                   data-en="Uses Pegasus in the kids room"
+                   data-zh="使用场景：儿童房"
+                   data-ja="利用シーン：子ども部屋">
+                使用场景：儿童房
+              </div>
+            </div>
+          </div>
+          <div class="review-text i18n"
+               data-en="“He used to drag his feet over homework. Now he says ‘I’ll start when Pegasus starts the timer’. It feels less like nagging and more like they are doing it together.”"
+               data-zh="「以前写作业总是磨蹭。现在他会说『等 Pegasus 开好计时我就开始』。变成他在和 Pegasus 一起做事，而不是我在催。」"
+               data-ja="「前は宿題をなかなか始めてくれなかったのに、『Pegasus がタイマーつけたら始める』と言うようになりました。私がせかすんじゃなくて、Pegasus と一緒にやっている感じです。」">
+            「以前写作业总是磨蹭。现在他会说『等 Pegasus 开好计时我就开始』。变成他在和 Pegasus 一起做事，而不是我在催。」
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="avatar">👴</div>
+            <div>
+              <div class="review-name i18n"
+                   data-en="Mr. Chen, retired"
+                   data-zh="陈先生 · 退休在家"
+                   data-ja="チェンさん ・ 退職後在宅">
+                陈先生 · 退休在家
+              </div>
+              <div class="review-meta i18n"
+                   data-en="Uses Pegasus in the living room"
+                   data-zh="使用场景：客厅"
+                   data-ja="利用シーン：リビング">
+                使用场景：客厅
+              </div>
+            </div>
+          </div>
+          <div class="review-text i18n"
+               data-en="“Sometimes I forget my medicine. He doesn’t scold me, just blinks a little green light and reminds me softly. It is strange, but I feel less lonely.”"
+               data-zh="「有时候会忘记吃药。他不会怪我，只是亮一下小绿灯，用很温柔的声音提醒一下。说不清哪里不一样，就是觉得家里不那么安静了。」"
+               data-ja="「ときどき薬を飲み忘れるんですが、Pegasus は怒ったりしません。小さなグリーンのランプを光らせて、やさしく声をかけてくれるだけ。なんとなく、家が前よりさびしくなくなりました。」">
+            「有时候会忘记吃药。他不会怪我，只是亮一下小绿灯，用很温柔的声音提醒一下。说不清哪里不一样，就是觉得家里不那么安静了。」
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="avatar">👧</div>
+            <div>
+              <div class="review-name i18n"
+                   data-en="Xiao Yu, high-school student"
+                   data-zh="小鱼 · 高中生"
+                   data-ja="シャオユイさん ・ 高校生">
+                小鱼 · 高中生
+              </div>
+              <div class="review-meta i18n"
+                   data-en="Uses Pegasus on the desk"
+                   data-zh="使用场景：书桌"
+                   data-ja="利用シーン：デスク">
+                使用场景：书桌
+              </div>
+            </div>
+          </div>
+          <div class="review-text i18n"
+               data-en="“I put the dock next to my keyboard. When the room is dark and only Pegasus is glowing a little, it feels like someone is quietly cheering for me.”"
+               data-zh="「我把基座放在键盘旁边。房间暗下来只剩 Pegasus 在小小地发光的时候，会有一种有人在安静帮我加油的感觉。」"
+               data-ja="「ドックをキーボードの横に置いています。部屋が暗くなって Pegasus だけがふんわり光っていると、だれかが静かに応援してくれているみたいな気持ちになります。」">
+            「我把基座放在键盘旁边。房间暗下来只剩 Pegasus 在小小地发光的时候，会有一种有人在安静帮我加油的感觉。」
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ID CARD -->
   <section id="idcard">
     <div class="container">
@@ -1119,6 +1832,7 @@
   </footer>
 
   <script>
+    // 语言切换
     const langButtons = document.querySelectorAll("[data-lang-btn]");
     const i18nNodes = document.querySelectorAll(".i18n");
 
@@ -1142,6 +1856,55 @@
     });
 
     setLang("en");
+
+    // 外包装切换
+    const boxTabs = document.querySelectorAll(".box-tab");
+    const boxImages = document.querySelectorAll(".box-image");
+
+    boxTabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const target = tab.getAttribute("data-pack-target");
+        boxTabs.forEach((t) => t.classList.remove("active"));
+        tab.classList.add("active");
+        boxImages.forEach((img) => {
+          img.classList.toggle(
+            "active",
+            img.getAttribute("data-pack-panel") === target
+          );
+        });
+      });
+    });
+
+    // 开箱动画：时间轴激活 + 步骤高亮
+    const unboxBtn = document.querySelector("[data-unbox-play]");
+    const unboxTrack = document.querySelector(".unboxing-track");
+    const unboxSteps = document.querySelectorAll(".unbox-step");
+
+    function playUnboxing() {
+      if (!unboxTrack) return;
+      unboxTrack.classList.remove("playing");
+      unboxSteps.forEach((s) => s.classList.remove("active"));
+
+      // 强制重绘，确保动画能重新触发
+      void unboxTrack.offsetWidth;
+
+      unboxTrack.classList.add("playing");
+      const delays = [0, 800, 1600, 2400];
+      unboxSteps.forEach((step, index) => {
+        setTimeout(() => {
+          step.classList.add("active");
+        }, delays[index]);
+      });
+
+      // 动画结束后恢复按钮可再次点击
+      setTimeout(() => {
+        unboxTrack.classList.remove("playing");
+      }, 3600);
+    }
+
+    if (unboxBtn) {
+      unboxBtn.addEventListener("click", playUnboxing);
+    }
   </script>
 </body>
 </html>
