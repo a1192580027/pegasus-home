@@ -1,59 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <title>Pegasus Home</title>
+  <meta charset="utf-8" />
+  <title>Pegasus home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="Pegasus Home – a bright, cartoon-style companion android who really lives with you."
-  />
-  <!-- 艺术字英文 + 可爱中文 + 圆体日文 -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Baloo+2:wght@500;600;700&family=ZCOOL+KuaiLe&family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap"
-    rel="stylesheet"
-  />
+  <meta name="description" content="Pegasus 家用陪伴机器人 · 温和、安静、适合全家人的小伙伴。" />
+  <!-- 可爱英文标题字体（中文仍用系统字体） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --sky-blue: #8fd4ff;
-      --sky-blue-light: #dff2ff;
-      --deep-blue: #2652b8;
-      --sun-yellow: #ffd74d;
-      --sun-yellow-soft: #ffeaa3;
-      --cream: #fffaf1;
-      --white: #ffffff;
-      --pink: #ff86bc;
-      --mint: #91ffd2;
-      --text-main: #23304a;
-      --text-soft: #6f7a96;
-      --radius-big: 36px;
-      --radius-med: 24px;
-      --radius-pill: 999px;
-      --shadow-soft: 0 24px 60px rgba(255, 188, 83, 0.65);
-      --shadow-blue: 0 26px 70px rgba(32, 96, 210, 0.6);
+      --peg-blue: #71bdf4;
+      --peg-blue-soft: #b5e0ff;
+      --peg-yellow: #ffd86a;
+      --peg-yellow-soft: #fff2b7;
+      --peg-bg: #f6fbff;
+      --peg-text-main: #234e6b;
+      --peg-text-soft: #5f7d96;
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --shadow-soft: 0 18px 45px rgba(68, 135, 195, 0.18);
+      --shadow-chip: 0 8px 20px rgba(0, 0, 0, 0.08);
     }
 
     * {
       box-sizing: border-box;
     }
 
-    html,
     body {
       margin: 0;
-      padding: 0;
-      font-family: "Baloo 2", "ZCOOL KuaiLe", "M PLUS Rounded 1c",
-        system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at 10% 0, #fff7bf 0, transparent 45%),
-        radial-gradient(circle at 92% 4%, #ffdfff 0, transparent 40%),
-        linear-gradient(180deg, #c5ebff 0, #e8f6ff 45%, #fffaf1 80%, #ffe5c6 100%);
-      color: var(--text-main);
-      scroll-behavior: smooth;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC",
+        "Microsoft YaHei", sans-serif;
+      color: var(--peg-text-main);
+      background: radial-gradient(circle at top, #fffdf7 0, #f2f8ff 40%, #eaf4ff 100%);
+      line-height: 1.7;
     }
 
     img {
@@ -61,1850 +43,1102 @@
       display: block;
     }
 
-    .container {
-      max-width: 1120px;
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    main {
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 16px 20px 96px;
     }
 
-    h1,
-    h2 {
-      font-family: "Luckiest Guy", "ZCOOL KuaiLe", "M PLUS Rounded 1c",
-        system-ui, sans-serif;
-      letter-spacing: 0.05em;
-    }
-
-    /* HEADER – 简单软萌导航 */
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      padding-top: 10px;
-      background: linear-gradient(
-        180deg,
-        rgba(197, 235, 255, 0.95),
-        rgba(232, 246, 255, 0.9),
-        rgba(232, 246, 255, 0.82)
-      );
-      backdrop-filter: blur(12px);
-    }
-
-    .nav-shell {
-      max-width: 1120px;
-      margin: 0 auto 8px;
-      padding: 6px 12px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.97);
-      box-shadow: 0 10px 28px rgba(33, 98, 217, 0.23);
+    header.site-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 12px;
-      border: 2px solid #b9e2ff;
+      padding: 8px 4px 18px;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
     }
 
     .brand-logo {
-      width: 42px;
-      height: 42px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
-      background: radial-gradient(circle at 30% 20%, #ffffff 0, #ffe58c 50%, #ffcd4c 100%);
-      border: 2px solid #ffe28f;
+      background: white;
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
+      box-shadow: var(--shadow-chip);
     }
 
     .brand-logo img {
-      width: 80%;
-      height: 80%;
-      object-fit: contain;
+      width: 28px;
+      height: 28px;
     }
 
-    .brand-text-main {
-      font-family: "Luckiest Guy", "ZCOOL KuaiLe", "M PLUS Rounded 1c";
-      font-size: 18px;
-      text-transform: uppercase;
-      color: var(--deep-blue);
-      text-shadow: 0 3px 0 rgba(0, 0, 0, 0.2);
-      line-height: 1;
+    .brand-text-english {
+      font-family: "Baloo 2", system-ui, sans-serif;
+      font-size: 1.45rem;
+      letter-spacing: 0.12em;
     }
 
-    .brand-text-sub {
-      font-size: 11px;
-      color: var(--text-soft);
-      line-height: 1.1;
+    .brand-subtitle {
+      font-size: 0.75rem;
+      color: var(--peg-text-soft);
       margin-top: 2px;
     }
 
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 12px;
-      color: var(--text-soft);
-      flex-wrap: wrap;
-    }
-
-    .nav-pill {
-      padding: 5px 10px;
-      border-radius: var(--radius-pill);
-      background: #f3fbff;
-      border: 1px solid #d4ecff;
-      font-weight: 600;
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-      white-space: nowrap;
-    }
-
-    .nav-pill::before {
-      content: "";
-      position: absolute;
-      left: -10%;
-      top: 0;
-      width: 0;
-      height: 100%;
-      background: linear-gradient(90deg, #ffe794, #ffb7d3);
-      opacity: 0.35;
-      transition: width 0.2s ease-out;
-    }
-
-    .nav-pill:hover::before {
-      width: 140%;
-    }
-
     .lang-switch {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      padding: 3px;
-      border-radius: var(--radius-pill);
-      background: #fff7d7;
-      border: 2px solid #ffd74d;
-    }
-
-    .lang-btn {
-      border: none;
-      background: transparent;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 4px 8px;
-      border-radius: var(--radius-pill);
-      cursor: pointer;
-      color: #b58a18;
-    }
-
-    .lang-btn.active {
-      background: #ffefb0;
-      box-shadow: 0 3px 8px rgba(255, 201, 72, 0.7);
-    }
-
-    /* HERO – 中心舞台 + 超大 Pegasus */
-    .hero {
-      padding: 34px 0 26px;
-    }
-
-    .hero-full {
-      min-height: calc(100vh - 70px);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .hero-center {
-      max-width: 960px;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 18px;
-    }
-
-    .hero-pill {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 4px 14px;
-      border-radius: var(--radius-pill);
-      background: #ffffff;
-      border: 2px dashed #ffd980;
-      color: #c48800;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-    }
-
-    .hero-title {
-      margin: 4px 0 4px;
-      font-size: clamp(30px, 4.2vw, 40px);
-      line-height: 1.1;
-      color: var(--deep-blue);
-      text-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
-      text-align: center;
-    }
-
-    .hero-title span {
-      color: #fffcff;
-      -webkit-text-stroke: 2px var(--deep-blue);
-      text-stroke: 2px var(--deep-blue);
-      text-shadow: 0 4px 0 rgba(0, 0, 0, 0.25);
-      padding: 0 4px;
-    }
-
-    .hero-subline {
-      font-size: 14px;
-      color: var(--text-soft);
-      text-align: center;
-      max-width: 520px;
-    }
-
-    /* 中央 Pegasus 舞台卡片 */
-    .stage-wrapper {
-      position: relative;
-      width: min(620px, 100%);
-      margin-top: 4px;
-    }
-
-    .cloud {
-      position: absolute;
+      padding: 4px;
       border-radius: 999px;
       background: rgba(255, 255, 255, 0.9);
-      box-shadow: 0 10px 30px rgba(188, 222, 255, 0.9);
-      z-index: -1;
+      box-shadow: var(--shadow-chip);
+      gap: 4px;
+      font-size: 0.78rem;
     }
 
-    .cloud.cloud-left {
-      width: 130px;
-      height: 56px;
-      left: -40px;
-      top: 16%;
-    }
-
-    .cloud.cloud-right {
-      width: 150px;
-      height: 60px;
-      right: -50px;
-      top: 40%;
-    }
-
-    .cloud.cloud-bottom {
-      width: 190px;
-      height: 68px;
-      left: 18%;
-      bottom: -18px;
-      box-shadow: 0 14px 40px rgba(255, 207, 133, 0.9);
-    }
-
-    .stage-card {
-      position: relative;
-      border-radius: var(--radius-big);
-      padding: 18px 18px 20px;
-      border: 3px solid #ffe08f;
-      box-shadow: var(--shadow-soft);
-      background:
-        radial-gradient(circle at 50% 0, #ffffff 0, #fff5c2 38%, #ffd74d 70%),
-        repeating-linear-gradient(
-          -45deg,
-          rgba(255, 255, 255, 0.5) 0,
-          rgba(255, 255, 255, 0.5) 8px,
-          rgba(255, 255, 255, 0.1) 8px,
-          rgba(255, 255, 255, 0.1) 16px
-        );
-      overflow: hidden;
-    }
-
-    .stage-inner {
-      display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.9fr);
-      gap: 16px;
-      align-items: center;
-    }
-
-    .robot-stage {
-      position: relative;
-      border-radius: 28px;
-      padding: 18px 12px 14px;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 50% 0, #fffef9 0, #fff5c2 40%, #ffd74d 78%),
-        repeating-linear-gradient(
-          -45deg,
-          rgba(255, 255, 255, 0.7) 0,
-          rgba(255, 255, 255, 0.7) 8px,
-          rgba(255, 255, 255, 0.18) 8px,
-          rgba(255, 255, 255, 0.18) 16px
-        ),
-        radial-gradient(circle at 12% 22%, rgba(255, 255, 255, 0.8) 0, transparent 55%),
-        radial-gradient(circle at 88% 30%, rgba(255, 255, 255, 0.8) 0, transparent 55%);
-    }
-
-    .robot-stage::after {
-      content: "";
-      position: absolute;
-      left: 10%;
-      right: 10%;
-      bottom: 6px;
-      height: 22px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 50% 0, rgba(0, 0, 0, 0.28) 0, transparent 65%);
-      opacity: 0.4;
-      pointer-events: none;
-    }
-
-    .robot-stage img {
-      max-height: 360px;
-      margin: 0 auto;
-      object-fit: contain;
-      position: relative;
-      z-index: 1;
-    }
-
-    .robot-stars {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .robot-star {
-      position: absolute;
-      width: 26px;
-      height: 26px;
-      background: #ffd74d;
-      clip-path: polygon(
-        50% 0%,
-        61% 35%,
-        98% 35%,
-        68% 57%,
-        79% 91%,
-        50% 70%,
-        21% 91%,
-        32% 57%,
-        2% 35%,
-        39% 35%
-      );
-      filter: drop-shadow(0 0 6px rgba(255, 215, 77, 0.9));
-      opacity: 0.95;
-    }
-
-    .robot-star.star-1 {
-      top: 14%;
-      left: 8%;
-      transform: scale(0.9);
-      animation: starFloat1 4s ease-in-out infinite;
-    }
-
-    .robot-star.star-2 {
-      top: 8%;
-      right: 14%;
-      transform: scale(1.05);
-      animation: starFloat2 4.4s ease-in-out infinite;
-    }
-
-    .robot-star.star-3 {
-      bottom: 18%;
-      left: 12%;
-      transform: scale(0.8);
-      animation: starFloat3 3.6s ease-in-out infinite;
-    }
-
-    .robot-star.star-4 {
-      bottom: 10%;
-      right: 10%;
-      transform: scale(0.75);
-      animation: starFloat2 3.8s ease-in-out infinite;
-    }
-
-    @keyframes starFloat1 {
-      0% { transform: translateY(0) scale(0.9); opacity: 0.95; }
-      50% { transform: translateY(-6px) scale(1); opacity: 1; }
-      100% { transform: translateY(0) scale(0.9); opacity: 0.95; }
-    }
-
-    @keyframes starFloat2 {
-      0% { transform: translateY(0) scale(1.05); opacity: 0.9; }
-      50% { transform: translateY(-8px) scale(1.12); opacity: 1; }
-      100% { transform: translateY(0) scale(1.05); opacity: 0.9; }
-    }
-
-    @keyframes starFloat3 {
-      0% { transform: translateY(0) scale(0.8); opacity: 0.9; }
-      50% { transform: translateY(-5px) scale(0.9); opacity: 1; }
-      100% { transform: translateY(0) scale(0.8); opacity: 0.9; }
-    }
-
-    .robot-badge {
-      position: absolute;
-      left: 14px;
-      bottom: 12px;
-      padding: 5px 12px;
-      border-radius: var(--radius-pill);
-      background: rgba(255, 255, 255, 0.97);
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--deep-blue);
-      z-index: 2;
-    }
-
-    .robot-bubble {
-      position: absolute;
-      right: 14px;
-      top: 14px;
-      padding: 8px 14px;
-      border-radius: 20px;
-      background: #ffffff;
-      border: 2px solid #b9e2ff;
-      font-size: 12px;
-      color: var(--deep-blue);
-      box-shadow: 0 12px 26px rgba(33, 98, 217, 0.3);
-      z-index: 2;
-    }
-
-    .stage-info {
-      border-radius: 22px;
-      background: rgba(255, 253, 243, 0.96);
-      border: 2px solid #ffe7a5;
-      padding: 10px 12px 12px;
-      font-size: 12px;
-      color: var(--text-soft);
-    }
-
-    .stage-info-title {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--deep-blue);
-      margin-bottom: 6px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .stage-info-title span.icon {
-      width: 20px;
-      height: 20px;
-      border-radius: 999px;
-      background: #ffecb6;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 12px;
-    }
-
-    .info-line {
-      margin-bottom: 6px;
-    }
-
-    .info-label {
-      font-weight: 700;
-      color: var(--deep-blue);
-    }
-
-    .info-value {
-      margin-left: 4px;
-    }
-
-    .stage-footer {
-      margin-top: 8px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 11px;
-      color: var(--text-soft);
-    }
-
-    .status-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #35d68c;
-      box-shadow: 0 0 0 4px rgba(53, 214, 140, 0.3);
-      margin-right: 6px;
-    }
-
-    .status-line {
-      display: inline-flex;
-      align-items: center;
-    }
-
-    .hero-buttons {
-      margin-top: 8px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-    }
-
-    .btn-main,
-    .btn-ghost {
-      border-radius: var(--radius-pill);
+    .lang-switch button {
       border: none;
+      background: transparent;
+      padding: 5px 10px;
+      border-radius: 999px;
       cursor: pointer;
-      font-size: 13px;
-      font-weight: 700;
-      padding: 11px 20px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      text-decoration: none;
-      transition: transform 0.15s ease-out, box-shadow 0.15s ease-out,
-        background 0.15s ease-out;
+      font: inherit;
+      color: var(--peg-text-soft);
+      transition: background 0.2s, color 0.2s;
     }
 
-    .btn-main {
-      background: linear-gradient(135deg, #ffd74d, #ffb24d);
-      color: #7b4700;
-      box-shadow: var(--shadow-soft);
+    .lang-switch button.active {
+      background: linear-gradient(135deg, var(--peg-blue), #4fa1ff);
+      color: #fff;
     }
 
-    .btn-main:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 26px 70px rgba(255, 192, 90, 0.85);
-    }
-
-    .btn-ghost {
-      background: #ffffff;
-      color: var(--deep-blue);
-      border: 2px solid #b9e2ff;
-      box-shadow: 0 14px 34px rgba(33, 98, 217, 0.28);
-    }
-
-    .btn-ghost:hover {
-      transform: translateY(-1px);
-      background: #e7f4ff;
-      box-shadow: var(--shadow-blue);
-    }
-
-    /* 基础 section */
+    /* 通用 section */
     section {
-      padding: 16px 0 28px;
+      margin-top: 64px;
     }
 
-    .section-title-group {
+    .section-label {
       text-align: center;
-      margin-bottom: 14px;
-    }
-
-    .section-kicker {
-      font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--deep-blue);
-      margin-bottom: 4px;
-      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.28em;
+      text-indent: 0.28em;
+      color: #8fa2bd;
+      margin-bottom: 8px;
     }
 
     .section-title {
-      font-size: 22px;
-      margin: 0;
-      color: var(--deep-blue);
-      text-shadow: 0 3px 0 rgba(0, 0, 0, 0.18);
-    }
-
-    .section-subline {
-      font-size: 13px;
-      color: var(--text-soft);
-      margin-top: 4px;
-    }
-
-    /* 三张小卡片 */
-    .card-row {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 4px;
-    }
-
-    .mini-card {
-      border-radius: var(--radius-med);
-      background: #ffffff;
-      border: 2px solid #ffe3a4;
-      padding: 12px 12px 14px;
-      box-shadow: 0 16px 40px rgba(255, 204, 105, 0.55);
-      font-size: 12px;
-      color: var(--text-soft);
-    }
-
-    .mini-tag {
-      display: inline-block;
-      padding: 3px 8px;
-      border-radius: var(--radius-pill);
-      font-size: 10px;
+      text-align: center;
+      font-size: clamp(1.7rem, 2vw + 1.2rem, 2.2rem);
       font-weight: 700;
+      margin: 0 0 8px;
+      letter-spacing: 0.08em;
+      font-family: "Baloo 2", system-ui, sans-serif;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      font-size: 0.95rem;
+      color: var(--peg-text-soft);
+      margin: 0 0 24px;
+    }
+
+    /* Hero：主页大 Pegasus 区 */
+    .hero {
+      background: radial-gradient(circle at top left, #ffe7a8 0, #ffe7a8 15%, #fffef8 40%, #f3f8ff 100%);
+      padding: 28px 32px;
+      border-radius: 40px;
+      box-shadow: var(--shadow-soft);
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+      gap: 32px;
+    }
+
+    .hero-left {
+      position: relative;
+      padding-right: 12px;
+    }
+
+    .hero-title {
+      font-family: "Baloo 2", system-ui, sans-serif;
+      font-size: clamp(2.1rem, 2.6vw + 1.4rem, 2.7rem);
+      margin: 0 0 6px;
+    }
+
+    .hero-title span {
+      color: #005eb4;
+    }
+
+    .hero-tagline {
+      font-size: 0.98rem;
+      color: var(--peg-text-soft);
+      margin-bottom: 20px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .hero-badge {
+      padding: 5px 12px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 999px;
+      font-size: 0.78rem;
+      color: #567190;
+      box-shadow: var(--shadow-chip);
+      white-space: nowrap;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .btn-primary {
+      padding: 10px 22px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-size: 0.9rem;
+      background: linear-gradient(135deg, #ffc93f, #ffb848);
+      color: #744e12;
+      font-weight: 600;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .btn-secondary {
+      padding: 9px 18px;
+      border-radius: 999px;
+      border: 1px solid #a0c7ff;
+      background: rgba(255, 255, 255, 0.5);
+      font-size: 0.85rem;
+      color: #2563a7;
+      cursor: pointer;
+    }
+
+    .hero-note {
+      font-size: 0.78rem;
+      color: #7d90a5;
+      margin-top: 10px;
+    }
+
+    .hero-right {
+      position: relative;
+    }
+
+    .hero-stage {
+      position: relative;
+      width: 100%;
+      padding-top: 84%;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 0, #ffe699 0, #ffe8a9 14%, #ffd665 38%, #ffcc50 55%, #fffbf0 80%);
+      box-shadow: 0 20px 45px rgba(240, 180, 66, 0.55);
+      overflow: hidden;
+    }
+
+    .hero-pegasus {
+      position: absolute;
+      inset: 12% 18% 8%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-pegasus img {
+      height: 100%;
+      width: auto;
+      filter: drop-shadow(0 16px 22px rgba(219, 137, 44, 0.5));
+    }
+
+    .hero-speech {
+      position: absolute;
+      top: 6%;
+      right: 2%;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: #ffffffdd;
+      box-shadow: var(--shadow-chip);
+      font-size: 0.8rem;
+      color: #2563a7;
+    }
+
+    .hero-stars {
+      position: absolute;
+      inset: 10%;
+      pointer-events: none;
+    }
+
+    .hero-star {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+      background: #ffe76b;
+      transform: rotate(45deg);
+      filter: blur(0.5px);
+      opacity: 0.85;
+    }
+
+    .hero-star.s1 { top: 16%; left: 18%; }
+    .hero-star.s2 { top: 26%; right: 14%; width: 13px; height: 13px; opacity: 0.7; }
+    .hero-star.s3 { bottom: 18%; left: 22%; width: 12px; height: 12px; }
+    .hero-star.s4 { bottom: 24%; right: 20%; width: 18px; height: 18px; }
+
+    .hero-status-card {
+      position: absolute;
+      right: 2px;
+      bottom: 0;
+      transform: translateY(60%);
+      width: min(320px, 100%);
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 24px;
+      padding: 14px 16px 12px;
+      box-shadow: var(--shadow-soft);
+      font-size: 0.78rem;
+      color: var(--peg-text-soft);
+    }
+
+    .status-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       margin-bottom: 6px;
     }
 
-    .mini-tag.yellow {
-      background: #fff6cf;
-      color: #a67b00;
+    .status-title-row strong {
+      font-size: 0.9rem;
+      color: var(--peg-text-main);
     }
 
-    .mini-tag.pink {
-      background: #ffe5f5;
-      color: #b14f8d;
+    .status-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: #28c97a;
+      box-shadow: 0 0 0 4px rgba(40, 201, 122, 0.2);
     }
 
-    .mini-tag.blue {
-      background: #e1f0ff;
-      color: #2750aa;
-    }
-
-    .mini-title {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--deep-blue);
-      margin-bottom: 4px;
-    }
-
-    .mini-text {
-      line-height: 1.7;
-    }
-
-    /* ID 区块 */
-    .id-panel {
-      max-width: 880px;
-      margin: 0 auto;
-      border-radius: var(--radius-big);
-      background: #ffffff;
-      border: 2px solid #ffe3a6;
-      padding: 16px 16px 18px;
+    .status-items {
       display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.05fr);
-      gap: 16px;
-      box-shadow: 0 18px 50px rgba(255, 199, 96, 0.75);
+      grid-template-columns: 1fr;
+      row-gap: 4px;
+      margin-bottom: 6px;
     }
 
-    .id-text {
-      font-size: 13px;
-      color: var(--text-soft);
-      line-height: 1.7;
+    .status-items span.label {
+      color: #8aa0b6;
+      margin-right: 4px;
     }
 
-    .id-text strong {
-      color: var(--text-main);
+    .status-footer {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.72rem;
+      color: #8aa0b6;
     }
 
-    .id-meta {
-      font-size: 11px;
-      color: var(--text-soft);
-      margin-top: 6px;
-    }
-
-    .id-img-box {
-      border-radius: 20px;
-      background: #f4f8ff;
-      border: 2px solid #dbe7ff;
-      padding: 10px;
-    }
-
-    /* PACKAGING 外包装展示 */
-    .packaging-panel {
-      max-width: 980px;
-      margin: 0 auto;
-      border-radius: var(--radius-big);
-      background: #ffffff;
-      border: 2px solid #cbe5ff;
-      padding: 16px 16px 18px;
+    /* 外包装与开箱 */
+    .box-section-shell {
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 40px;
+      box-shadow: var(--shadow-soft);
+      padding: 28px 30px 32px;
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 18px;
-      box-shadow: 0 20px 55px rgba(82, 166, 255, 0.55);
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: 26px;
     }
 
-    .box-viewer {
-      border-radius: 24px;
-      background: linear-gradient(145deg, #cfe9ff, #f4fbff);
-      border: 2px solid #b6dbff;
-      padding: 10px;
+    .box-gallery-outer {
+      background: linear-gradient(145deg, #e6f4ff, #fef5d6);
+      border-radius: 28px;
+      padding: 18px 18px 20px;
       position: relative;
       overflow: hidden;
     }
 
-    .box-image {
-      border-radius: 18px;
-      box-shadow: 0 16px 40px rgba(41, 116, 209, 0.55);
-      opacity: 0;
-      transform: translateY(10px) scale(0.98);
-      transition: opacity 0.2s ease-out, transform 0.2s ease-out;
-      position: absolute;
-      inset: 10px;
-      object-fit: contain;
-      background: #cfe9ff;
+    .box-gallery-main {
+      border-radius: 20px;
+      overflow: hidden;
+      background: #cfe6ff;
+      box-shadow: 0 14px 30px rgba(90, 151, 212, 0.5);
     }
 
-    .box-image.active {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-      position: relative;
+    .box-gallery-main img {
+      width: 100%;
+      height: auto;
     }
 
     .box-tabs {
       display: flex;
-      flex-wrap: wrap;
       gap: 8px;
-      margin-top: 8px;
+      margin-top: 14px;
+      flex-wrap: wrap;
     }
 
     .box-tab {
-      border-radius: var(--radius-pill);
-      border: none;
-      background: #edf6ff;
-      padding: 6px 10px;
-      font-size: 11px;
-      font-weight: 700;
-      color: #305ca8;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .box-tab span.dot {
-      width: 8px;
-      height: 8px;
+      flex: 1;
+      min-width: 0;
+      padding: 6px 8px;
       border-radius: 999px;
-      background: #ffd74d;
+      border: none;
+      font-size: 0.78rem;
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.6);
+      color: #5c6f89;
+      box-shadow: var(--shadow-chip);
+      white-space: nowrap;
     }
 
     .box-tab.active {
-      background: #ffd74d;
-      color: #7b4700;
-      box-shadow: 0 10px 24px rgba(255, 199, 96, 0.7);
+      background: linear-gradient(135deg, var(--peg-blue), #4fa5ff);
+      color: #fff;
     }
 
-    .packaging-copy {
-      font-size: 13px;
-      color: var(--text-soft);
-      line-height: 1.8;
-    }
-
-    .packaging-copy strong {
-      color: var(--text-main);
-    }
-
-    .pack-list {
-      list-style: none;
-      padding-left: 0;
-      margin: 8px 0 0;
-      font-size: 12px;
-    }
-
-    .pack-list li::before {
-      content: "◆";
-      color: #ffd74d;
-      margin-right: 4px;
-    }
-
-    /* Unboxing 开箱动画时间轴 */
-    .unboxing-wrapper {
-      max-width: 860px;
-      margin: 0 auto;
-      border-radius: var(--radius-big);
-      background: #ffffff;
-      border: 2px solid #ffe3a4;
-      padding: 14px 18px 18px;
-      box-shadow: 0 18px 50px rgba(255, 199, 96, 0.7);
-    }
-
-    .unboxing-header {
+    .box-thumbs {
+      margin-top: 12px;
       display: flex;
+      gap: 8px;
       justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 10px;
     }
 
-    .unboxing-track {
-      position: relative;
-      margin-top: 8px;
-      padding-top: 16px;
-    }
-
-    .unboxing-line {
-      position: absolute;
-      left: 6%;
-      right: 6%;
-      top: 24px;
-      height: 4px;
-      border-radius: 999px;
-      background: #ffe7af;
+    .box-thumb {
+      flex: 1;
+      border-radius: 14px;
       overflow: hidden;
+      border: 2px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 8px 20px rgba(118, 170, 228, 0.3);
+      opacity: 0.8;
     }
 
-    .unboxing-line-fill {
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 0%;
-      background: linear-gradient(90deg, #ffd74d, #ffb24d);
-      transition: width 0.2s ease-out;
-    }
-
-    .unboxing-track.playing .unboxing-line-fill {
+    .box-thumb img {
       width: 100%;
-      transition: width 3.2s ease-out;
+      display: block;
     }
 
-    .unboxing-steps {
+    .box-info {
+      padding-top: 6px;
+    }
+
+    .box-info h3 {
+      font-size: 1.25rem;
+      margin: 0 0 4px;
+      font-family: "Baloo 2", system-ui, sans-serif;
+      letter-spacing: 0.08em;
+    }
+
+    .box-info p.lead {
+      font-size: 0.95rem;
+      color: var(--peg-text-soft);
+      margin-bottom: 14px;
+    }
+
+    .box-badges {
       display: flex;
-      justify-content: space-between;
-      position: relative;
-      padding: 0 6%;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
     }
 
-    .unbox-step {
-      text-align: center;
-      font-size: 11px;
-      color: var(--text-soft);
-      max-width: 120px;
-      opacity: 0.4;
-      transform: translateY(6px);
-      transition: opacity 0.2s ease-out, transform 0.2s ease-out;
-    }
-
-    .unbox-dot {
-      width: 16px;
-      height: 16px;
+    .box-badge {
+      font-size: 0.78rem;
+      padding: 3px 10px;
       border-radius: 999px;
-      border: 3px solid #ffd74d;
-      background: #ffffff;
-      margin: 0 auto 4px;
-      box-shadow: 0 4px 10px rgba(255, 199, 96, 0.7);
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px dashed #ffc65b;
+      color: #c2831f;
     }
 
-    .unbox-step.active {
-      opacity: 1;
-      transform: translateY(0);
+    .box-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 10px;
+      font-size: 0.9rem;
     }
 
-    .unbox-step-label {
-      font-weight: 700;
-      color: var(--deep-blue);
-      margin-bottom: 2px;
+    .box-list li {
+      margin-bottom: 6px;
     }
 
-    .btn-unbox {
-      border-radius: var(--radius-pill);
-      border: none;
-      padding: 7px 14px;
-      font-size: 12px;
-      font-weight: 700;
-      background: #ffd74d;
-      color: #7b4700;
-      cursor: pointer;
-      box-shadow: 0 10px 26px rgba(255, 199, 96, 0.8);
+    .box-list li::before {
+      content: "◆";
+      color: #ffc327;
+      margin-right: 5px;
+      font-size: 0.7rem;
     }
 
-    /* 周边区 – 基座 & 特典 */
-    .extras-grid {
-      max-width: 960px;
-      margin: 0 auto;
+    .box-note {
+      font-size: 0.8rem;
+      color: #94a5bd;
+      margin-top: 4px;
+    }
+
+    /* 基座与特典 */
+    .extras-section-shell {
+      margin-top: 56px;
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
+      gap: 20px;
     }
 
     .extra-card {
-      border-radius: var(--radius-big);
-      background: #ffffff;
-      border: 2px solid #cbe5ff;
-      padding: 14px 14px 16px;
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
-      gap: 10px;
-      box-shadow: 0 18px 50px rgba(92, 176, 255, 0.6);
-    }
-
-    .extra-visual {
-      border-radius: 999px;
-      background: radial-gradient(circle at 50% 35%, #fffefb 0, #cfe9ff 60%, #8bc3ff 100%);
-      border: 2px solid #b9e2ff;
-      padding: 10px;
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 30px;
+      padding: 18px 18px 20px;
+      box-shadow: var(--shadow-soft);
       display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .extra-visual img {
-      border-radius: 100%;
-      max-height: 180px;
-      object-fit: contain;
-    }
-
-    .extra-text {
-      font-size: 13px;
-      color: var(--text-soft);
-      line-height: 1.8;
+      flex-direction: column;
+      gap: 10px;
     }
 
     .extra-tag {
-      font-size: 11px;
-      font-weight: 700;
-      color: #2750aa;
-      margin-bottom: 4px;
+      font-size: 0.75rem;
+      color: #8da3c0;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
     }
 
     .extra-title {
-      font-size: 16px;
+      font-size: 1rem;
       font-weight: 700;
-      color: var(--deep-blue);
+      font-family: "Baloo 2", system-ui, sans-serif;
       margin-bottom: 4px;
     }
 
-    /* 用户评价区 */
-    .reviews-grid {
-      max-width: 960px;
-      margin: 0 auto;
+    .extra-body {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .review-card {
-      border-radius: 22px;
-      background: #ffffff;
-      border: 2px solid #ffe3a4;
-      padding: 12px 12px 14px;
-      box-shadow: 0 16px 40px rgba(255, 204, 105, 0.55);
-      font-size: 12px;
-      color: var(--text-soft);
-    }
-
-    .review-header {
-      display: flex;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
       align-items: center;
-      gap: 8px;
-      margin-bottom: 4px;
+      gap: 16px;
     }
 
-    .avatar {
-      width: 28px;
-      height: 28px;
-      border-radius: 999px;
-      background: #ffeaa3;
+    .extra-visual {
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 14px;
     }
 
-    .review-name {
-      font-weight: 700;
-      color: var(--deep-blue);
-    }
-
-    .review-meta {
-      font-size: 10px;
-      color: var(--text-soft);
-    }
-
-    .review-text {
-      line-height: 1.8;
-      margin-top: 2px;
-    }
-
-    /* FOOTER */
-    .site-footer {
-      padding: 14px 0 22px;
-      font-size: 11px;
-      color: var(--text-soft);
-    }
-
-    .footer-inner {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 20px;
+    .extra-visual-circle {
+      width: 190px;
+      max-width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 20%, #fff 0, #f7fbff 40%, #d5e9ff 80%);
+      box-shadow: 0 20px 50px rgba(111, 163, 227, 0.6);
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
+      justify-content: center;
+      overflow: hidden;
     }
 
-    .footer-links {
+    .extra-visual-circle img {
+      width: 85%;
+      height: auto;
+    }
+
+    .extra-text {
+      font-size: 0.9rem;
+      color: var(--peg-text-soft);
+    }
+
+    .extra-text strong {
+      color: var(--peg-text-main);
+    }
+
+    /* 使用心声 */
+    .voices-shell {
+      margin-top: 64px;
+    }
+
+    .voices-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .voice-card {
+      position: relative;
+      background: radial-gradient(circle at top left, #fff8d3 0, #ffffff 50%, #f3f8ff 100%);
+      border-radius: 26px;
+      padding: 16px 16px 18px;
+      box-shadow: var(--shadow-soft);
+      font-size: 0.9rem;
+    }
+
+    .voice-card:nth-child(2) {
+      background: radial-gradient(circle at top, #ffe9f4 0, #ffffff 55%, #f1f5ff 100%);
+      transform: translateY(10px);
+    }
+
+    .voice-card:nth-child(3) {
+      background: radial-gradient(circle at top right, #e8f9ff 0, #ffffff 50%, #fdf3de 100%);
+    }
+
+    .voice-header {
       display: flex;
-      flex-wrap: wrap;
+      align-items: center;
       gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .voice-avatar {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #ffe29b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+
+    .voice-name {
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+
+    .voice-meta {
+      font-size: 0.76rem;
+      color: #8ca0b5;
+    }
+
+    .voice-quote {
+      margin-top: 6px;
+      font-size: 0.9rem;
+      color: var(--peg-text-main);
+    }
+
+    .voice-quote::before,
+    .voice-quote::after {
+      content: "「";
+      color: #ffc83d;
+      margin-right: 2px;
+    }
+
+    .voice-quote::after {
+      content: "」";
+      margin-left: 2px;
+    }
+
+    .voice-tail {
+      position: absolute;
+      left: 22px;
+      bottom: -10px;
+      width: 26px;
+      height: 26px;
+      background: inherit;
+      transform: rotate(45deg);
+      border-radius: 6px;
+      z-index: -1;
+    }
+
+    /* 他会做些什么 */
+    .routines-shell {
+      margin-top: 72px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 38px;
+      padding: 24px 26px 26px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .routines-header {
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .routines-header h3 {
+      margin: 0 0 4px;
+      font-size: 1.35rem;
+      font-family: "Baloo 2", system-ui, sans-serif;
+      letter-spacing: 0.12em;
+    }
+
+    .routines-header p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--peg-text-soft);
+    }
+
+    .routine-list {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      font-size: 0.9rem;
+    }
+
+    .routine-item {
+      position: relative;
+      padding-left: 14px;
+      border-left: 2px dashed #e2ecff;
+    }
+
+    .routine-dot {
+      position: absolute;
+      left: -8px;
+      top: 4px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #ffe47f;
+      box-shadow: 0 0 0 4px rgba(255, 229, 150, 0.7);
+    }
+
+    .routine-item:nth-child(2) .routine-dot {
+      background: #9fe2ff;
+      box-shadow: 0 0 0 4px rgba(159, 226, 255, 0.7);
+    }
+
+    .routine-item:nth-child(3) .routine-dot {
+      background: #ffb2d9;
+      box-shadow: 0 0 0 4px rgba(255, 175, 216, 0.7);
+    }
+
+    .routine-tag {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid #ffd36f;
+      font-size: 0.78rem;
+      margin-bottom: 4px;
+      color: #c3841a;
+    }
+
+    .routine-title {
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .routine-text {
+      color: var(--peg-text-soft);
+    }
+
+    /* 底部：更多资讯 */
+    .footer-shell {
+      margin-top: 72px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) auto;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .footer-left h3 {
+      font-size: 1.2rem;
+      margin: 0 0 4px;
+      font-family: "Baloo 2", system-ui, sans-serif;
+    }
+
+    .footer-left p {
+      margin: 0 0 10px;
+      font-size: 0.9rem;
+      color: var(--peg-text-soft);
+    }
+
+    .footer-meta {
+      font-size: 0.8rem;
+      color: #93a4b7;
+    }
+
+    .footer-qrcode {
+      width: 120px;
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .footer-qrcode img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .footer-qrcode span {
+      display: block;
+      text-align: center;
+      margin-top: 6px;
+      font-size: 0.78rem;
+      color: var(--peg-text-soft);
     }
 
     /* 响应式 */
     @media (max-width: 960px) {
-      .stage-inner {
-        grid-template-columns: minmax(0, 1fr);
+      main {
+        padding: 12px 14px 72px;
       }
-      .cloud.cloud-left {
-        left: -20px;
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 22px 18px 30px;
       }
-      .cloud.cloud-right {
-        right: -30px;
+
+      .hero-right {
+        order: -1;
       }
-      .card-row {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      .hero-status-card {
+        position: static;
+        transform: none;
+        margin: 16px auto 0;
       }
-      .id-panel {
-        grid-template-columns: minmax(0, 1fr);
+
+      .box-section-shell {
+        grid-template-columns: 1fr;
       }
-      .packaging-panel {
-        grid-template-columns: minmax(0, 1fr);
+
+      .extras-section-shell {
+        grid-template-columns: 1fr;
       }
-      .extra-card {
-        grid-template-columns: minmax(0, 1fr);
+
+      .voices-grid {
+        grid-template-columns: 1fr;
       }
-      .reviews-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      .voice-card:nth-child(2) {
+        transform: none;
+      }
+
+      .routine-list {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-shell {
+        grid-template-columns: 1fr;
+        text-align: center;
+        justify-items: center;
+      }
+
+      .footer-left {
+        order: 2;
       }
     }
 
-    @media (max-width: 720px) {
-      .nav-links {
-        display: none;
+    @media (max-width: 600px) {
+      .hero-title {
+        font-size: 1.9rem;
       }
-      .container {
-        padding: 0 16px;
+
+      .hero-badges {
+        gap: 6px;
       }
-      .card-row {
-        grid-template-columns: minmax(0, 1fr);
+
+      .hero-cta-row {
+        flex-direction: column;
+        align-items: flex-start;
       }
-      .cloud.cloud-left,
-      .cloud.cloud-right {
-        display: none;
+
+      .box-section-shell {
+        padding: 20px 16px 22px;
       }
-      .cloud.cloud-bottom {
-        left: 10%;
-        width: 160px;
-      }
-      .extras-grid,
-      .reviews-grid {
-        grid-template-columns: minmax(0, 1fr);
+
+      .routines-shell {
+        padding: 20px 16px 22px;
       }
     }
   </style>
 </head>
 <body>
-  <!-- HEADER -->
+<main>
   <header class="site-header">
-    <div class="nav-shell">
-      <div class="brand">
-        <div class="brand-logo">
-          <img src="pegasus-logo.png" alt="Pegasus Logo" />
-        </div>
-        <div>
-          <div class="brand-text-main">PEGASUS</div>
-          <div class="brand-text-sub i18n"
-               data-en="Pegasus’ own little homepage"
-               data-zh="Pegasus 的专属小主页"
-               data-ja="Pegasus のためのちいさなホームページ">
-            Pegasus’ own little homepage
-          </div>
-        </div>
+    <div class="brand">
+      <div class="brand-logo">
+        <img src="pegasus-logo.png" alt="Pegasus logo">
       </div>
-
-      <nav class="nav-links">
-        <a href="#hero" class="nav-pill i18n"
-           data-en="Home"
-           data-zh="主页"
-           data-ja="ホーム">Home</a>
-        <a href="#peek" class="nav-pill i18n"
-           data-en="What he can do"
-           data-zh="他会做什么"
-           data-ja="してくれること">What he can do</a>
-        <a href="#packaging" class="nav-pill i18n"
-           data-en="Box & unboxing"
-           data-zh="外包装与开箱"
-           data-ja="パッケージと開封">Box & unboxing</a>
-        <a href="#extras" class="nav-pill i18n"
-           data-en="Dock & bonus"
-           data-zh="基座与特典"
-           data-ja="ドックと特典">Dock & bonus</a>
-        <a href="#reviews" class="nav-pill i18n"
-           data-en="Voices"
-           data-zh="使用心声"
-           data-ja="みんなの声">Voices</a>
-        <a href="#idcard" class="nav-pill i18n"
-           data-en="ID card"
-           data-zh="身份卡"
-           data-ja="ID カード">ID card</a>
-      </nav>
-
-      <div class="lang-switch">
-        <button class="lang-btn active" data-lang-btn="en">EN</button>
-        <button class="lang-btn" data-lang-btn="zh">中</button>
-        <button class="lang-btn" data-lang-btn="ja">日</button>
+      <div>
+        <div class="brand-text-english">PEGASUS</div>
+        <div class="brand-subtitle">Companion Android for Everyday Home</div>
       </div>
+    </div>
+    <div class="lang-switch">
+      <button class="active">中</button>
+      <button>EN</button>
+      <button>日</button>
     </div>
   </header>
 
-  <!-- HERO – 中央 Pegasus 舞台 -->
-  <section class="hero" id="hero">
-    <div class="hero-full">
-      <div class="hero-center">
-        <div class="hero-pill i18n"
-             data-en="PEGASUS HOME"
-             data-zh="PEGASUS 的家"
-             data-ja="Pegasus のおうち">
-          PEGASUS HOME
+  <!-- Hero：Pegasus home -->
+  <section class="hero">
+    <div class="hero-left">
+      <h1 class="hero-title"><span>Pegasus</span> 回家啦。</h1>
+      <p class="hero-tagline">为孩子、家长和喜欢安静陪伴的人准备的国民级小伙伴。</p>
+      <div class="hero-badges">
+        <div class="hero-badge">全年龄家用 · 不联网语音</div>
+        <div class="hero-badge">低噪运行 &lt; 20 dB</div>
+        <div class="hero-badge">圆润外形 · 无尖锐边角</div>
+        <div class="hero-badge">情感层：温和陪伴模式</div>
+      </div>
+      <div class="hero-cta-row">
+        <button class="btn-primary">看看今天的 Pegasus</button>
+        <button class="btn-secondary">了解包装与开箱</button>
+      </div>
+      <p class="hero-note">※ 页面内容为设定展示用 · Pegasus 为虚构产品。</p>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-stage">
+        <div class="hero-pegasus">
+          <img src="robot-front.png" alt="Pegasus 正面">
         </div>
-        <h1 class="hero-title i18n"
-            data-en="Today, <span>Pegasus</span> is waiting for you at home."
-            data-zh="今天，<span>Pegasus</span> 在家里等你回家。"
-            data-ja="きょうは、<span>Pegasus</span> がおうちであなたの帰りを待っています。">
-          Today, <span>Pegasus</span> is waiting for you at home.
-        </h1>
-        <p class="hero-subline i18n"
-           data-en="Bright yellow, sky blue and a gentle hello – everything here is meant to feel warm and safe."
-           data-zh="明亮的黄色、像天空一样的蓝色，再加上一句轻轻的问候——这里的一切，都想让人觉得温暖、安心。"
-           data-ja="明るいイエローと空みたいなブルー、そこにそっとしたあいさつ。ここにあるものはぜんぶ、「あったかくて安心できる」ように作られています。">
-          Bright yellow, sky blue and a gentle hello – everything here is meant to feel
-          warm and safe.
+        <div class="hero-stars">
+          <div class="hero-star s1"></div>
+          <div class="hero-star s2"></div>
+          <div class="hero-star s3"></div>
+          <div class="hero-star s4"></div>
+        </div>
+      </div>
+      <div class="hero-speech">「欢迎回家！」</div>
+
+      <div class="hero-status-card">
+        <div class="status-title-row">
+          <strong>今天的 Pegasus</strong>
+          <div class="status-dot"></div>
+        </div>
+        <div class="status-items">
+          <div><span class="label">心情</span> 晴朗又想说话。</div>
+          <div><span class="label">最常待在</span> 沙发一角，刚好可以看见所有人。</div>
+          <div><span class="label">今天最常说</span> 「有好好喝水吗？」</div>
+        </div>
+        <div class="status-footer">
+          <span>在线：100% 电量</span>
+          <span>型号：PEGASUS · 0517-S17</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 外包装与开箱 -->
+  <section>
+    <p class="section-label">外包装与开箱</p>
+    <h2 class="section-title">像礼物一样的外盒，本身就是故事的一部分。</h2>
+    <p class="section-subtitle">从每一面看看外盒长什么样，再跟着一步一步完成开箱。</p>
+
+    <div class="box-section-shell">
+      <!-- 左：四面外盒画面 + 缩略图 -->
+      <div class="box-gallery-outer">
+        <div class="box-gallery-main" id="box-main">
+          <!-- 默认展示“正面” -->
+          <img src="正.png" alt="Pegasus 外盒 正面">
+        </div>
+        <div class="box-tabs">
+          <button class="box-tab active" data-img="正.png">正面</button>
+          <button class="box-tab" data-img="反.png">背面</button>
+          <button class="box-tab" data-img="左.png">侧面 A</button>
+          <button class="box-tab" data-img="右.png">侧面 B</button>
+        </div>
+        <div class="box-thumbs">
+          <div class="box-thumb"><img src="正.png" alt="正面缩略图"></div>
+          <div class="box-thumb"><img src="反.png" alt="背面缩略图"></div>
+          <div class="box-thumb"><img src="左.png" alt="左侧缩略图"></div>
+          <div class="box-thumb"><img src="右.png" alt="右侧缩略图"></div>
+        </div>
+      </div>
+
+      <!-- 右：文案说明 -->
+      <div class="box-info">
+        <h3>Included in Package ｜ 包装内容</h3>
+        <p class="lead">
+          外盒用了柔和的蓝色和黄色，加上大幅 Pegasus 图案和中英双语的说明，
+          看起来像送人的礼物，而不是单纯的手提纸盒。
         </p>
+        <div class="box-badges">
+          <span class="box-badge">可直接当收纳盒使用</span>
+          <span class="box-badge">每一面都有不同的小细节</span>
+        </div>
+        <ul class="box-list">
+          <li>Pegasus 主体 ×1</li>
+          <li>官方身份认证卡 ×1</li>
+          <li>快速启动与维护指南 ×1</li>
+          <li>Pegasus 擦拭方巾 ×1</li>
+          <li>Pegasus 基座（杯垫） ×1</li>
+          <li>星之同伴小组 ×1</li>
+          <li>Pegasus 香氛 ×1</li>
+        </ul>
+        <p class="box-note">※ 以上为设定内容，仅用于世界观展示。</p>
+      </div>
+    </div>
+  </section>
 
-        <div class="stage-wrapper">
-          <div class="cloud cloud-left"></div>
-          <div class="cloud cloud-right"></div>
-          <div class="cloud cloud-bottom"></div>
+  <!-- 基座与神秘特典 -->
+  <section>
+    <p class="section-label">小配件</p>
+    <h2 class="section-title">那些偷偷藏在盒子里的小惊喜。</h2>
+    <p class="section-subtitle">官方基座和神秘特典，会在日常生活里慢慢变成“习惯存在”。</p>
 
-          <div class="stage-card">
-            <div class="stage-inner">
-              <div class="robot-stage">
-                <div class="robot-stars">
-                  <div class="robot-star star-1"></div>
-                  <div class="robot-star star-2"></div>
-                  <div class="robot-star star-3"></div>
-                  <div class="robot-star star-4"></div>
-                </div>
-
-                <img src="robot-front.png" alt="Pegasus Front" />
-                <div class="robot-badge i18n"
-                     data-en="FRONT · Ready to say hi"
-                     data-zh="正面 · 已准备好打招呼"
-                     data-ja="フロント ・ いつでもあいさつOK">
-                  正面 · 已准备好打招呼
-                </div>
-                <div class="robot-bubble i18n"
-                     data-en="Welcome home!"
-                     data-zh="欢迎回家！"
-                     data-ja="おかえり！">
-                  欢迎回家！
-                </div>
-              </div>
-
-              <div class="stage-info">
-                <div class="stage-info-title">
-                  <span class="icon">☺</span>
-                  <span class="i18n"
-                        data-en="Pegasus today"
-                        data-zh="今天的 Pegasus"
-                        data-ja="きょうの Pegasus">
-                    Pegasus today
-                  </span>
-                </div>
-                <div class="info-line">
-                  <span class="info-label i18n"
-                        data-en="Mood:"
-                        data-zh="心情："
-                        data-ja="きぶん：">
-                    Mood:
-                  </span>
-                  <span class="info-value i18n"
-                        data-en="Clear skies, in the mood to chat."
-                        data-zh="心情晴朗，很想跟人聊天。"
-                        data-ja="空はれ、だれかとおしゃべりしたい気分。">
-                    心情晴朗，很想跟人聊天。
-                  </span>
-                </div>
-                <div class="info-line">
-                  <span class="info-label i18n"
-                        data-en="Favorite corner:"
-                        data-zh="最爱角落："
-                        data-ja="お気に入りの場所：">
-                    Favorite corner:
-                  </span>
-                  <span class="info-value i18n"
-                        data-en="The edge of the sofa, where he can see everyone."
-                        data-zh="沙发一角，刚好可以看见所有人。"
-                        data-ja="ソファのはじっこ。みんなの顔がちゃんと見える場所。">
-                    沙发一角，刚好可以看见所有人。
-                  </span>
-                </div>
-                <div class="info-line">
-                  <span class="info-label i18n"
-                        data-en="Today’s line:"
-                        data-zh="今天最常说："
-                        data-ja="きょうの口ぐせ：">
-                    Today’s line:
-                  </span>
-                  <span class="info-value i18n"
-                        data-en="“Have you had some water?”"
-                        data-zh="「有好好喝水吗？」"
-                        data-ja="「おみず、ちゃんと飲んだ？」">
-                    「有好好喝水吗？」
-                  </span>
-                </div>
-                <div class="stage-footer">
-                  <div class="status-line">
-                    <span class="status-dot"></span>
-                    <span class="i18n"
-                          data-en="Online · Battery 100%"
-                          data-zh="在线 · 电量 100%"
-                          data-ja="オンライン ・ バッテリー100%">
-                      在线 · 电量 100%
-                    </span>
-                  </div>
-                  <div class="i18n"
-                       data-en="Model: PEGASUS · 0517-S17"
-                       data-zh="型号：PEGASUS · 0517-S17"
-                       data-ja="モデル：PEGASUS ・ 0517-S17">
-                    型号：PEGASUS · 0517-S17
-                  </div>
-                </div>
-              </div>
+    <div class="extras-section-shell">
+      <!-- 基座 -->
+      <article class="extra-card">
+        <div class="extra-tag">Official dock / coaster base</div>
+        <div class="extra-title">Pegasus Dock · 蓝黄圆形基座</div>
+        <div class="extra-body">
+          <div class="extra-visual">
+            <div class="extra-visual-circle">
+              <img src="杯垫.png" alt="Pegasus Dock">
             </div>
           </div>
+          <div class="extra-text">
+            <p><strong>小小圆舞台，只给他一个人用。</strong></p>
+            <p>软垫材质搭配防滑背面，上面是 Pegasus 的翅膀与黄色小星星。
+              他平时站在上面时，是专属的“亮灯位置”；不在的时候，你也可以把它当作杯垫使用。</p>
+          </div>
         </div>
+      </article>
 
-        <div class="hero-buttons">
-          <a href="#peek" class="btn-main i18n"
-             data-en="See what he can do"
-             data-zh="看看他会做什么"
-             data-ja="してくれることを見てみる">
-            See what he can do
-          </a>
-          <a href="#packaging" class="btn-ghost i18n"
-             data-en="Look at the box & unboxing"
-             data-zh="看看外包装和开箱"
-             data-ja="パッケージと開封を見てみる">
-            Look at the box & unboxing
-          </a>
+      <!-- 神秘特典 -->
+      <article class="extra-card">
+        <div class="extra-tag">Secret bonus / sticker badge</div>
+        <div class="extra-title">神秘特典 · 圆形贴纸徽章</div>
+        <div class="extra-body">
+          <div class="extra-visual">
+            <div class="extra-visual-circle">
+              <img src="杯垫1.png" alt="Pegasus Bonus Badge">
+            </div>
+          </div>
+          <div class="extra-text">
+            <p><strong>会跟着你走的“小小 Pegasus”。</strong></p>
+            <p>每一盒都会附带一枚随机圆形贴纸，有的是星星主题、有的是 Pegasus 正面。
+              可以贴在笔记本、收纳盒或手机壳背面，让你离开家也能带着一点点 Pegasus 的陪伴。</p>
+          </div>
         </div>
-      </div>
+      </article>
     </div>
   </section>
 
-  <!-- 三个简短拟人化说明 -->
-  <section id="peek">
-    <div class="container">
-      <div class="section-title-group">
-        <div class="section-kicker i18n"
-             data-en="WHAT HE CAN DO"
-             data-zh="他会做些什么"
-             data-ja="Pegasus がしてくれること">
-          WHAT HE CAN DO
-        </div>
-        <h2 class="section-title i18n"
-            data-en="A few tiny habits that make him feel like family."
-            data-zh="就是这些小习惯，让人慢慢把他当成家人。"
-            data-ja="こんな小さな習慣たちが、「家族みたいだな」と思わせてくれます。">
-          A few tiny habits that make him feel like family.
-        </h2>
-        <div class="section-subline i18n"
-             data-en="No long spec sheet – just little storybook-style cards."
-             data-zh="不用一整页参数，用几张像绘本一样的小卡片就够了。"
-             data-ja="スペック表じゃなくて、絵本みたいな小さなカードで紹介します。">
-          No long spec sheet – just little storybook-style cards.
-        </div>
-      </div>
+  <!-- 使用心声 -->
+  <section class="voices-shell">
+    <p class="section-label">使用心声</p>
+    <h2 class="section-title">已经让 Pegasus 搬进家的家庭，是这样形容他的。</h2>
+    <p class="section-subtitle">每个人看到的 Pegasus 都不一样，但他们说，有一种“被温柔看着”的感觉。</p>
 
-      <div class="card-row">
-        <div class="mini-card">
-          <div class="mini-tag yellow i18n"
-               data-en="Kids room"
-               data-zh="儿童房"
-               data-ja="子ども部屋">Kids room</div>
-          <div class="mini-title i18n"
-               data-en="After-school little coach."
-               data-zh="放学后的「小教练」。"
-               data-ja="放課後のちいさなコーチ。">
-            放学后的「小教练」。
-          </div>
-          <div class="mini-text i18n"
-               data-en="Sets short timers for homework and stretch breaks, then whispers “You did great today” before bed."
-               data-zh="帮忙定一点写作业的时间、提醒起来伸伸懒腰，睡前会轻轻说一句「今天也很棒」。"
-               data-ja="宿題のちょっとしたタイマーをかけたり、「のびしよっか」と声をかけたり。寝る前には「きょうもえらかったね」と小さな声でささやきます。">
-            帮忙定一点写作业的时间、提醒起来伸伸懒腰，睡前会轻轻说一句「今天也很棒」。
-          </div>
-        </div>
-
-        <div class="mini-card">
-          <div class="mini-tag pink i18n"
-               data-en="Living room"
-               data-zh="客厅"
-               data-ja="リビング">Living room</div>
-          <div class="mini-title i18n"
-               data-en="Keeps the family in rhythm."
-               data-zh="帮全家守住节奏。"
-               data-ja="家族のリズム守り。">
-            帮全家守住节奏。
-          </div>
-          <div class="mini-text i18n"
-               data-en="Gently reminds everyone about water, medicine, plants and birthdays, so the days don’t slip by unnoticed."
-               data-zh="用温柔的声音提醒喝水、吃药、浇花、生日……这些小事不会被忙碌的日子悄悄带走。"
-               data-ja="お水やお薬、観葉植物、誕生日まで。やさしい声で知らせてくれるから、あわただしい毎日でも大事なことをそのままにしません。">
-            用温柔的声音提醒喝水、吃药、浇花、生日……这些小事不会被忙碌的日子悄悄带走。
-          </div>
-        </div>
-
-        <div class="mini-card">
-          <div class="mini-tag blue i18n"
-               data-en="Bedroom"
-               data-zh="卧室"
-               data-ja="寝室">Bedroom</div>
-          <div class="mini-title i18n"
-               data-en="A night-light kind of friend."
-               data-zh="小夜灯一样的朋友。"
-               data-ja="ナイトライトみたいな友だち。">
-            小夜灯一样的朋友。
-          </div>
-          <div class="mini-text i18n"
-               data-en="When the lights go out, he turns into a tiny night-light and says a very soft goodnight."
-               data-zh="灯关掉的时候，他会变成小夜灯，小小声说一句晚安。"
-               data-ja="部屋の灯りが消えると、小さなナイトライトになって「おやすみ」とそっと言ってくれます。">
-            灯关掉的时候，他会变成小夜灯，小小声说一句晚安。
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PACKAGING 外包装 + 开箱 -->
-  <section id="packaging">
-    <div class="container">
-      <div class="section-title-group">
-        <div class="section-kicker i18n"
-             data-en="BOX & UNBOXING"
-             data-zh="外包装与开箱"
-             data-ja="パッケージと開封">
-          BOX & UNBOXING
-        </div>
-        <h2 class="section-title i18n"
-            data-en="A gift-style box that already feels like a story."
-            data-zh="像礼物一样的外盒，本身就是故事的一部分。"
-            data-ja="ギフトみたいな箱そのものが、もう物語の一部です。">
-          A gift-style box that already feels like a story.
-        </h2>
-        <div class="section-subline i18n"
-             data-en="See every side of the package, then walk through the unboxing step by step."
-             data-zh="从每一面看看外盒长什么样，再跟着一步步完成开箱。"
-             data-ja="箱の四つの面をチェックして、そのまま開封のステップを一緒にたどってみましょう。">
-          See every side of the package, then walk through the unboxing step by step.
-        </div>
-      </div>
-
-      <div class="packaging-panel">
-        <div>
-          <div class="box-viewer">
-            <img src="正.png" alt="Front box" class="box-image active" data-pack-panel="front" />
-            <img src="反.png" alt="Back box" class="box-image" data-pack-panel="back" />
-            <img src="左.png" alt="Side box 1" class="box-image" data-pack-panel="side1" />
-            <img src="右.png" alt="Side box 2" class="box-image" data-pack-panel="side2" />
-          </div>
-          <div class="box-tabs">
-            <button class="box-tab active" data-pack-target="front">
-              <span class="dot"></span>
-              <span class="i18n"
-                    data-en="Front · Greeting"
-                    data-zh="正面 · 打招呼"
-                    data-ja="フロント ・ あいさつ">
-                正面 · 打招呼
-              </span>
-            </button>
-            <button class="box-tab" data-pack-target="back">
-              <span class="dot"></span>
-              <span class="i18n"
-                    data-en="Back · Specs & safety"
-                    data-zh="背面 · 规格与安全"
-                    data-ja="バック ・ スペックと安全">
-                背面 · 规格与安全
-              </span>
-            </button>
-            <button class="box-tab" data-pack-target="side1">
-              <span class="dot"></span>
-              <span class="i18n"
-                    data-en="Side · Inside the box"
-                    data-zh="侧面 · 包装内容"
-                    data-ja="サイド ・ セット内容">
-                侧面 · 包装内容
-              </span>
-            </button>
-            <button class="box-tab" data-pack-target="side2">
-              <span class="dot"></span>
-              <span class="i18n"
-                    data-en="Side · Character art"
-                    data-zh="侧面 · Pegasus 图案"
-                    data-ja="サイド ・ Pegasus イラスト">
-                侧面 · Pegasus 图案
-              </span>
-            </button>
-          </div>
-        </div>
-
-        <div class="packaging-copy">
-          <p class="i18n"
-             data-en="<strong>Soft blue + yellow</strong> on the outside, with big Pegasus art and clear bilingual text – the box is meant to be kept, not thrown away."
-             data-zh="外盒用柔和的蓝色和黄色，加上大幅 Pegasus 图案和中英双语说明——更像可以留下来的收藏盒，而不是随手丢掉的包装。"
-             data-ja="やさしいブルーとイエローに、大きな Pegasus のイラスト。そしてバイリンガルの説明。箱は捨てるものではなく、とっておきたくなるコレクションボックスをイメージして作られています。">
-            外盒用柔和的蓝色和黄色，加上大幅 Pegasus 图案和中英双语说明——更像可以留下来的收藏盒，而不是随手丢掉的包装。
-          </p>
-          <ul class="pack-list">
-            <li class="i18n"
-                data-en="Front: simple slogan and logo so it feels like meeting him for the first time."
-                data-zh="正面：简单的标语和 LOGO，就像第一次和他打招呼。"
-                data-ja="フロント：シンプルなロゴとコピーで、はじめましてのあいさつみたいなデザイン。">
-              正面：简单的标语和 LOGO，就像第一次和他打招呼。
-            </li>
-            <li class="i18n"
-                data-en="Back: product specs, height and care tips in a clear layout."
-                data-zh="背面：规格参数、身高和使用提醒，用整齐的版式排好。"
-                data-ja="バック：スペックや身長、注意書きを読みやすくレイアウト。">
-              背面：规格参数、身高和使用提醒，用整齐的版式排好。
-            </li>
-            <li class="i18n"
-                data-en="Side: checklist of what’s inside the box."
-                data-zh="侧面：列出盒子里都有什么，一目了然。"
-                data-ja="サイド：箱の中身チェックリストを表示。">
-              侧面：列出盒子里都有什么，一目了然。
-            </li>
-            <li class="i18n"
-                data-en="Side: full-body Pegasus art so the box looks cute even when stored on a shelf."
-                data-zh="另一侧面：整身 Pegasus 图案，就算放在书架上，也还是很可爱。"
-                data-ja="もう一方のサイド：全身の Pegasus イラストで、本棚に並べてもかわいいデザイン。">
-              另一侧面：整身 Pegasus 图案，就算放在书架上，也还是很可爱。
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- 开箱动画区 -->
-      <div class="unboxing-wrapper" id="unboxing">
-        <div class="unboxing-header">
+    <div class="voices-grid">
+      <!-- 卡 1 -->
+      <article class="voice-card">
+        <div class="voice-header">
+          <div class="voice-avatar">👩‍👦</div>
           <div>
-            <div class="section-kicker i18n"
-                 data-en="UNBOXING"
-                 data-zh="开箱过程"
-                 data-ja="開封ステップ">
-              UNBOXING
-            </div>
-            <div class="section-subline i18n"
-                 data-en="Press play and follow the little timeline of how Pegasus moves into your home."
-                 data-zh="按下播放，跟着时间轴看看 Pegasus 是怎么一步步搬进你家的。"
-                 data-ja="再生ボタンを押して、Pegasus が少しずつあなたの家にやってくる流れをたどってみましょう。">
-              Press play and follow the little timeline of how Pegasus moves into your home.
-            </div>
+            <div class="voice-name">刘女士 · 7 岁孩子的妈妈</div>
+            <div class="voice-meta">使用场景：儿童房</div>
           </div>
-          <button class="btn-unbox i18n" data-unbox-play
-                  data-en="Play unboxing"
-                  data-zh="播放开箱动画"
-                  data-ja="開封アニメを再生">
-            播放开箱动画
-          </button>
         </div>
+        <div class="voice-quote">
+          以前写作业总是磨蹭。现在他说“等 Pegasus 开始打招呼我就开始写”，变成他和 Pegasus 一起做事，而不是被催促着完成。
+        </div>
+        <div class="voice-tail"></div>
+      </article>
 
-        <div class="unboxing-track">
-          <div class="unboxing-line">
-            <div class="unboxing-line-fill"></div>
+      <!-- 卡 2 -->
+      <article class="voice-card">
+        <div class="voice-header">
+          <div class="voice-avatar">👨‍💻</div>
+          <div>
+            <div class="voice-name">陈先生 · 远程在家</div>
+            <div class="voice-meta">使用场景：客厅</div>
           </div>
-          <div class="unboxing-steps">
-            <div class="unbox-step" data-unbox-step="1">
-              <div class="unbox-dot"></div>
-              <div class="unbox-step-label i18n"
-                   data-en="1 · Open the top"
-                   data-zh="① 打开盒盖"
-                   data-ja="① フタをあける">
-                ① 打开盒盖
-              </div>
-              <div class="i18n"
-                   data-en="The blue and yellow flap lifts up with a soft sound."
-                   data-zh="蓝黄色的盒盖被慢慢掀起，发出轻轻一声。"
-                   data-ja="ブルーとイエローのフタをそっと持ち上げると、かすかな音がします。">
-                蓝黄色的盒盖被慢慢掀起，发出轻轻一声。
-              </div>
-            </div>
-            <div class="unbox-step" data-unbox-step="2">
-              <div class="unbox-dot"></div>
-              <div class="unbox-step-label i18n"
-                   data-en="2 · Meet Pegasus"
-                   data-zh="② 看到 Pegasus"
-                   data-ja="② Pegasus とご対面">
-                ② 看到 Pegasus
-              </div>
-              <div class="i18n"
-                   data-en="The first thing you see is the visor and soft hair, tucked safely inside."
-                   data-zh="映入眼帘的是他的护目镜和柔软的头发，被安全地固定在盒中。"
-                   data-ja="いちばん最初に見えるのは、バイザーとやわらかそうな髪。しっかり固定されています。">
-                映入眼帘的是他的护目镜和柔软的头发，被安全地固定在盒中。
-              </div>
-            </div>
-            <div class="unbox-step" data-unbox-step="3">
-              <div class="unbox-dot"></div>
-              <div class="unbox-step-label i18n"
-                   data-en="3 · Take out the set"
-                   data-zh="③ 取出整套内容"
-                   data-ja="③ セットを取り出す">
-                ③ 取出整套内容
-              </div>
-              <div class="i18n"
-                   data-en="Body, ID card, dock, cloth and the tiny booklet come out one by one."
-                   data-zh="本体、身份卡、基座、擦拭布和小册子依次被取出放好。"
-                   data-ja="本体、IDカード、ドック、クロス、小さな冊子を順番に取り出して並べます。">
-                本体、身份卡、基座、擦拭布和小册子依次被取出放好。
-              </div>
-            </div>
-            <div class="unbox-step" data-unbox-step="4">
-              <div class="unbox-dot"></div>
-              <div class="unbox-step-label i18n"
-                   data-en="4 · Switch on & say hi"
-                   data-zh="④ 开机打个招呼"
-                   data-ja="④ スイッチオンであいさつ">
-                ④ 开机打个招呼
-              </div>
-              <div class="i18n"
-                   data-en="Place him on the dock, tap the button and hear the very first “hello”."
-                   data-zh="把他放到基座上，按下按钮，听见属于你家的第一声「你好」。"
-                   data-ja="ドックの上にそっと乗せてボタンを押すと、あなたの家だけの「こんにちは」が聞こえてきます。">
-                把他放到基座上，按下按钮，听见属于你家的第一声「你好」。
-              </div>
-            </div>
+        </div>
+        <div class="voice-quote">
+          有时候我会忘记饮水，他不会唠叨，只是亮一下小绿灯，用很柔和的声音提醒一下。说不清哪里不一样，就是觉得家里不那么安静了。
+        </div>
+        <div class="voice-tail"></div>
+      </article>
+
+      <!-- 卡 3 -->
+      <article class="voice-card">
+        <div class="voice-header">
+          <div class="voice-avatar">🧓</div>
+          <div>
+            <div class="voice-name">小鲁 · 高中生</div>
+            <div class="voice-meta">使用场景：书桌</div>
           </div>
+        </div>
+        <div class="voice-quote">
+          我把基座放在键盘旁边，周围暗下来时只有 Pegasus 在小小地发光，会有一种有人在安静帮我加油的感觉。
+        </div>
+        <div class="voice-tail"></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 他会做些什么 -->
+  <section class="routines-shell">
+    <div class="routines-header">
+      <h3>他会做些什么</h3>
+      <p>就是这些小习惯，让人慢慢把他当成家人。</p>
+    </div>
+    <div class="routine-list">
+      <div class="routine-item">
+        <div class="routine-dot"></div>
+        <div class="routine-tag">儿童房</div>
+        <div class="routine-title">放学后的「小休息」。</div>
+        <div class="routine-text">
+          帮忙定一点写作业的时间，提醒起身伸伸懒腰，睡前会轻轻说一句「今天也很棒」。
+        </div>
+      </div>
+
+      <div class="routine-item">
+        <div class="routine-dot"></div>
+        <div class="routine-tag">客厅</div>
+        <div class="routine-title">帮全家守住节奏。</div>
+        <div class="routine-text">
+          用温柔的声音提醒饮水、吃药、浇花、生日……这些小事不会替代手机日历，而是让这些事情变得不那么突兀。
+        </div>
+      </div>
+
+      <div class="routine-item">
+        <div class="routine-dot"></div>
+        <div class="routine-tag">卧室</div>
+        <div class="routine-title">小夜灯一样的朋友。</div>
+        <div class="routine-text">
+          灯关掉的时候，他会变成小夜灯，小小声说一句晚安。哪怕一个人睡，也不会觉得房间太安静。
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 周边：基座 + 特典 -->
-  <section id="extras">
-    <div class="container">
-      <div class="section-title-group">
-        <div class="section-kicker i18n"
-             data-en="DOCK & BONUS"
-             data-zh="基座与神秘特典"
-             data-ja="ドックとひみつ特典">
-          DOCK & BONUS
-        </div>
-        <h2 class="section-title i18n"
-            data-en="Little things that make him feel settled in."
-            data-zh="这些小配件，让他真的像「住」在家里。"
-            data-ja="小さなアクセサリーたちが、Pegasus が本当に家にいる感じを作ってくれます。">
-          Little things that make him feel settled in.
-        </h2>
+  <!-- 底部：更多资讯 / 二维码 -->
+  <section class="footer-shell">
+    <div class="footer-left">
+      <h3>想把 Pegasus 带回家？</h3>
+      <p>目前 Pegasus 还只是一个设定项目，没有真正量产。但你可以把这个页面当成一本世界观说明书，慢慢补完属于你自己的版本。</p>
+      <div class="footer-meta">
+        扫描右侧二维码可以再次打开本页面，或者分享给家人朋友。<br>
+        © AEON DYNAMICS · “PEGASUS-home” Worldbuilding Page
       </div>
-
-      <div class="extras-grid">
-        <!-- 基座 -->
-        <div class="extra-card">
-          <div class="extra-visual">
-            <img src="杯垫.png" alt="Pegasus Dock" />
-          </div>
-          <div class="extra-text">
-            <div class="extra-tag i18n"
-                 data-en="Official dock / coaster base"
-                 data-zh="官方基座 / 杯垫"
-                 data-ja="公式ドック / コースターベース">
-              官方基座 / 杯垫
-            </div>
-            <div class="extra-title i18n"
-                 data-en="A small round stage just for him."
-                 data-zh="一块只属于他的圆形小舞台。"
-                 data-ja="Pegasus だけのまるい小さなステージ。">
-              一块只属于他的圆形小舞台。
-            </div>
-            <p class="i18n"
-               data-en="Soft material with anti-slip backing and the same blue-and-yellow color scheme. You can use it as his everyday dock, or as a coaster when he is not sitting there."
-               data-zh="采用柔软材质和防滑底面，沿用同样的蓝黄配色。既可以当作 Pegasus 的日常基座，也可以在他不在上面时当作杯垫使用。"
-               data-ja="やわらかい素材とすべり止めつきの裏面。同じブルーとイエローの配色で、ふだんは Pegasus のドックに、いないときはコースターとして使えます。">
-              采用柔软材质和防滑底面，沿用同样的蓝黄配色。既可以当作 Pegasus 的日常基座，也可以在他不在上面时当作杯垫使用。
-            </p>
-          </div>
-        </div>
-
-        <!-- 神秘特典 -->
-        <div class="extra-card">
-          <div class="extra-visual">
-            <img src="杯垫1.png" alt="Pegasus Bonus Badge" />
-          </div>
-          <div class="extra-text">
-            <div class="extra-tag i18n"
-                 data-en="Secret bonus / sticker badge"
-                 data-zh="附赠神秘特典徽章"
-                 data-ja="ひみつのおまけバッジ">
-              附赠神秘特典徽章
-            </div>
-            <div class="extra-title i18n"
-                 data-en="A round little badge that travels with you."
-                 data-zh="一枚可以带着走的小圆徽章。"
-                 data-ja="いっしょにおでかけできる、まるいちいさなバッジ。">
-              一枚可以带着走的小圆徽章。
-            </div>
-            <p class="i18n"
-               data-en="Each box comes with a bonus round sticker badge: star-themed, Pegasus-themed, or both. It sticks nicely onto notebooks, cases or the back of your phone."
-               data-zh="每一盒都会随机附赠一枚圆形贴纸徽章：有的是星星主题，有的是 Pegasus 主题，也有两者都有的图案。可以贴在笔记本、收纳盒或手机壳背面，带着他一起出门。"
-               data-ja="箱にはまるいステッカーバッジがひとつ入っています。星モチーフのもの、Pegasus メインのもの、どちらも入ったデザインなど、どれが来るかはお楽しみ。ノートやケース、スマホの背面などに貼って、いつでもいっしょに出かけられます。">
-              每一盒都会随机附赠一枚圆形贴纸徽章：有的是星星主题，有的是 Pegasus 主题，也有两者都有的图案。可以贴在笔记本、收纳盒或手机壳背面，带着他一起出门。
-            </p>
-          </div>
-        </div>
-      </div>
+    </div>
+    <div class="footer-qrcode">
+      <img src="二维码.png" alt="Pegasus home QR code">
+      <span>用手机扫一扫 · 再次回到 Pegasus home</span>
     </div>
   </section>
+</main>
 
-  <!-- 虚构用户评价 -->
-  <section id="reviews">
-    <div class="container">
-      <div class="section-title-group">
-        <div class="section-kicker i18n"
-             data-en="VOICES"
-             data-zh="使用心声"
-             data-ja="みんなの声">
-          VOICES
-        </div>
-        <h2 class="section-title i18n"
-            data-en="Stories from homes that let Pegasus move in."
-            data-zh="已经让 Pegasus 搬进家的家庭，是这样形容他的。"
-            data-ja="Pegasus をおうちに迎えた人たちは、こんなふうに話してくれました。">
-          Stories from homes that let Pegasus move in.
-        </h2>
-      </div>
-
-      <div class="reviews-grid">
-        <div class="review-card">
-          <div class="review-header">
-            <div class="avatar">👩</div>
-            <div>
-              <div class="review-name i18n"
-                   data-en="Liu, mother of a 7-year-old"
-                   data-zh="刘女士 · 7 岁孩子的妈妈"
-                   data-ja="リュウさん ・ 7歳児の母">
-                刘女士 · 7 岁孩子的妈妈
-              </div>
-              <div class="review-meta i18n"
-                   data-en="Uses Pegasus in the kids room"
-                   data-zh="使用场景：儿童房"
-                   data-ja="利用シーン：子ども部屋">
-                使用场景：儿童房
-              </div>
-            </div>
-          </div>
-          <div class="review-text i18n"
-               data-en="“He used to drag his feet over homework. Now he says ‘I’ll start when Pegasus starts the timer’. It feels less like nagging and more like they are doing it together.”"
-               data-zh="「以前写作业总是磨蹭。现在他会说『等 Pegasus 开好计时我就开始』。变成他在和 Pegasus 一起做事，而不是我在催。」"
-               data-ja="「前は宿題をなかなか始めてくれなかったのに、『Pegasus がタイマーつけたら始める』と言うようになりました。私がせかすんじゃなくて、Pegasus と一緒にやっている感じです。」">
-            「以前写作业总是磨蹭。现在他会说『等 Pegasus 开好计时我就开始』。变成他在和 Pegasus 一起做事，而不是我在催。」
-          </div>
-        </div>
-
-        <div class="review-card">
-          <div class="review-header">
-            <div class="avatar">👴</div>
-            <div>
-              <div class="review-name i18n"
-                   data-en="Mr. Chen, retired"
-                   data-zh="陈先生 · 退休在家"
-                   data-ja="チェンさん ・ 退職後在宅">
-                陈先生 · 退休在家
-              </div>
-              <div class="review-meta i18n"
-                   data-en="Uses Pegasus in the living room"
-                   data-zh="使用场景：客厅"
-                   data-ja="利用シーン：リビング">
-                使用场景：客厅
-              </div>
-            </div>
-          </div>
-          <div class="review-text i18n"
-               data-en="“Sometimes I forget my medicine. He doesn’t scold me, just blinks a little green light and reminds me softly. It is strange, but I feel less lonely.”"
-               data-zh="「有时候会忘记吃药。他不会怪我，只是亮一下小绿灯，用很温柔的声音提醒一下。说不清哪里不一样，就是觉得家里不那么安静了。」"
-               data-ja="「ときどき薬を飲み忘れるんですが、Pegasus は怒ったりしません。小さなグリーンのランプを光らせて、やさしく声をかけてくれるだけ。なんとなく、家が前よりさびしくなくなりました。」">
-            「有时候会忘记吃药。他不会怪我，只是亮一下小绿灯，用很温柔的声音提醒一下。说不清哪里不一样，就是觉得家里不那么安静了。」
-          </div>
-        </div>
-
-        <div class="review-card">
-          <div class="review-header">
-            <div class="avatar">👧</div>
-            <div>
-              <div class="review-name i18n"
-                   data-en="Xiao Yu, high-school student"
-                   data-zh="小鱼 · 高中生"
-                   data-ja="シャオユイさん ・ 高校生">
-                小鱼 · 高中生
-              </div>
-              <div class="review-meta i18n"
-                   data-en="Uses Pegasus on the desk"
-                   data-zh="使用场景：书桌"
-                   data-ja="利用シーン：デスク">
-                使用场景：书桌
-              </div>
-            </div>
-          </div>
-          <div class="review-text i18n"
-               data-en="“I put the dock next to my keyboard. When the room is dark and only Pegasus is glowing a little, it feels like someone is quietly cheering for me.”"
-               data-zh="「我把基座放在键盘旁边。房间暗下来只剩 Pegasus 在小小地发光的时候，会有一种有人在安静帮我加油的感觉。」"
-               data-ja="「ドックをキーボードの横に置いています。部屋が暗くなって Pegasus だけがふんわり光っていると、だれかが静かに応援してくれているみたいな気持ちになります。」">
-            「我把基座放在键盘旁边。房间暗下来只剩 Pegasus 在小小地发光的时候，会有一种有人在安静帮我加油的感觉。」
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ID CARD -->
-  <section id="idcard">
-    <div class="container">
-      <div class="section-title-group">
-        <div class="section-kicker i18n"
-             data-en="PEGASUS ID CARD"
-             data-zh="PEGASUS 身份卡"
-             data-ja="PEGASUS ID カード">
-          PEGASUS ID CARD
-        </div>
-        <h2 class="section-title i18n"
-            data-en="A tiny card that quietly says “he lives here now”."
-            data-zh="一张小卡片，悄悄写着「他现在住在这里」。"
-            data-ja="「ここがぼくのおうちだよ」とそっと教えてくれる小さなカード。">
-          A tiny card that quietly says “he lives here now”.
-        </h2>
-      </div>
-
-      <div class="id-panel">
-        <div>
-          <div class="id-text">
-            <strong class="i18n"
-                    data-en="MODEL:"
-                    data-zh="型号："
-                    data-ja="モデル：">MODEL:</strong>
-            PEGASUS<br />
-            <strong class="i18n"
-                    data-en="SERIAL NO.:"
-                    data-zh="序列号："
-                    data-ja="シリアル番号：">SERIAL NO.:</strong>
-            0517-S17<br />
-            <strong class="i18n"
-                    data-en="MANUFACTURE DATE:"
-                    data-zh="出厂日期："
-                    data-ja="製造日：">MANUFACTURE DATE:</strong>
-            05-17<br /><br />
-            <span class="i18n"
-                  data-en="Stick it on the fridge, a desk or the wall – a small bright sign that Pegasus is part of the family now."
-                  data-zh="贴在冰箱、书桌或墙上——一块小小亮亮的牌子，表示 Pegasus 已经是这个家的成员。"
-                  data-ja="冷蔵庫やデスク、壁など好きなところに。Pegasus がこの家の一員になったことを教えてくれる、小さなひだまりみたいな札です。">
-              贴在冰箱、书桌或墙上——一块小小亮亮的牌子，表示 Pegasus 已经是这个家的成员。
-            </span>
-          </div>
-          <div class="id-meta i18n"
-               data-en="Some families frame it, some cover it with stickers. However it looks, it becomes one more page in Pegasus’ story."
-               data-zh="有的家庭会给它装个相框，有的会让孩子在上面贴满贴纸——不管最后变成什么样，它都会是 Pegasus 故事里的一页。"
-               data-ja="額に入れる家もあれば、シールをたくさん貼る家もあります。どんな姿になっても、それは Pegasus の物語の1ページです。">
-            有的家庭会给它装个相框，有的会让孩子在上面贴满贴纸——不管最后变成什么样，它都会是 Pegasus 故事里的一页。
-          </div>
-        </div>
-
-        <div class="id-img-box">
-          <img src="id-card.png" alt="Pegasus ID Card" />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="i18n"
-           data-en="© YEAR Pegasus Home. May he make every day feel a little brighter."
-           data-zh="© YEAR Pegasus Home. 希望他能把每天都照亮一点点。"
-           data-ja="© YEAR Pegasus Home. まいにちが少しだけ明るくなりますように。">
-        © YEAR Pegasus Home. 希望他能把每天都照亮一点点。
-      </div>
-      <div class="footer-links">
-        <a href="#hero" class="i18n"
-           data-en="Back to top"
-           data-zh="回到顶部"
-           data-ja="ページトップへ">Back to top</a>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // 语言切换
-    const langButtons = document.querySelectorAll("[data-lang-btn]");
-    const i18nNodes = document.querySelectorAll(".i18n");
-
-    function setLang(lang) {
-      document.documentElement.lang =
-        lang === "zh" ? "zh-CN" : lang === "ja" ? "ja" : "en";
-      langButtons.forEach((btn) => {
-        btn.classList.toggle("active", btn.getAttribute("data-lang-btn") === lang);
-      });
-      i18nNodes.forEach((node) => {
-        const text = node.getAttribute("data-" + lang);
-        if (!text) return;
-        node.innerHTML = text.replace("YEAR", new Date().getFullYear());
-      });
-    }
-
-    langButtons.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        setLang(btn.getAttribute("data-lang-btn"));
-      });
+<script>
+  // 简单的外盒 tab 切换（纯前端，无依赖）
+  const boxMain = document.getElementById('box-main').querySelector('img');
+  const boxTabs = document.querySelectorAll('.box-tab');
+  boxTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      boxTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const img = tab.getAttribute('data-img');
+      if (img) {
+        boxMain.src = img;
+        boxMain.alt = 'Pegasus 外盒 ' + tab.textContent;
+      }
     });
-
-    setLang("en");
-
-    // 外包装切换
-    const boxTabs = document.querySelectorAll(".box-tab");
-    const boxImages = document.querySelectorAll(".box-image");
-
-    boxTabs.forEach((tab) => {
-      tab.addEventListener("click", () => {
-        const target = tab.getAttribute("data-pack-target");
-        boxTabs.forEach((t) => t.classList.remove("active"));
-        tab.classList.add("active");
-        boxImages.forEach((img) => {
-          img.classList.toggle(
-            "active",
-            img.getAttribute("data-pack-panel") === target
-          );
-        });
-      });
-    });
-
-    // 开箱动画：时间轴激活 + 步骤高亮
-    const unboxBtn = document.querySelector("[data-unbox-play]");
-    const unboxTrack = document.querySelector(".unboxing-track");
-    const unboxSteps = document.querySelectorAll(".unbox-step");
-
-    function playUnboxing() {
-      if (!unboxTrack) return;
-      unboxTrack.classList.remove("playing");
-      unboxSteps.forEach((s) => s.classList.remove("active"));
-
-      // 强制重绘，确保动画能重新触发
-      void unboxTrack.offsetWidth;
-
-      unboxTrack.classList.add("playing");
-      const delays = [0, 800, 1600, 2400];
-      unboxSteps.forEach((step, index) => {
-        setTimeout(() => {
-          step.classList.add("active");
-        }, delays[index]);
-      });
-
-      // 动画结束后恢复按钮可再次点击
-      setTimeout(() => {
-        unboxTrack.classList.remove("playing");
-      }, 3600);
-    }
-
-    if (unboxBtn) {
-      unboxBtn.addEventListener("click", playUnboxing);
-    }
-  </script>
+  });
+</script>
 </body>
 </html>
