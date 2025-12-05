@@ -5,7 +5,7 @@
   <title>Pegasus home</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Pegasus 家用陪伴机器人 · 温和、安静、适合全家人的小伙伴。" />
-  <!-- 可爱英文标题字体（中文仍用系统字体） -->
+  <!-- 英文可爱标题字体 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700&display=swap" rel="stylesheet">
@@ -138,16 +138,18 @@
 
     .section-title {
       text-align: center;
-      font-size: clamp(1.7rem, 2vw + 1.2rem, 2.2rem);
+      font-size: clamp(1.7rem, 2vw + 1.2rem, 2.25rem);
       font-weight: 700;
       margin: 0 0 8px;
       letter-spacing: 0.08em;
       font-family: "Baloo 2", system-ui, sans-serif;
+      text-shadow: 0 3px 0 rgba(255, 255, 255, 0.9),
+                   0 4px 10px rgba(157, 182, 226, 0.6);
     }
 
     .section-subtitle {
       text-align: center;
-      font-size: 0.95rem;
+      font-size: 0.96rem;
       color: var(--peg-text-soft);
       margin: 0 0 24px;
     }
@@ -172,6 +174,8 @@
       font-family: "Baloo 2", system-ui, sans-serif;
       font-size: clamp(2.1rem, 2.6vw + 1.4rem, 2.7rem);
       margin: 0 0 6px;
+      text-shadow: 0 3px 0 rgba(255, 255, 255, 0.9),
+                   0 4px 10px rgba(155, 174, 215, 0.7);
     }
 
     .hero-title span {
@@ -661,15 +665,18 @@
     }
 
     .routines-header h3 {
-      margin: 0 0 4px;
-      font-size: 1.35rem;
+      margin: 0 0 6px;
+      font-size: 1.5rem;
       font-family: "Baloo 2", system-ui, sans-serif;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.16em;
+      text-shadow: 0 3px 0 rgba(255, 255, 255, 0.9),
+                   0 4px 10px rgba(160, 184, 225, 0.55);
     }
 
     .routines-header p {
       margin: 0;
-      font-size: 0.9rem;
+      font-size: 0.98rem;
+      font-weight: 600;
       color: var(--peg-text-soft);
     }
 
@@ -841,10 +848,7 @@
         align-items: flex-start;
       }
 
-      .box-section-shell {
-        padding: 20px 16px 22px;
-      }
-
+      .box-section-shell,
       .routines-shell {
         padding: 20px 16px 22px;
       }
@@ -1017,7 +1021,7 @@
     </div>
   </section>
 
-  <!-- 使用心声 -->
+  <!-- 使用心声（已按你给的文本修改） -->
   <section class="voices-shell">
     <p class="section-label">使用心声</p>
     <h2 class="section-title">已经让 Pegasus 搬进家的家庭，是这样形容他的。</h2>
@@ -1029,12 +1033,12 @@
         <div class="voice-header">
           <div class="voice-avatar">👩‍👦</div>
           <div>
-            <div class="voice-name">刘女士 · 7 岁孩子的妈妈</div>
-            <div class="voice-meta">使用场景：儿童房</div>
+            <div class="voice-name">神代女士 · 9 岁孩子的妈妈</div>
+            <div class="voice-meta">使用场景：车库</div>
           </div>
         </div>
         <div class="voice-quote">
-          以前写作业总是磨蹭。现在他说“等 Pegasus 开始打招呼我就开始写”，变成他和 Pegasus 一起做事，而不是被催促着完成。
+          以前写作业总是磨蹭。现在他说「等 Pegasus 开始打招呼我就开始写」，变成他和 Pegasus 一起做事，而不是被催促着完成。
         </div>
         <div class="voice-tail"></div>
       </article>
@@ -1042,14 +1046,14 @@
       <!-- 卡 2 -->
       <article class="voice-card">
         <div class="voice-header">
-          <div class="voice-avatar">👨‍💻</div>
+          <div class="voice-avatar">👩‍💻</div>
           <div>
-            <div class="voice-name">陈先生 · 远程在家</div>
+            <div class="voice-name">天马女士 · 远程在家</div>
             <div class="voice-meta">使用场景：客厅</div>
           </div>
         </div>
         <div class="voice-quote">
-          有时候我会忘记饮水，他不会唠叨，只是亮一下小绿灯，用很柔和的声音提醒一下。说不清哪里不一样，就是觉得家里不那么安静了。
+          有时候我会忘记吃药，他不会唠叨，只是亮一下小绿灯，用很柔和的声音提醒一下。说不清是哪里不一样，就是觉得家里不那么安静了。
         </div>
         <div class="voice-tail"></div>
       </article>
@@ -1057,24 +1061,24 @@
       <!-- 卡 3 -->
       <article class="voice-card">
         <div class="voice-header">
-          <div class="voice-avatar">🧓</div>
+          <div class="voice-avatar">🎹</div>
           <div>
-            <div class="voice-name">小鲁 · 高中生</div>
-            <div class="voice-meta">使用场景：书桌</div>
+            <div class="voice-name">toya · 高中生</div>
+            <div class="voice-meta">使用场景：房间</div>
           </div>
         </div>
         <div class="voice-quote">
-          我把基座放在键盘旁边，周围暗下来时只有 Pegasus 在小小地发光，会有一种有人在安静帮我加油的感觉。
+          我把基座放在钢琴旁边，周围暗下来时只有 Pegasus 在小小地发光，会有一种有人在安静帮我加油的感觉。
         </div>
         <div class="voice-tail"></div>
       </article>
     </div>
   </section>
 
-  <!-- 他会做些什么 -->
+  <!-- 他会做些什么（标题与副标题更强调） -->
   <section class="routines-shell">
     <div class="routines-header">
-      <h3>他会做些什么</h3>
+      <h3>他会做些什么？</h3>
       <p>就是这些小习惯，让人慢慢把他当成家人。</p>
     </div>
     <div class="routine-list">
@@ -1125,7 +1129,7 @@
 </main>
 
 <script>
-  // 简单的外盒 tab 切换（纯前端，无依赖）
+  // 外盒 tab 切换
   const boxMain = document.getElementById('box-main').querySelector('img');
   const boxTabs = document.querySelectorAll('.box-tab');
   boxTabs.forEach(tab => {
