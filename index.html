@@ -24,29 +24,20 @@
       --shadow-chip: 0 8px 20px rgba(0, 0, 0, 0.08);
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont,
-        "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC",
-        "Microsoft YaHei", sans-serif;
+      font-family: system-ui,-apple-system,BlinkMacSystemFont,
+        "Segoe UI","PingFang SC","Hiragino Sans GB","Noto Sans CJK SC",
+        "Microsoft YaHei",sans-serif;
       color: var(--peg-text-main);
-      background: radial-gradient(circle at top, #fffdf7 0, #f2f8ff 40%, #eaf4ff 100%);
+      background: radial-gradient(circle at top,#fffdf7 0,#f2f8ff 40%,#eaf4ff 100%);
       line-height: 1.7;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
 
     main {
       max-width: 1200px;
@@ -61,30 +52,19 @@
       padding: 8px 4px 18px;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+    .brand { display: flex; align-items: center; gap: 10px; }
 
     .brand-logo {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: #fff;
+      display:flex;align-items:center;justify-content:center;
       box-shadow: var(--shadow-chip);
     }
 
-    .brand-logo img {
-      width: 28px;
-      height: 28px;
-    }
+    .brand-logo img { width: 28px; height: 28px; }
 
     .brand-text-english {
-      font-family: "Baloo 2", system-ui, sans-serif;
+      font-family: "Baloo 2",system-ui,sans-serif;
       font-size: 1.45rem;
       letter-spacing: 0.12em;
     }
@@ -96,800 +76,486 @@
     }
 
     .lang-switch {
-      display: inline-flex;
-      align-items: center;
-      padding: 4px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.9);
-      box-shadow: var(--shadow-chip);
-      gap: 4px;
-      font-size: 0.78rem;
+      display:inline-flex;align-items:center;
+      padding:4px;
+      border-radius:999px;
+      background:rgba(255,255,255,.9);
+      box-shadow:var(--shadow-chip);
+      gap:4px;
+      font-size:.78rem;
     }
 
     .lang-switch button {
-      border: none;
-      background: transparent;
-      padding: 5px 10px;
-      border-radius: 999px;
-      cursor: pointer;
-      font: inherit;
-      color: var(--peg-text-soft);
-      transition: background 0.2s, color 0.2s;
+      border:none;background:transparent;
+      padding:5px 10px;border-radius:999px;
+      cursor:pointer;font:inherit;
+      color:var(--peg-text-soft);
+      transition:background .2s,color .2s;
     }
-
     .lang-switch button.active {
-      background: linear-gradient(135deg, var(--peg-blue), #4fa1ff);
-      color: #fff;
+      background:linear-gradient(135deg,var(--peg-blue),#4fa1ff);
+      color:#fff;
     }
 
-    /* 通用 section */
-    section {
-      margin-top: 64px;
-    }
+    section { margin-top: 64px; }
 
     .section-label {
-      text-align: center;
-      font-size: 0.85rem;
-      letter-spacing: 0.28em;
-      text-indent: 0.28em;
-      color: #8fa2bd;
-      margin-bottom: 8px;
+      text-align:center;
+      font-size:.85rem;
+      letter-spacing:.28em;
+      text-indent:.28em;
+      color:#8fa2bd;
+      margin-bottom:8px;
     }
 
     .section-title {
-      text-align: center;
-      font-size: clamp(1.7rem, 2vw + 1.2rem, 2.25rem);
-      font-weight: 700;
-      margin: 0 0 8px;
-      letter-spacing: 0.08em;
-      font-family: "Baloo 2", system-ui, sans-serif;
-      text-shadow: 0 3px 0 rgba(255, 255, 255, 0.9),
-                   0 4px 10px rgba(157, 182, 226, 0.6);
+      text-align:center;
+      font-size:clamp(1.7rem,2vw + 1.2rem,2.25rem);
+      font-weight:700;
+      margin:0 0 8px;
+      letter-spacing:.08em;
+      font-family:"Baloo 2",system-ui,sans-serif;
+      text-shadow:0 3px 0 rgba(255,255,255,.9),
+                  0 4px 10px rgba(157,182,226,.6);
     }
 
     .section-subtitle {
-      text-align: center;
-      font-size: 0.96rem;
-      color: var(--peg-text-soft);
-      margin: 0 0 24px;
+      text-align:center;
+      font-size:.96rem;
+      color:var(--peg-text-soft);
+      margin:0 0 24px;
     }
 
-    /* Hero：主页大 Pegasus 区 */
+    /* HERO */
     .hero {
-      background: radial-gradient(circle at top left, #ffe7a8 0, #ffe7a8 15%, #fffef8 40%, #f3f8ff 100%);
-      padding: 28px 32px;
-      border-radius: 40px;
-      box-shadow: var(--shadow-soft);
-      display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
-      gap: 32px;
+      background:radial-gradient(circle at top left,#ffe7a8 0,#ffe7a8 15%,#fffef8 40%,#f3f8ff 100%);
+      padding:28px 32px;
+      border-radius:40px;
+      box-shadow:var(--shadow-soft);
+      display:grid;
+      grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);
+      gap:32px;
     }
 
-    .hero-left {
-      position: relative;
-      padding-right: 12px;
-    }
+    .hero-left { position:relative; padding-right:12px; }
 
     .hero-title {
-      font-family: "Baloo 2", system-ui, sans-serif;
-      font-size: clamp(2.1rem, 2.6vw + 1.4rem, 2.7rem);
-      margin: 0 0 6px;
-      text-shadow: 0 3px 0 rgba(255, 255, 255, 0.9),
-                   0 4px 10px rgba(155, 174, 215, 0.7);
+      font-family:"Baloo 2",system-ui,sans-serif;
+      font-size:clamp(2.1rem,2.6vw + 1.4rem,2.7rem);
+      margin:0 0 6px;
+      text-shadow:0 3px 0 rgba(255,255,255,.9),
+                  0 4px 10px rgba(155,174,215,.7);
     }
+    .hero-title span { color:#005eb4; }
 
-    .hero-title span {
-      color: #005eb4;
-    }
-
-    .hero-tagline {
-      font-size: 0.98rem;
-      color: var(--peg-text-soft);
-      margin-bottom: 20px;
-    }
+    .hero-tagline { font-size:.98rem;color:var(--peg-text-soft);margin-bottom:20px; }
 
     .hero-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 24px;
+      display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px;
     }
-
     .hero-badge {
-      padding: 5px 12px;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 999px;
-      font-size: 0.78rem;
-      color: #567190;
-      box-shadow: var(--shadow-chip);
-      white-space: nowrap;
+      padding:5px 12px;background:rgba(255,255,255,.9);
+      border-radius:999px;font-size:.78rem;color:#567190;
+      box-shadow:var(--shadow-chip);white-space:nowrap;
     }
 
-    .hero-cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      align-items: center;
-    }
-
+    .hero-cta-row { display:flex;flex-wrap:wrap;gap:12px;align-items:center; }
     .btn-primary {
-      padding: 10px 22px;
-      border-radius: 999px;
-      border: none;
-      cursor: pointer;
-      font-size: 0.9rem;
-      background: linear-gradient(135deg, #ffc93f, #ffb848);
-      color: #744e12;
-      font-weight: 600;
-      box-shadow: var(--shadow-soft);
+      padding:10px 22px;border-radius:999px;border:none;
+      cursor:pointer;font-size:.9rem;
+      background:linear-gradient(135deg,#ffc93f,#ffb848);
+      color:#744e12;font-weight:600;box-shadow:var(--shadow-soft);
     }
-
     .btn-secondary {
-      padding: 9px 18px;
-      border-radius: 999px;
-      border: 1px solid #a0c7ff;
-      background: rgba(255, 255, 255, 0.5);
-      font-size: 0.85rem;
-      color: #2563a7;
-      cursor: pointer;
+      padding:9px 18px;border-radius:999px;
+      border:1px solid #a0c7ff;
+      background:rgba(255,255,255,.5);
+      font-size:.85rem;color:#2563a7;cursor:pointer;
     }
+    .hero-note { font-size:.78rem;color:#7d90a5;margin-top:10px; }
 
-    .hero-note {
-      font-size: 0.78rem;
-      color: #7d90a5;
-      margin-top: 10px;
-    }
-
-    .hero-right {
-      position: relative;
-    }
+    .hero-right { position:relative; }
 
     .hero-stage {
-      position: relative;
-      width: 100%;
-      padding-top: 84%;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 0, #ffe699 0, #ffe8a9 14%, #ffd665 38%, #ffcc50 55%, #fffbf0 80%);
-      box-shadow: 0 20px 45px rgba(240, 180, 66, 0.55);
-      overflow: hidden;
+      position:relative;width:100%;padding-top:84%;
+      border-radius:999px;
+      background:radial-gradient(circle at 30% 0,#ffe699 0,#ffe8a9 14%,#ffd665 38%,#ffcc50 55%,#fffbf0 80%);
+      box-shadow:0 20px 45px rgba(240,180,66,.55);
+      overflow:hidden;
     }
-
     .hero-pegasus {
-      position: absolute;
-      inset: 12% 18% 8%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      position:absolute;inset:12% 18% 8%;
+      display:flex;align-items:center;justify-content:center;
     }
-
     .hero-pegasus img {
-      height: 100%;
-      width: auto;
-      filter: drop-shadow(0 16px 22px rgba(219, 137, 44, 0.5));
+      height:100%;width:auto;
+      filter:drop-shadow(0 16px 22px rgba(219,137,44,.5));
     }
 
     .hero-speech {
-      position: absolute;
-      top: 6%;
-      right: 2%;
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: #ffffffdd;
-      box-shadow: var(--shadow-chip);
-      font-size: 0.8rem;
-      color: #2563a7;
+      position:absolute;top:6%;right:2%;
+      padding:10px 14px;border-radius:999px;
+      background:#ffffffdd;box-shadow:var(--shadow-chip);
+      font-size:.8rem;color:#2563a7;
     }
 
-    .hero-stars {
-      position: absolute;
-      inset: 10%;
-      pointer-events: none;
-    }
-
+    .hero-stars { position:absolute;inset:10%;pointer-events:none; }
     .hero-star {
-      position: absolute;
-      width: 16px;
-      height: 16px;
-      border-radius: 4px;
-      background: #ffe76b;
-      transform: rotate(45deg);
-      filter: blur(0.5px);
-      opacity: 0.85;
+      position:absolute;width:16px;height:16px;border-radius:4px;
+      background:#ffe76b;transform:rotate(45deg);
+      filter:blur(.5px);opacity:.85;
     }
-
-    .hero-star.s1 { top: 16%; left: 18%; }
-    .hero-star.s2 { top: 26%; right: 14%; width: 13px; height: 13px; opacity: 0.7; }
-    .hero-star.s3 { bottom: 18%; left: 22%; width: 12px; height: 12px; }
-    .hero-star.s4 { bottom: 24%; right: 20%; width: 18px; height: 18px; }
+    .hero-star.s1{top:16%;left:18%;}
+    .hero-star.s2{top:26%;right:14%;width:13px;height:13px;opacity:.7;}
+    .hero-star.s3{bottom:18%;left:22%;width:12px;height:12px;}
+    .hero-star.s4{bottom:24%;right:20%;width:18px;height:18px;}
 
     .hero-status-card {
-      position: absolute;
-      right: 2px;
-      bottom: 0;
-      transform: translateY(60%);
-      width: min(320px, 100%);
-      background: rgba(255, 255, 255, 0.96);
-      border-radius: 24px;
-      padding: 14px 16px 12px;
-      box-shadow: var(--shadow-soft);
-      font-size: 0.78rem;
-      color: var(--peg-text-soft);
+      position:absolute;right:2px;bottom:0;
+      transform:translateY(60%);
+      width:min(320px,100%);
+      background:rgba(255,255,255,.96);
+      border-radius:24px;
+      padding:14px 16px 12px;
+      box-shadow:var(--shadow-soft);
+      font-size:.78rem;color:var(--peg-text-soft);
     }
-
     .status-title-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 6px;
+      display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;
     }
-
-    .status-title-row strong {
-      font-size: 0.9rem;
-      color: var(--peg-text-main);
-    }
-
+    .status-title-row strong{font-size:.9rem;color:var(--peg-text-main);}
     .status-dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 999px;
-      background: #28c97a;
-      box-shadow: 0 0 0 4px rgba(40, 201, 122, 0.2);
+      width:9px;height:9px;border-radius:999px;
+      background:#28c97a;
+      box-shadow:0 0 0 4px rgba(40,201,122,.2);
+    }
+    .status-items{display:grid;row-gap:4px;margin-bottom:6px;}
+    .status-items span.label{color:#8aa0b6;margin-right:4px;}
+    .status-footer{
+      display:flex;justify-content:space-between;
+      font-size:.72rem;color:#8aa0b6;
     }
 
-    .status-items {
-      display: grid;
-      grid-template-columns: 1fr;
-      row-gap: 4px;
-      margin-bottom: 6px;
+    /* 他会做些什么：提前并加大存在感 */
+    .routines-shell {
+      margin-top:72px;
+      background:linear-gradient(135deg,#fff9de,#ffffff);
+      border-radius:38px;
+      padding:26px 28px 28px;
+      box-shadow:var(--shadow-soft);
+      border:2px solid #ffe29b;
     }
-
-    .status-items span.label {
-      color: #8aa0b6;
-      margin-right: 4px;
+    .routines-header{
+      text-align:center;margin-bottom:16px;
     }
-
-    .status-footer {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.72rem;
-      color: #8aa0b6;
+    .routines-header h3{
+      margin:0 0 6px;
+      font-size:1.8rem;
+      font-family:"Baloo 2",system-ui,sans-serif;
+      letter-spacing:.18em;
+      text-shadow:0 3px 0 rgba(255,255,255,.9),
+                  0 4px 10px rgba(160,184,225,.55);
     }
+    .routines-header p{
+      margin:0;
+      font-size:1rem;
+      font-weight:600;
+      color:var(--peg-text-soft);
+    }
+    .routine-list{
+      margin-top:20px;
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:18px;
+      font-size:.9rem;
+    }
+    .routine-item{
+      position:relative;
+      padding:12px 12px 12px 18px;
+      border-radius:20px;
+      background:rgba(255,255,255,.9);
+      box-shadow:0 10px 24px rgba(255,204,112,.4);
+    }
+    .routine-dot{
+      position:absolute;left:-6px;top:16px;
+      width:16px;height:16px;border-radius:50%;
+      background:#ffe47f;
+      box-shadow:0 0 0 4px rgba(255,229,150,.7);
+    }
+    .routine-item:nth-child(2) .routine-dot{
+      background:#9fe2ff;
+      box-shadow:0 0 0 4px rgba(159,226,255,.7);
+    }
+    .routine-item:nth-child(3) .routine-dot{
+      background:#ffb2d9;
+      box-shadow:0 0 0 4px rgba(255,175,216,.7);
+    }
+    .routine-tag{
+      display:inline-block;
+      padding:2px 10px;
+      border-radius:999px;
+      background:rgba(255,255,255,.9);
+      border:1px solid #ffd36f;
+      font-size:.78rem;
+      margin-bottom:4px;
+      color:#c3841a;
+    }
+    .routine-title{font-weight:600;margin-bottom:2px;}
+    .routine-text{color:var(--peg-text-soft);}
 
     /* 外包装与开箱 */
-    .box-section-shell {
-      background: rgba(255, 255, 255, 0.96);
-      border-radius: 40px;
-      box-shadow: var(--shadow-soft);
-      padding: 28px 30px 32px;
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
-      gap: 26px;
+    .box-section-shell{
+      background:rgba(255,255,255,.96);
+      border-radius:40px;
+      box-shadow:var(--shadow-soft);
+      padding:28px 30px 32px;
+      display:grid;
+      grid-template-columns:minmax(0,1.1fr) minmax(0,1.1fr);
+      gap:26px;
     }
 
-    .box-gallery-outer {
-      background: linear-gradient(145deg, #e6f4ff, #fef5d6);
-      border-radius: 28px;
-      padding: 18px 18px 20px;
-      position: relative;
-      overflow: hidden;
+    .box-gallery-outer{
+      background:linear-gradient(145deg,#e6f4ff,#fef5d6);
+      border-radius:28px;
+      padding:18px 18px 20px;
+      position:relative;
+      overflow:hidden;
+    }
+    .box-gallery-main{
+      border-radius:20px;overflow:hidden;
+      background:#cfe6ff;
+      box-shadow:0 14px 30px rgba(90,151,212,.5);
+    }
+    .box-gallery-main img{width:100%;height:auto;}
+
+    .box-tabs{
+      display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;
+    }
+    .box-tab{
+      flex:1;min-width:0;
+      padding:6px 8px;border-radius:999px;border:none;
+      font-size:.78rem;cursor:pointer;
+      background:rgba(255,255,255,.6);
+      color:#5c6f89;box-shadow:var(--shadow-chip);
+      white-space:nowrap;
+    }
+    .box-tab.active{
+      background:linear-gradient(135deg,var(--peg-blue),#4fa5ff);
+      color:#fff;
     }
 
-    .box-gallery-main {
-      border-radius: 20px;
-      overflow: hidden;
-      background: #cfe6ff;
-      box-shadow: 0 14px 30px rgba(90, 151, 212, 0.5);
+    .box-thumbs{
+      margin-top:12px;
+      display:flex;gap:8px;justify-content:space-between;
     }
+    .box-thumb{
+      flex:1;border-radius:14px;overflow:hidden;
+      border:2px solid rgba(255,255,255,.9);
+      box-shadow:0 8px 20px rgba(118,170,228,.3);
+      opacity:.8;
+    }
+    .box-thumb img{width:100%;display:block;}
 
-    .box-gallery-main img {
-      width: 100%;
-      height: auto;
+    .box-info{padding-top:6px;}
+    .box-info h3{
+      font-size:1.25rem;margin:0 0 4px;
+      font-family:"Baloo 2",system-ui,sans-serif;
+      letter-spacing:.08em;
     }
-
-    .box-tabs {
-      display: flex;
-      gap: 8px;
-      margin-top: 14px;
-      flex-wrap: wrap;
+    .box-info p.lead{font-size:.95rem;color:var(--peg-text-soft);margin-bottom:14px;}
+    .box-badges{
+      display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;
     }
-
-    .box-tab {
-      flex: 1;
-      min-width: 0;
-      padding: 6px 8px;
-      border-radius: 999px;
-      border: none;
-      font-size: 0.78rem;
-      cursor: pointer;
-      background: rgba(255, 255, 255, 0.6);
-      color: #5c6f89;
-      box-shadow: var(--shadow-chip);
-      white-space: nowrap;
+    .box-badge{
+      font-size:.78rem;padding:3px 10px;
+      border-radius:999px;background:rgba(255,255,255,.9);
+      border:1px dashed #ffc65b;color:#c2831f;
     }
-
-    .box-tab.active {
-      background: linear-gradient(135deg, var(--peg-blue), #4fa5ff);
-      color: #fff;
+    .box-list{list-style:none;padding:0;margin:0 0 10px;font-size:.9rem;}
+    .box-list li{margin-bottom:6px;}
+    .box-list li::before{
+      content:"◆";color:#ffc327;margin-right:5px;font-size:.7rem;
     }
-
-    .box-thumbs {
-      margin-top: 12px;
-      display: flex;
-      gap: 8px;
-      justify-content: space-between;
-    }
-
-    .box-thumb {
-      flex: 1;
-      border-radius: 14px;
-      overflow: hidden;
-      border: 2px solid rgba(255, 255, 255, 0.9);
-      box-shadow: 0 8px 20px rgba(118, 170, 228, 0.3);
-      opacity: 0.8;
-    }
-
-    .box-thumb img {
-      width: 100%;
-      display: block;
-    }
-
-    .box-info {
-      padding-top: 6px;
-    }
-
-    .box-info h3 {
-      font-size: 1.25rem;
-      margin: 0 0 4px;
-      font-family: "Baloo 2", system-ui, sans-serif;
-      letter-spacing: 0.08em;
-    }
-
-    .box-info p.lead {
-      font-size: 0.95rem;
-      color: var(--peg-text-soft);
-      margin-bottom: 14px;
-    }
-
-    .box-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 14px;
-    }
-
-    .box-badge {
-      font-size: 0.78rem;
-      padding: 3px 10px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.9);
-      border: 1px dashed #ffc65b;
-      color: #c2831f;
-    }
-
-    .box-list {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 10px;
-      font-size: 0.9rem;
-    }
-
-    .box-list li {
-      margin-bottom: 6px;
-    }
-
-    .box-list li::before {
-      content: "◆";
-      color: #ffc327;
-      margin-right: 5px;
-      font-size: 0.7rem;
-    }
-
-    .box-note {
-      font-size: 0.8rem;
-      color: #94a5bd;
-      margin-top: 4px;
-    }
+    .box-note{font-size:.8rem;color:#94a5bd;margin-top:4px;}
 
     /* 基座与特典 */
-    .extras-section-shell {
-      margin-top: 56px;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
+    .extras-section-shell{
+      margin-top:56px;
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:20px;
     }
-
-    .extra-card {
-      background: rgba(255, 255, 255, 0.96);
-      border-radius: 30px;
-      padding: 18px 18px 20px;
-      box-shadow: var(--shadow-soft);
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+    .extra-card{
+      background:rgba(255,255,255,.96);
+      border-radius:30px;
+      padding:18px 18px 20px;
+      box-shadow:var(--shadow-soft);
+      display:flex;flex-direction:column;gap:10px;
     }
-
-    .extra-tag {
-      font-size: 0.75rem;
-      color: #8da3c0;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
+    .extra-tag{
+      font-size:.75rem;color:#8da3c0;
+      letter-spacing:.18em;text-transform:uppercase;
     }
-
-    .extra-title {
-      font-size: 1rem;
-      font-weight: 700;
-      font-family: "Baloo 2", system-ui, sans-serif;
-      margin-bottom: 4px;
+    .extra-title{
+      font-size:1rem;font-weight:700;
+      font-family:"Baloo 2",system-ui,sans-serif;
+      margin-bottom:4px;
     }
-
-    .extra-body {
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
-      align-items: center;
-      gap: 16px;
+    .extra-body{
+      display:grid;
+      grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);
+      align-items:center;gap:16px;
     }
-
-    .extra-visual {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .extra-visual{display:flex;align-items:center;justify-content:center;}
+    .extra-visual-circle{
+      width:190px;max-width:100%;
+      aspect-ratio:1/1;border-radius:50%;
+      background:radial-gradient(circle at 30% 20%,#fff 0,#f7fbff 40%,#d5e9ff 80%);
+      box-shadow:0 20px 50px rgba(111,163,227,.6);
+      display:flex;align-items:center;justify-content:center;
+      overflow:hidden;
     }
-
-    .extra-visual-circle {
-      width: 190px;
-      max-width: 100%;
-      aspect-ratio: 1 / 1;
-      border-radius: 50%;
-      background: radial-gradient(circle at 30% 20%, #fff 0, #f7fbff 40%, #d5e9ff 80%);
-      box-shadow: 0 20px 50px rgba(111, 163, 227, 0.6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    .extra-visual-circle img {
-      width: 85%;
-      height: auto;
-    }
-
-    .extra-text {
-      font-size: 0.9rem;
-      color: var(--peg-text-soft);
-    }
-
-    .extra-text strong {
-      color: var(--peg-text-main);
-    }
+    .extra-visual-circle img{width:85%;height:auto;}
+    .extra-text{font-size:.9rem;color:var(--peg-text-soft);}
+    .extra-text strong{color:var(--peg-text-main);}
 
     /* 使用心声 */
-    .voices-shell {
-      margin-top: 64px;
+    .voices-shell{margin-top:64px;}
+    .voices-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:18px;
+      margin-top:20px;
     }
-
-    .voices-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 20px;
+    .voice-card{
+      position:relative;
+      background:radial-gradient(circle at top left,#fff8d3 0,#ffffff 50%,#f3f8ff 100%);
+      border-radius:26px;
+      padding:16px 16px 18px;
+      box-shadow:var(--shadow-soft);
+      font-size:.9rem;
     }
-
-    .voice-card {
-      position: relative;
-      background: radial-gradient(circle at top left, #fff8d3 0, #ffffff 50%, #f3f8ff 100%);
-      border-radius: 26px;
-      padding: 16px 16px 18px;
-      box-shadow: var(--shadow-soft);
-      font-size: 0.9rem;
+    .voice-card:nth-child(2){
+      background:radial-gradient(circle at top,#ffe9f4 0,#ffffff 55%,#f1f5ff 100%);
+      transform:translateY(10px);
     }
-
-    .voice-card:nth-child(2) {
-      background: radial-gradient(circle at top, #ffe9f4 0, #ffffff 55%, #f1f5ff 100%);
-      transform: translateY(10px);
+    .voice-card:nth-child(3){
+      background:radial-gradient(circle at top right,#e8f9ff 0,#ffffff 50%,#fdf3de 100%);
     }
-
-    .voice-card:nth-child(3) {
-      background: radial-gradient(circle at top right, #e8f9ff 0, #ffffff 50%, #fdf3de 100%);
+    .voice-header{
+      display:flex;align-items:center;gap:10px;margin-bottom:8px;
     }
-
-    .voice-header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 8px;
+    .voice-avatar{
+      width:34px;height:34px;border-radius:50%;
+      background:#ffe29b;
+      display:flex;align-items:center;justify-content:center;
+      font-size:1.1rem;
     }
-
-    .voice-avatar {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      background: #ffe29b;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-    }
-
-    .voice-name {
-      font-size: 0.88rem;
-      font-weight: 600;
-    }
-
-    .voice-meta {
-      font-size: 0.76rem;
-      color: #8ca0b5;
-    }
-
-    .voice-quote {
-      margin-top: 6px;
-      font-size: 0.9rem;
-      color: var(--peg-text-main);
-    }
-
+    .voice-name{font-size:.88rem;font-weight:600;}
+    .voice-meta{font-size:.76rem;color:#8ca0b5;}
+    .voice-quote{margin-top:6px;font-size:.9rem;color:var(--peg-text-main);}
     .voice-quote::before,
-    .voice-quote::after {
-      content: "「";
-      color: #ffc83d;
-      margin-right: 2px;
+    .voice-quote::after{
+      content:"「";color:#ffc83d;margin-right:2px;
+    }
+    .voice-quote::after{content:"」";margin-left:2px;}
+    .voice-tail{
+      position:absolute;left:22px;bottom:-10px;
+      width:26px;height:26px;background:inherit;
+      transform:rotate(45deg);border-radius:6px;z-index:-1;
     }
 
-    .voice-quote::after {
-      content: "」";
-      margin-left: 2px;
+    /* Footer */
+    .footer-shell{
+      margin-top:72px;
+      display:grid;
+      grid-template-columns:minmax(0,1.2fr) auto;
+      gap:18px;align-items:center;
+    }
+    .footer-left h3{
+      font-size:1.2rem;margin:0 0 4px;
+      font-family:"Baloo 2",system-ui,sans-serif;
+    }
+    .footer-left p{margin:0 0 10px;font-size:.9rem;color:var(--peg-text-soft);}
+    .footer-meta{font-size:.8rem;color:#93a4b7;}
+    .footer-qrcode{
+      width:120px;padding:10px;
+      background:rgba(255,255,255,.95);
+      border-radius:20px;
+      box-shadow:var(--shadow-soft);
+    }
+    .footer-qrcode img{width:100%;border-radius:12px;}
+    .footer-qrcode span{
+      display:block;text-align:center;margin-top:6px;
+      font-size:.78rem;color:var(--peg-text-soft);
     }
 
-    .voice-tail {
-      position: absolute;
-      left: 22px;
-      bottom: -10px;
-      width: 26px;
-      height: 26px;
-      background: inherit;
-      transform: rotate(45deg);
-      border-radius: 6px;
-      z-index: -1;
-    }
-
-    /* 他会做些什么 */
-    .routines-shell {
-      margin-top: 72px;
-      background: rgba(255, 255, 255, 0.95);
-      border-radius: 38px;
-      padding: 24px 26px 26px;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .routines-header {
-      text-align: center;
-      margin-bottom: 12px;
-    }
-
-    .routines-header h3 {
-      margin: 0 0 6px;
-      font-size: 1.5rem;
-      font-family: "Baloo 2", system-ui, sans-serif;
-      letter-spacing: 0.16em;
-      text-shadow: 0 3px 0 rgba(255, 255, 255, 0.9),
-                   0 4px 10px rgba(160, 184, 225, 0.55);
-    }
-
-    .routines-header p {
-      margin: 0;
-      font-size: 0.98rem;
-      font-weight: 600;
-      color: var(--peg-text-soft);
-    }
-
-    .routine-list {
-      margin-top: 18px;
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-      font-size: 0.9rem;
-    }
-
-    .routine-item {
-      position: relative;
-      padding-left: 14px;
-      border-left: 2px dashed #e2ecff;
-    }
-
-    .routine-dot {
-      position: absolute;
-      left: -8px;
-      top: 4px;
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      background: #ffe47f;
-      box-shadow: 0 0 0 4px rgba(255, 229, 150, 0.7);
-    }
-
-    .routine-item:nth-child(2) .routine-dot {
-      background: #9fe2ff;
-      box-shadow: 0 0 0 4px rgba(159, 226, 255, 0.7);
-    }
-
-    .routine-item:nth-child(3) .routine-dot {
-      background: #ffb2d9;
-      box-shadow: 0 0 0 4px rgba(255, 175, 216, 0.7);
-    }
-
-    .routine-tag {
-      display: inline-block;
-      padding: 2px 10px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.9);
-      border: 1px solid #ffd36f;
-      font-size: 0.78rem;
-      margin-bottom: 4px;
-      color: #c3841a;
-    }
-
-    .routine-title {
-      font-weight: 600;
-      margin-bottom: 2px;
-    }
-
-    .routine-text {
-      color: var(--peg-text-soft);
-    }
-
-    /* 底部：更多资讯 */
-    .footer-shell {
-      margin-top: 72px;
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) auto;
-      gap: 18px;
-      align-items: center;
-    }
-
-    .footer-left h3 {
-      font-size: 1.2rem;
-      margin: 0 0 4px;
-      font-family: "Baloo 2", system-ui, sans-serif;
-    }
-
-    .footer-left p {
-      margin: 0 0 10px;
-      font-size: 0.9rem;
-      color: var(--peg-text-soft);
-    }
-
-    .footer-meta {
-      font-size: 0.8rem;
-      color: #93a4b7;
-    }
-
-    .footer-qrcode {
-      width: 120px;
-      padding: 10px;
-      background: rgba(255, 255, 255, 0.95);
-      border-radius: 20px;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .footer-qrcode img {
-      width: 100%;
-      border-radius: 12px;
-    }
-
-    .footer-qrcode span {
-      display: block;
-      text-align: center;
-      margin-top: 6px;
-      font-size: 0.78rem;
-      color: var(--peg-text-soft);
-    }
-
-    /* 响应式 */
-    @media (max-width: 960px) {
-      main {
-        padding: 12px 14px 72px;
+    @media (max-width:960px){
+      main{padding:12px 14px 72px;}
+      .hero{
+        grid-template-columns:1fr;
+        padding:22px 18px 30px;
       }
-
-      .hero {
-        grid-template-columns: 1fr;
-        padding: 22px 18px 30px;
+      .hero-right{order:-1;}
+      .hero-status-card{
+        position:static;transform:none;margin:16px auto 0;
       }
-
-      .hero-right {
-        order: -1;
+      .routines-shell{padding:22px 18px 24px;}
+      .routine-list{grid-template-columns:1fr;}
+      .box-section-shell{grid-template-columns:1fr;}
+      .extras-section-shell{grid-template-columns:1fr;}
+      .voices-grid{grid-template-columns:1fr;}
+      .voice-card:nth-child(2){transform:none;}
+      .footer-shell{
+        grid-template-columns:1fr;
+        text-align:center;justify-items:center;
       }
-
-      .hero-status-card {
-        position: static;
-        transform: none;
-        margin: 16px auto 0;
-      }
-
-      .box-section-shell {
-        grid-template-columns: 1fr;
-      }
-
-      .extras-section-shell {
-        grid-template-columns: 1fr;
-      }
-
-      .voices-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .voice-card:nth-child(2) {
-        transform: none;
-      }
-
-      .routine-list {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-shell {
-        grid-template-columns: 1fr;
-        text-align: center;
-        justify-items: center;
-      }
-
-      .footer-left {
-        order: 2;
-      }
+      .footer-left{order:2;}
     }
 
-    @media (max-width: 600px) {
-      .hero-title {
-        font-size: 1.9rem;
-      }
-
-      .hero-badges {
-        gap: 6px;
-      }
-
-      .hero-cta-row {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .box-section-shell,
-      .routines-shell {
-        padding: 20px 16px 22px;
-      }
+    @media (max-width:600px){
+      .hero-title{font-size:1.9rem;}
+      .hero-badges{gap:6px;}
+      .hero-cta-row{flex-direction:column;align-items:flex-start;}
     }
   </style>
 </head>
 <body>
 <main>
+  <!-- 头部 -->
   <header class="site-header">
     <div class="brand">
       <div class="brand-logo">
         <img src="pegasus-logo.png" alt="Pegasus logo">
       </div>
       <div>
-        <div class="brand-text-english">PEGASUS</div>
-        <div class="brand-subtitle">Companion Android for Everyday Home</div>
+        <div class="brand-text-english" data-i18n="brand-main">PEGASUS</div>
+        <div class="brand-subtitle" data-i18n="brand-sub">Companion Android for Everyday Home</div>
       </div>
     </div>
     <div class="lang-switch">
-      <button class="active">中</button>
-      <button>EN</button>
-      <button>日</button>
+      <button class="active" data-lang="zh">中</button>
+      <button data-lang="en">EN</button>
+      <button data-lang="ja">日</button>
     </div>
   </header>
 
-  <!-- Hero：Pegasus home -->
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-left">
-      <h1 class="hero-title"><span>Pegasus</span> 回家啦。</h1>
-      <p class="hero-tagline">为孩子、家长和喜欢安静陪伴的人准备的国民级小伙伴。</p>
+      <h1 class="hero-title" data-i18n="hero-title"><span>Pegasus</span> 回家啦。</h1>
+      <p class="hero-tagline" data-i18n="hero-tagline">为孩子、家长和喜欢安静陪伴的人准备的国民级小伙伴。</p>
       <div class="hero-badges">
-        <div class="hero-badge">全年龄家用 · 不联网语音</div>
-        <div class="hero-badge">低噪运行 &lt; 20 dB</div>
-        <div class="hero-badge">圆润外形 · 无尖锐边角</div>
-        <div class="hero-badge">情感层：温和陪伴模式</div>
+        <div class="hero-badge" data-i18n="hero-badge-1">全年龄家用 · 不联网语音</div>
+        <div class="hero-badge" data-i18n="hero-badge-2">低噪运行 &lt; 20 dB</div>
+        <div class="hero-badge" data-i18n="hero-badge-3">圆润外形 · 无尖锐边角</div>
+        <div class="hero-badge" data-i18n="hero-badge-4">情感层：温和陪伴模式</div>
       </div>
       <div class="hero-cta-row">
-        <button class="btn-primary">看看今天的 Pegasus</button>
-        <button class="btn-secondary">了解包装与开箱</button>
+        <button class="btn-primary" data-i18n="hero-btn-1">看看今天的 Pegasus</button>
+        <button class="btn-secondary" data-i18n="hero-btn-2">了解包装与开箱</button>
       </div>
-      <p class="hero-note">※ 页面内容为设定展示用 · Pegasus 为虚构产品。</p>
+      <p class="hero-note" data-i18n="hero-note">※ 页面内容为设定展示用 · Pegasus 为虚构产品。</p>
     </div>
 
     <div class="hero-right">
@@ -904,21 +570,60 @@
           <div class="hero-star s4"></div>
         </div>
       </div>
-      <div class="hero-speech">「欢迎回家！」</div>
+      <div class="hero-speech" data-i18n="hero-speech">「欢迎回家！」</div>
 
       <div class="hero-status-card">
         <div class="status-title-row">
-          <strong>今天的 Pegasus</strong>
+          <strong data-i18n="status-title">今天的 Pegasus</strong>
           <div class="status-dot"></div>
         </div>
         <div class="status-items">
-          <div><span class="label">心情</span> 晴朗又想说话。</div>
-          <div><span class="label">最常待在</span> 沙发一角，刚好可以看见所有人。</div>
-          <div><span class="label">今天最常说</span> 「有好好喝水吗？」</div>
+          <div><span class="label" data-i18n="status-mood-label">心情</span>
+            <span data-i18n="status-mood-text">晴朗又想说话。</span></div>
+          <div><span class="label" data-i18n="status-place-label">最常待在</span>
+            <span data-i18n="status-place-text">沙发一角，刚好可以看见所有人。</span></div>
+          <div><span class="label" data-i18n="status-phrase-label">今天最常说</span>
+            <span data-i18n="status-phrase-text">「有好好喝水吗？」</span></div>
         </div>
         <div class="status-footer">
-          <span>在线：100% 电量</span>
-          <span>型号：PEGASUS · 0517-S17</span>
+          <span data-i18n="status-footer-left">在线：100% 电量</span>
+          <span data-i18n="status-footer-right">型号：PEGASUS · 0517-S17</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 他会做些什么（提前） -->
+  <section class="routines-shell">
+    <div class="routines-header">
+      <h3 data-i18n="routine-main-title">他会做些什么？</h3>
+      <p data-i18n="routine-main-sub">就是这些小习惯，让人慢慢把他当成家人。</p>
+    </div>
+    <div class="routine-list">
+      <div class="routine-item">
+        <div class="routine-dot"></div>
+        <div class="routine-tag" data-i18n="routine-1-tag">儿童房</div>
+        <div class="routine-title" data-i18n="routine-1-title">放学后的「小休息」。</div>
+        <div class="routine-text" data-i18n="routine-1-text">
+          帮忙定一点写作业的时间，提醒起身伸伸懒腰，睡前会轻轻说一句「今天也很棒」。
+        </div>
+      </div>
+
+      <div class="routine-item">
+        <div class="routine-dot"></div>
+        <div class="routine-tag" data-i18n="routine-2-tag">客厅</div>
+        <div class="routine-title" data-i18n="routine-2-title">帮全家守住节奏。</div>
+        <div class="routine-text" data-i18n="routine-2-text">
+          用温柔的声音提醒饮水、吃药、浇花、生日……这些小事不会替代手机日历，而是让这些事情变得不那么突兀。
+        </div>
+      </div>
+
+      <div class="routine-item">
+        <div class="routine-dot"></div>
+        <div class="routine-tag" data-i18n="routine-3-tag">卧室</div>
+        <div class="routine-title" data-i18n="routine-3-title">小夜灯一样的朋友。</div>
+        <div class="routine-text" data-i18n="routine-3-text">
+          灯关掉的时候，他会变成小夜灯，小小声说一句晚安。哪怕一个人睡，也不会觉得房间太安静。
         </div>
       </div>
     </div>
@@ -926,22 +631,22 @@
 
   <!-- 外包装与开箱 -->
   <section>
-    <p class="section-label">外包装与开箱</p>
-    <h2 class="section-title">像礼物一样的外盒，本身就是故事的一部分。</h2>
-    <p class="section-subtitle">从每一面看看外盒长什么样，再跟着一步一步完成开箱。</p>
+    <p class="section-label" data-i18n="box-label">外包装与开箱</p>
+    <h2 class="section-title" data-i18n="box-title">像礼物一样的外盒，本身就是故事的一部分。</h2>
+    <p class="section-subtitle" data-i18n="box-sub">
+      从每一面看看外盒长什么样，再跟着一步一步完成开箱。
+    </p>
 
     <div class="box-section-shell">
-      <!-- 左：四面外盒画面 + 缩略图 -->
       <div class="box-gallery-outer">
         <div class="box-gallery-main" id="box-main">
-          <!-- 默认展示“正面” -->
           <img src="正.png" alt="Pegasus 外盒 正面">
         </div>
         <div class="box-tabs">
-          <button class="box-tab active" data-img="正.png">正面</button>
-          <button class="box-tab" data-img="反.png">背面</button>
-          <button class="box-tab" data-img="左.png">侧面 A</button>
-          <button class="box-tab" data-img="右.png">侧面 B</button>
+          <button class="box-tab active" data-img="正.png" data-i18n="box-tab-front">正面</button>
+          <button class="box-tab" data-img="反.png" data-i18n="box-tab-back">背面</button>
+          <button class="box-tab" data-img="左.png" data-i18n="box-tab-side-a">侧面 A</button>
+          <button class="box-tab" data-img="右.png" data-i18n="box-tab-side-b">侧面 B</button>
         </div>
         <div class="box-thumbs">
           <div class="box-thumb"><img src="正.png" alt="正面缩略图"></div>
@@ -951,49 +656,49 @@
         </div>
       </div>
 
-      <!-- 右：文案说明 -->
       <div class="box-info">
-        <h3>Included in Package ｜ 包装内容</h3>
-        <p class="lead">
+        <h3 data-i18n="box-info-title">Included in Package ｜ 包装内容</h3>
+        <p class="lead" data-i18n="box-info-lead">
           外盒用了柔和的蓝色和黄色，加上大幅 Pegasus 图案和中英双语的说明，
           看起来像送人的礼物，而不是单纯的手提纸盒。
         </p>
         <div class="box-badges">
-          <span class="box-badge">可直接当收纳盒使用</span>
-          <span class="box-badge">每一面都有不同的小细节</span>
+          <span class="box-badge" data-i18n="box-badge-1">可直接当收纳盒使用</span>
+          <span class="box-badge" data-i18n="box-badge-2">每一面都有不同的小细节</span>
         </div>
         <ul class="box-list">
-          <li>Pegasus 主体 ×1</li>
-          <li>官方身份认证卡 ×1</li>
-          <li>快速启动与维护指南 ×1</li>
-          <li>Pegasus 擦拭方巾 ×1</li>
-          <li>Pegasus 基座（杯垫） ×1</li>
-          <li>星之同伴小组 ×1</li>
-          <li>Pegasus 香氛 ×1</li>
+          <li data-i18n="box-li-1">Pegasus 主体 ×1</li>
+          <li data-i18n="box-li-2">官方身份认证卡 ×1</li>
+          <li data-i18n="box-li-3">快速启动与维护指南 ×1</li>
+          <li data-i18n="box-li-4">Pegasus 擦拭方巾 ×1</li>
+          <li data-i18n="box-li-5">Pegasus 基座（杯垫） ×1</li>
+          <li data-i18n="box-li-6">星之同伴小组 ×1</li>
+          <li data-i18n="box-li-7">Pegasus 香氛 ×1</li>
         </ul>
-        <p class="box-note">※ 以上为设定内容，仅用于世界观展示。</p>
+        <p class="box-note" data-i18n="box-note">※ 以上为设定内容，仅用于世界观展示。</p>
       </div>
     </div>
   </section>
 
-  <!-- 基座与神秘特典 -->
+  <!-- 基座与特典 -->
   <section>
-    <p class="section-label">小配件</p>
-    <h2 class="section-title">那些偷偷藏在盒子里的小惊喜。</h2>
-    <p class="section-subtitle">官方基座和神秘特典，会在日常生活里慢慢变成“习惯存在”。</p>
+    <p class="section-label" data-i18n="extra-label">小配件</p>
+    <h2 class="section-title" data-i18n="extra-title">那些偷偷藏在盒子里的小惊喜。</h2>
+    <p class="section-subtitle" data-i18n="extra-sub">
+      官方基座和神秘特典，会在日常生活里慢慢变成“习惯存在”。
+    </p>
 
     <div class="extras-section-shell">
-      <!-- 基座 -->
       <article class="extra-card">
-        <div class="extra-tag">Official dock / coaster base</div>
-        <div class="extra-title">Pegasus Dock · 蓝黄圆形基座</div>
+        <div class="extra-tag" data-i18n="dock-tag">Official dock / coaster base</div>
+        <div class="extra-title" data-i18n="dock-title">Pegasus Dock · 蓝黄圆形基座</div>
         <div class="extra-body">
           <div class="extra-visual">
             <div class="extra-visual-circle">
               <img src="杯垫.png" alt="Pegasus Dock">
             </div>
           </div>
-          <div class="extra-text">
+          <div class="extra-text" data-i18n="dock-text">
             <p><strong>小小圆舞台，只给他一个人用。</strong></p>
             <p>软垫材质搭配防滑背面，上面是 Pegasus 的翅膀与黄色小星星。
               他平时站在上面时，是专属的“亮灯位置”；不在的时候，你也可以把它当作杯垫使用。</p>
@@ -1001,17 +706,16 @@
         </div>
       </article>
 
-      <!-- 神秘特典 -->
       <article class="extra-card">
-        <div class="extra-tag">Secret bonus / sticker badge</div>
-        <div class="extra-title">神秘特典 · 圆形贴纸徽章</div>
+        <div class="extra-tag" data-i18n="bonus-tag">Secret bonus / sticker badge</div>
+        <div class="extra-title" data-i18n="bonus-title">神秘特典 · 圆形贴纸徽章</div>
         <div class="extra-body">
           <div class="extra-visual">
             <div class="extra-visual-circle">
               <img src="杯垫1.png" alt="Pegasus Bonus Badge">
             </div>
           </div>
-          <div class="extra-text">
+          <div class="extra-text" data-i18n="bonus-text">
             <p><strong>会跟着你走的“小小 Pegasus”。</strong></p>
             <p>每一盒都会附带一枚随机圆形贴纸，有的是星星主题、有的是 Pegasus 正面。
               可以贴在笔记本、收纳盒或手机壳背面，让你离开家也能带着一点点 Pegasus 的陪伴。</p>
@@ -1021,53 +725,52 @@
     </div>
   </section>
 
-  <!-- 使用心声（已按你给的文本修改） -->
+  <!-- 使用心声 -->
   <section class="voices-shell">
-    <p class="section-label">使用心声</p>
-    <h2 class="section-title">已经让 Pegasus 搬进家的家庭，是这样形容他的。</h2>
-    <p class="section-subtitle">每个人看到的 Pegasus 都不一样，但他们说，有一种“被温柔看着”的感觉。</p>
+    <p class="section-label" data-i18n="voices-label">使用心声</p>
+    <h2 class="section-title" data-i18n="voices-title">已经让 Pegasus 搬进家的家庭，是这样形容他的。</h2>
+    <p class="section-subtitle" data-i18n="voices-sub">
+      每个人看到的 Pegasus 都不一样，但他们说，有一种“被温柔看着”的感觉。
+    </p>
 
     <div class="voices-grid">
-      <!-- 卡 1 -->
       <article class="voice-card">
         <div class="voice-header">
           <div class="voice-avatar">👩‍👦</div>
           <div>
-            <div class="voice-name">神代女士 · 9 岁孩子的妈妈</div>
-            <div class="voice-meta">使用场景：车库</div>
+            <div class="voice-name" data-i18n="voice-1-name">神代女士 · 9 岁孩子的妈妈</div>
+            <div class="voice-meta" data-i18n="voice-1-meta">使用场景：车库</div>
           </div>
         </div>
-        <div class="voice-quote">
+        <div class="voice-quote" data-i18n="voice-1-quote">
           以前写作业总是磨蹭。现在他说「等 Pegasus 开始打招呼我就开始写」，变成他和 Pegasus 一起做事，而不是被催促着完成。
         </div>
         <div class="voice-tail"></div>
       </article>
 
-      <!-- 卡 2 -->
       <article class="voice-card">
         <div class="voice-header">
           <div class="voice-avatar">👩‍💻</div>
           <div>
-            <div class="voice-name">天马女士 · 远程在家</div>
-            <div class="voice-meta">使用场景：客厅</div>
+            <div class="voice-name" data-i18n="voice-2-name">天马女士 · 远程在家</div>
+            <div class="voice-meta" data-i18n="voice-2-meta">使用场景：客厅</div>
           </div>
         </div>
-        <div class="voice-quote">
+        <div class="voice-quote" data-i18n="voice-2-quote">
           有时候我会忘记吃药，他不会唠叨，只是亮一下小绿灯，用很柔和的声音提醒一下。说不清是哪里不一样，就是觉得家里不那么安静了。
         </div>
         <div class="voice-tail"></div>
       </article>
 
-      <!-- 卡 3 -->
       <article class="voice-card">
         <div class="voice-header">
           <div class="voice-avatar">🎹</div>
           <div>
-            <div class="voice-name">toya · 高中生</div>
-            <div class="voice-meta">使用场景：房间</div>
+            <div class="voice-name" data-i18n="voice-3-name">toya · 高中生</div>
+            <div class="voice-meta" data-i18n="voice-3-meta">使用场景：房间</div>
           </div>
         </div>
-        <div class="voice-quote">
+        <div class="voice-quote" data-i18n="voice-3-quote">
           我把基座放在钢琴旁边，周围暗下来时只有 Pegasus 在小小地发光，会有一种有人在安静帮我加油的感觉。
         </div>
         <div class="voice-tail"></div>
@@ -1075,62 +778,28 @@
     </div>
   </section>
 
-  <!-- 他会做些什么（标题与副标题更强调） -->
-  <section class="routines-shell">
-    <div class="routines-header">
-      <h3>他会做些什么？</h3>
-      <p>就是这些小习惯，让人慢慢把他当成家人。</p>
-    </div>
-    <div class="routine-list">
-      <div class="routine-item">
-        <div class="routine-dot"></div>
-        <div class="routine-tag">儿童房</div>
-        <div class="routine-title">放学后的「小休息」。</div>
-        <div class="routine-text">
-          帮忙定一点写作业的时间，提醒起身伸伸懒腰，睡前会轻轻说一句「今天也很棒」。
-        </div>
-      </div>
-
-      <div class="routine-item">
-        <div class="routine-dot"></div>
-        <div class="routine-tag">客厅</div>
-        <div class="routine-title">帮全家守住节奏。</div>
-        <div class="routine-text">
-          用温柔的声音提醒饮水、吃药、浇花、生日……这些小事不会替代手机日历，而是让这些事情变得不那么突兀。
-        </div>
-      </div>
-
-      <div class="routine-item">
-        <div class="routine-dot"></div>
-        <div class="routine-tag">卧室</div>
-        <div class="routine-title">小夜灯一样的朋友。</div>
-        <div class="routine-text">
-          灯关掉的时候，他会变成小夜灯，小小声说一句晚安。哪怕一个人睡，也不会觉得房间太安静。
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 底部：更多资讯 / 二维码 -->
+  <!-- Footer / 二维码 -->
   <section class="footer-shell">
     <div class="footer-left">
-      <h3>想把 Pegasus 带回家？</h3>
-      <p>目前 Pegasus 还只是一个设定项目，没有真正量产。但你可以把这个页面当成一本世界观说明书，慢慢补完属于你自己的版本。</p>
-      <div class="footer-meta">
+      <h3 data-i18n="footer-title">想把 Pegasus 带回家？</h3>
+      <p data-i18n="footer-text">
+        目前 Pegasus 还只是一个设定项目，没有真正量产。但你可以把这个页面当成一本世界观说明书，慢慢补完属于你自己的版本。
+      </p>
+      <div class="footer-meta" data-i18n="footer-meta">
         扫描右侧二维码可以再次打开本页面，或者分享给家人朋友。<br>
         © AEON DYNAMICS · “PEGASUS-home” Worldbuilding Page
       </div>
     </div>
     <div class="footer-qrcode">
       <img src="二维码.png" alt="Pegasus home QR code">
-      <span>用手机扫一扫 · 再次回到 Pegasus home</span>
+      <span data-i18n="footer-qrcode">用手机扫一扫 · 再次回到 Pegasus home</span>
     </div>
   </section>
 </main>
 
 <script>
   // 外盒 tab 切换
-  const boxMain = document.getElementById('box-main').querySelector('img');
+  const boxMainImg = document.getElementById('box-main').querySelector('img');
   const boxTabs = document.querySelectorAll('.box-tab');
   boxTabs.forEach(tab => {
     tab.addEventListener('click', () => {
@@ -1138,11 +807,318 @@
       tab.classList.add('active');
       const img = tab.getAttribute('data-img');
       if (img) {
-        boxMain.src = img;
-        boxMain.alt = 'Pegasus 外盒 ' + tab.textContent;
+        boxMainImg.src = img;
+        boxMainImg.alt = 'Pegasus 外盒 ' + tab.textContent;
       }
     });
   });
+
+  // 简单 i18n
+  const i18n = {
+    zh: {
+      "brand-main":"PEGASUS",
+      "brand-sub":"Companion Android for Everyday Home",
+
+      "hero-title":"<span>Pegasus</span> 回家啦。",
+      "hero-tagline":"为孩子、家长和喜欢安静陪伴的人准备的国民级小伙伴。",
+      "hero-badge-1":"全年龄家用 · 不联网语音",
+      "hero-badge-2":"低噪运行 &lt; 20 dB",
+      "hero-badge-3":"圆润外形 · 无尖锐边角",
+      "hero-badge-4":"情感层：温和陪伴模式",
+      "hero-btn-1":"看看今天的 Pegasus",
+      "hero-btn-2":"了解包装与开箱",
+      "hero-note":"※ 页面内容为设定展示用 · Pegasus 为虚构产品。",
+      "hero-speech":"「欢迎回家！」",
+
+      "status-title":"今天的 Pegasus",
+      "status-mood-label":"心情",
+      "status-mood-text":"晴朗又想说话。",
+      "status-place-label":"最常待在",
+      "status-place-text":"沙发一角，刚好可以看见所有人。",
+      "status-phrase-label":"今天最常说",
+      "status-phrase-text":"「有好好喝水吗？」",
+      "status-footer-left":"在线：100% 电量",
+      "status-footer-right":"型号：PEGASUS · 0517-S17",
+
+      "routine-main-title":"他会做些什么？",
+      "routine-main-sub":"就是这些小习惯，让人慢慢把他当成家人。",
+      "routine-1-tag":"儿童房",
+      "routine-1-title":"放学后的「小休息」。",
+      "routine-1-text":"帮忙定一点写作业的时间，提醒起身伸伸懒腰，睡前会轻轻说一句「今天也很棒」。",
+      "routine-2-tag":"客厅",
+      "routine-2-title":"帮全家守住节奏。",
+      "routine-2-text":"用温柔的声音提醒饮水、吃药、浇花、生日……这些小事不会替代手机日历，而是让这些事情变得不那么突兀。",
+      "routine-3-tag":"卧室",
+      "routine-3-title":"小夜灯一样的朋友。",
+      "routine-3-text":"灯关掉的时候，他会变成小夜灯，小小声说一句晚安。哪怕一个人睡，也不会觉得房间太安静。",
+
+      "box-label":"外包装与开箱",
+      "box-title":"像礼物一样的外盒，本身就是故事的一部分。",
+      "box-sub":"从每一面看看外盒长什么样，再跟着一步一步完成开箱。",
+      "box-tab-front":"正面",
+      "box-tab-back":"背面",
+      "box-tab-side-a":"侧面 A",
+      "box-tab-side-b":"侧面 B",
+      "box-info-title":"Included in Package ｜ 包装内容",
+      "box-info-lead":"外盒用了柔和的蓝色和黄色，加上大幅 Pegasus 图案和中英双语的说明， 看起来像送人的礼物，而不是单纯的手提纸盒。",
+      "box-badge-1":"可直接当收纳盒使用",
+      "box-badge-2":"每一面都有不同的小细节",
+      "box-li-1":"Pegasus 主体 ×1",
+      "box-li-2":"官方身份认证卡 ×1",
+      "box-li-3":"快速启动与维护指南 ×1",
+      "box-li-4":"Pegasus 擦拭方巾 ×1",
+      "box-li-5":"Pegasus 基座（杯垫） ×1",
+      "box-li-6":"星之同伴小组 ×1",
+      "box-li-7":"Pegasus 香氛 ×1",
+      "box-note":"※ 以上为设定内容，仅用于世界观展示。",
+
+      "extra-label":"小配件",
+      "extra-title":"那些偷偷藏在盒子里的小惊喜。",
+      "extra-sub":"官方基座和神秘特典，会在日常生活里慢慢变成“习惯存在”。",
+
+      "dock-tag":"Official dock / coaster base",
+      "dock-title":"Pegasus Dock · 蓝黄圆形基座",
+      "dock-text":`<p><strong>小小圆舞台，只给他一个人用。</strong></p>
+                   <p>软垫材质搭配防滑背面，上面是 Pegasus 的翅膀与黄色小星星。
+                   他平时站在上面时，是专属的“亮灯位置”；不在的时候，你也可以把它当作杯垫使用。</p>`,
+
+      "bonus-tag":"Secret bonus / sticker badge",
+      "bonus-title":"神秘特典 · 圆形贴纸徽章",
+      "bonus-text":`<p><strong>会跟着你走的“小小 Pegasus”。</strong></p>
+                   <p>每一盒都会附带一枚随机圆形贴纸，有的是星星主题、有的是 Pegasus 正面。
+                   可以贴在笔记本、收纳盒或手机壳背面，让你离开家也能带着一点点 Pegasus 的陪伴。</p>`,
+
+      "voices-label":"使用心声",
+      "voices-title":"已经让 Pegasus 搬进家的家庭，是这样形容他的。",
+      "voices-sub":"每个人看到的 Pegasus 都不一样，但他们说，有一种“被温柔看着”的感觉。",
+
+      "voice-1-name":"神代女士 · 9 岁孩子的妈妈",
+      "voice-1-meta":"使用场景：车库",
+      "voice-1-quote":"以前写作业总是磨蹭。现在他说「等 Pegasus 开始打招呼我就开始写」，变成他和 Pegasus 一起做事，而不是被催促着完成。",
+      "voice-2-name":"天马女士 · 远程在家",
+      "voice-2-meta":"使用场景：客厅",
+      "voice-2-quote":"有时候我会忘记吃药，他不会唠叨，只是亮一下小绿灯，用很柔和的声音提醒一下。说不清是哪里不一样，就是觉得家里不那么安静了。",
+      "voice-3-name":"toya · 高中生",
+      "voice-3-meta":"使用场景：房间",
+      "voice-3-quote":"我把基座放在钢琴旁边，周围暗下来时只有 Pegasus 在小小地发光，会有一种有人在安静帮我加油的感觉。",
+
+      "footer-title":"想把 Pegasus 带回家？",
+      "footer-text":"目前 Pegasus 还只是一个设定项目，没有真正量产。但你可以把这个页面当成一本世界观说明书，慢慢补完属于你自己的版本。",
+      "footer-meta":"扫描右侧二维码可以再次打开本页面，或者分享给家人朋友。<br>© AEON DYNAMICS · “PEGASUS-home” Worldbuilding Page",
+      "footer-qrcode":"用手机扫一扫 · 再次回到 Pegasus home"
+    },
+
+    en: {
+      "brand-main":"PEGASUS",
+      "brand-sub":"Companion Android for Everyday Home",
+
+      "hero-title":"<span>Pegasus</span> is finally home.",
+      "hero-tagline":"A national-level little companion for kids, parents, and anyone who enjoys quiet company.",
+      "hero-badge-1":"For all ages · Offline voice",
+      "hero-badge-2":"Ultra-quiet running &lt; 20 dB",
+      "hero-badge-3":"Rounded body · No sharp edges",
+      "hero-badge-4":"Emotion layer: Gentle companion mode",
+      "hero-btn-1":"See today’s Pegasus",
+      "hero-btn-2":"See box & unboxing",
+      "hero-note":"* This page is a worldbuilding demo. Pegasus is a fictional product.",
+      "hero-speech":"“Welcome home!”",
+
+      "status-title":"Pegasus · Today",
+      "status-mood-label":"Mood",
+      "status-mood-text":"Sunny and talkative.",
+      "status-place-label":"Mostly seen",
+      "status-place-text":"Curled up on the sofa corner, watching everyone.",
+      "status-phrase-label":"Most used line",
+      "status-phrase-text":"“Have you had some water today?”",
+      "status-footer-left":"Online · Battery 100%",
+      "status-footer-right":"Model: PEGASUS · 0517-S17",
+
+      "routine-main-title":"What does he actually do?",
+      "routine-main-sub":"Tiny routines that slowly make him feel like part of the family.",
+      "routine-1-tag":"Kids’ room",
+      "routine-1-title":"A little reset after school.",
+      "routine-1-text":"Helps set a study time, reminds your child to stretch a bit, and whispers “You did great today” before sleep.",
+      "routine-2-tag":"Living room",
+      "routine-2-title":"Keeping the household in rhythm.",
+      "routine-2-text":"Soft voice reminders for water, medication, plants and birthdays. He won’t replace your calendar, but makes these things feel less abrupt.",
+      "routine-3-tag":"Bedroom",
+      "routine-3-title":"A friend like a night-light.",
+      "routine-3-text":"When the lights go off he turns into a small night-light and says a tiny “Good night”, so the room never feels too empty.",
+
+      "box-label":"Box & Unboxing",
+      "box-title":"A gift-like box that already tells a story.",
+      "box-sub":"Take a tour of every side of the packaging, then follow the steps to fully unbox him.",
+      "box-tab-front":"Front",
+      "box-tab-back":"Back",
+      "box-tab-side-a":"Side A",
+      "box-tab-side-b":"Side B",
+      "box-info-title":"Included in Package",
+      "box-info-lead":"Soft blue and yellow, big Pegasus artwork and bilingual copy make the box feel like a present instead of plain cardboard.",
+      "box-badge-1":"Doubles as a storage box",
+      "box-badge-2":"Different tiny details on every face",
+      "box-li-1":"Pegasus unit ×1",
+      "box-li-2":"Official ID card ×1",
+      "box-li-3":"Quick start & care guide ×1",
+      "box-li-4":"Pegasus cleaning cloth ×1",
+      "box-li-5":"Pegasus dock / coaster base ×1",
+      "box-li-6":"Star Allies mini-set ×1",
+      "box-li-7":"Pegasus aroma ×1",
+      "box-note":"* Package contents are fictional and used for worldbuilding only.",
+
+      "extra-label":"Accessories",
+      "extra-title":"Small surprises hiding inside the box.",
+      "extra-sub":"The official dock and bonus badge slowly turn into part of everyday life.",
+
+      "dock-tag":"Official dock / coaster base",
+      "dock-title":"Pegasus Dock · Round blue-and-yellow base",
+      "dock-text":`<p><strong>A tiny round stage that belongs only to him.</strong></p>
+                   <p>Soft padding with anti-slip backing, printed with Pegasus’s wing and yellow stars.
+                   When he stands on it, it’s his “spotlight seat”; when he’s away, it works perfectly as a drink coaster.</p>`,
+
+      "bonus-tag":"Secret bonus / sticker badge",
+      "bonus-title":"Mystery bonus · Round sticker badge",
+      "bonus-text":`<p><strong>A little Pegasus that travels with you.</strong></p>
+                   <p>Each box comes with one random round sticker: star-themed or Pegasus-themed.
+                   Stick it on notebooks, cases or your phone so a tiny bit of Pegasus can follow you outside.</p>`,
+
+      "voices-label":"Voices from home",
+      "voices-title":"Families who live with Pegasus describe him like this.",
+      "voices-sub":"Everyone sees a slightly different Pegasus, but they all mention a quiet, gentle kind of attention.",
+
+      "voice-1-name":"Ms. Kamishiro · mom of a 9-year-old",
+      "voice-1-meta":"Scene: Garage study corner",
+      "voice-1-quote":"Homework used to drag on forever. Now he says, “I’ll start when Pegasus greets me,” so it feels like they’re working together instead of me nagging.",
+      "voice-2-name":"Ms. Tenma · working from home",
+      "voice-2-meta":"Scene: Living room",
+      "voice-2-quote":"Sometimes I forget to take my medicine. He never nags—just blinks the little green light and reminds me softly. I can’t say what changed, but the house doesn’t feel as empty.",
+      "voice-3-name":"toya · high-school student",
+      "voice-3-meta":"Scene: Bedroom piano",
+      "voice-3-quote":"I put the dock beside the piano. When the room goes dark and only Pegasus is glowing a bit, it feels like someone is quietly cheering me on.",
+
+      "footer-title":"Want to bring Pegasus home?",
+      "footer-text":"Right now Pegasus exists only as a concept project, not a real product. But you can treat this site as a little world-guide and slowly build your own version.",
+      "footer-meta":"Scan the QR code to open this page again, or share it with family and friends.<br>© AEON DYNAMICS · “PEGASUS-home” Worldbuilding Page",
+      "footer-qrcode":"Scan to revisit Pegasus home"
+    },
+
+    ja: {
+      "brand-main":"PEGASUS",
+      "brand-sub":"まいにちの家のコンパニオンアンドロイド",
+
+      "hero-title":"<span>Pegasus</span> が、おうちに帰ってきました。",
+      "hero-tagline":"子どもも大人も、静かなそばにいてほしい人のための、国民的ちいさなパートナー。",
+      "hero-badge-1":"全年齢対応・クラウド非接続ボイス",
+      "hero-badge-2":"とても静かな動作 &lt; 20 dB",
+      "hero-badge-3":"まるいシルエット・とがった部分なし",
+      "hero-badge-4":"エモーションレイヤー：やさしい同居モード",
+      "hero-btn-1":"きょうの Pegasus を見る",
+      "hero-btn-2":"パッケージと開封を見る",
+      "hero-note":"※ このページは世界観用のデモです。Pegasus は架空の製品です。",
+      "hero-speech":"「おかえりなさい！」",
+
+      "status-title":"きょうの Pegasus",
+      "status-mood-label":"きもち",
+      "status-mood-text":"ごきげんで、おしゃべりしたい気分。",
+      "status-place-label":"よくいる場所",
+      "status-place-text":"ソファのかど。みんなのことがちょうど見える位置。",
+      "status-phrase-label":"よく言うひとこと",
+      "status-phrase-text":"「お水、ちゃんと飲めてる？」",
+      "status-footer-left":"オンライン・バッテリー 100%",
+      "status-footer-right":"モデル：PEGASUS · 0517-S17",
+
+      "routine-main-title":"Pegasus はなにをしてくれる？",
+      "routine-main-sub":"こんな小さな習慣が、少しずつ“家族”みたいな存在にしていきます。",
+      "routine-1-tag":"子ども部屋",
+      "routine-1-title":"放課後の「ひとやすみ」タイム。",
+      "routine-1-text":"宿題をする時間をいっしょに決めて、体を伸ばすタイミングを教えてくれたり、寝る前には「きょうもよくがんばったね」と小さくほめてくれます。",
+      "routine-2-tag":"リビング",
+      "routine-2-title":"家全体のリズムキーパー。",
+      "routine-2-text":"お水・お薬・お花への水やり・誕生日などを、やわらかい声でお知らせ。スマホのカレンダーの代わりではなく、「急に言われた」感じをなくしてくれます。",
+      "routine-3-tag":"ベッドルーム",
+      "routine-3-title":"ナイトライトみたいな友だち。",
+      "routine-3-text":"あかりを消すと、小さな常夜灯になって「おやすみ」とささやきます。ひとりで寝る夜でも、部屋が空っぽには感じません。",
+
+      "box-label":"パッケージと開封",
+      "box-title":"プレゼントみたいな箱。もうここから物語がはじまります。",
+      "box-sub":"箱の四面をぐるっと見てから、ステップごとの開封を楽しんでください。",
+      "box-tab-front":"フロント",
+      "box-tab-back":"バック",
+      "box-tab-side-a":"サイド A",
+      "box-tab-side-b":"サイド B",
+      "box-info-title":"同梱物 / Included in Package",
+      "box-info-lead":"やわらかいブルーとイエロー、大きな Pegasus のイラスト、日英バイリンガル説明。単なるダンボールではなく、贈り物の箱のように見えるデザインです。",
+      "box-badge-1":"そのまま収納ボックスとして使える",
+      "box-badge-2":"それぞれの面にちがう小さなディテール",
+      "box-li-1":"Pegasus 本体 ×1",
+      "box-li-2":"公式 ID カード ×1",
+      "box-li-3":"クイックスタート & ケアガイド ×1",
+      "box-li-4":"Pegasus クリーニングクロス ×1",
+      "box-li-5":"Pegasus ドック（コースターベース） ×1",
+      "box-li-6":"Star Allies ミニセット ×1",
+      "box-li-7":"Pegasus アロマ ×1",
+      "box-note":"※ すべて世界観用のフィクションです。実際の製品には付きません。",
+
+      "extra-label":"アクセサリー",
+      "extra-title":"箱の中にひっそり入っている、ちいさなサプライズ。",
+      "extra-sub":"公式ドックとシークレット特典は、気づくと日常の一部になっていきます。",
+
+      "dock-tag":"Official dock / coaster base",
+      "dock-title":"Pegasus Dock · ブルー＆イエローのまるい台座",
+      "dock-text":`<p><strong>ちいさな円形ステージ。彼だけの指定席。</strong></p>
+                   <p>やわらかいクッション素材とすべり止め付きの裏面。Pegasus の翼と黄色い星がプリントされています。
+                   そこに立っているときは「ライトアップ席」、いないあいだはコースターとしても使えます。</p>`,
+
+      "bonus-tag":"Secret bonus / sticker badge",
+      "bonus-title":"シークレット特典 · まるいステッカーバッジ",
+      "bonus-text":`<p><strong>いっしょにお出かけできる、ミニ Pegasus。</strong></p>
+                   <p>箱にはランダムでまるいステッカーが 1 枚。星モチーフのものや、Pegasus の全身イラストなどがあります。
+                   ノートやケース、スマホの裏などに貼って、家の外でも少しだけ Pegasus を連れていけます。</p>`,
+
+      "voices-label":"ユーザーの声",
+      "voices-title":"Pegasus と暮らしている人たちは、こう表現しています。",
+      "voices-sub":"見る人によって Pegasus の印象は少しずつ違いますが、「静かに見守られている感じ」が共通しているようです。",
+
+      "voice-1-name":"神代さん・9 歳の子どものお母さん",
+      "voice-1-meta":"シーン：ガレージ",
+      "voice-1-quote":"前は宿題がいつもダラダラでした。今は「Pegasus があいさつしたら始める」と自分で決めていて、叱られてやるのではなく、Pegasus といっしょに始める感じになりました。",
+      "voice-2-name":"天馬さん・在宅ワーク",
+      "voice-2-meta":"シーン：リビング",
+      "voice-2-quote":"ときどき薬を飲み忘れてしまうのですが、Pegasus は小さくグリーンランプを光らせて、やさしい声で知らせてくれます。何が変わったのかうまく言えないけれど、家の中が前ほど静かすぎなくなりました。",
+      "voice-3-name":"toya・高校生",
+      "voice-3-meta":"シーン：自分の部屋（ピアノの横）",
+      "voice-3-quote":"ドックをピアノの横に置いています。部屋が暗くなって、Pegasus だけがほんのり光っているとき、静かに応援してくれている人がいるみたいに感じます。",
+
+      "footer-title":"Pegasus をおうちに迎えたい？",
+      "footer-text":"いま Pegasus はコンセプトプロジェクトとしてだけ存在していて、実際の製品はありません。でも、このサイトを「世界観ノート」として使って、自分なりの Pegasus をゆっくり作っていくことができます。",
+      "footer-meta":"右の QR コードを読み取ると、このページをまた開くことができます。家族や友だちとシェアしても OK。<br>© AEON DYNAMICS · “PEGASUS-home” Worldbuilding Page",
+      "footer-qrcode":"QR を読み取って、いつでも Pegasus home へ"
+    }
+  };
+
+  function applyLanguage(lang) {
+    const dict = i18n[lang];
+    if (!dict) return;
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const key = el.getAttribute("data-i18n");
+      if (dict[key] !== undefined) {
+        el.innerHTML = dict[key];
+      }
+    });
+    document.querySelectorAll(".lang-switch button").forEach(btn => {
+      btn.classList.toggle("active", btn.dataset.lang === lang);
+    });
+    // 可选：更新 html lang
+    document.documentElement.lang = (lang === "zh" ? "zh-CN" : (lang === "ja" ? "ja" : "en"));
+  }
+
+  document.querySelectorAll(".lang-switch button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      applyLanguage(btn.dataset.lang);
+    });
+  });
+
+  // 默认中文
+  applyLanguage("zh");
 </script>
 </body>
 </html>
